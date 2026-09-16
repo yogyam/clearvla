@@ -1,0 +1,28 @@
+# 8 material-neutral paraphrases per task. Sampled uniformly per episode; the id is logged.
+grasp:
+  - "Put the tube in the rack."
+  - "Pick up the test tube and place it in the rack slot."
+  - "Move the tube into the rack."
+  - "Grab the tube and set it upright in the rack."
+  - "Place the test tube into the holder on the rack."
+  - "Pick the tube off the bench and rack it."
+  - "Take the tube and put it in the rack."
+  - "Transfer the tube to the rack slot."
+pour:
+  - "Pour into the beaker up to the line."
+  - "Fill the beaker to the mark from the tube."
+  - "Pour the liquid from the tube until it reaches the line on the beaker."
+  - "Pick up the tube and pour into the beaker up to the red line."
+  - "Pour until the beaker is filled to the marked level."
+  - "Transfer liquid from the tube to the beaker, stopping at the line."
+  - "Fill the beaker to the line and stop."
+  - "Pour from the tube into the beaker until the liquid reaches the mark."
+insert:
+  - "Insert the tube into the holder."
+  - "Put the tube into the narrow holder."
+  - "Slide the tube down into the holder slot."
+  - "Seat the tube in the holder."
+  - "Place the tube you are holding into the holder."
+  - "Lower the tube into the holder until it is seated."
+  - "Insert the test tube into the slot."
+  - "Put the tube in the slot on the holder."
