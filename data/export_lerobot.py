@@ -31,7 +31,8 @@ def export_task(task, raw, out_root, source, limit):
     from lerobot.datasets.lerobot_dataset import LeRobotDataset
     root = out_root / f"clearvla_{task}"
     if root.exists(): shutil.rmtree(root)
-    ds = LeRobotDataset.create(repo_id=f"clearvla/{task}", fps=FPS, features=features(), root=root, robot_type="franka_panda", use_videos=True)
+    ds = LeRobotDataset.create(repo_id=f"clearvla/{task}", fps=FPS, features=features(), root=root, robot_type="franka_panda", use_videos=True,
+                               image_writer_threads=8, vcodec="h264")
     n_ep = 0
     for material in MATERIALS:
         files = sorted((raw / f"{task}_{material}").glob("ep_*.h5"))[: limit or None]
