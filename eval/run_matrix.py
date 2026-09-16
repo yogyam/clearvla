@@ -22,7 +22,7 @@ def parse_seeds(s):
 def run(policy, task, bridge, masks, seed, tmp, strip_dir=None, strip_every=16):
     obs = task.reset(seed); policy.reset(); bridge.rebind(task.model, task.info, task.material)
     masks = MaskRenderer(task.model, task.info)
-    t0 = time.perf_counter(); done = False; keep_sets = []; frames = []
+    t0 = time.perf_counter(); done = False; keep_sets = []; frames = []; held = 0
     while not done:
         if policy.need_observation():
             bridge.sync(task.data); bridge.render(str(tmp)); img = np.asarray(Image.open(tmp).convert("RGB"))
@@ -30,6 +30,8 @@ def run(policy, task, bridge, masks, seed, tmp, strip_dir=None, strip_every=16):
             if policy.diag: crit, _ = masks(task.data); keep_sets.append(dict(step=task.t, keep=policy.diag[-1].tolist(), crit_patches=(crit.reshape(14, 16, 14, 16).mean((1, 3)) >= 0.25).flatten().tolist()))
             if strip_dir is not None and task.t % strip_every == 0: frames.append(img)
         obs, done = task.step(policy.next_action())
+        held = held + 1 if task.success() else 0
+        if held >= 20: break                      # success sustained for 2 s: terminate early
     succ = task.success()
     if strip_dir is not None and frames:
         Image.fromarray(np.concatenate(frames[:12], 1)).save(strip_dir / f"{task.name}_{task.material}_s{seed}_{'ok' if succ else 'fail'}.png")
