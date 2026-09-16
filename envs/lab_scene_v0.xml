@@ -5,7 +5,7 @@
   <option timestep="0.002" integrator="implicitfast"/>
   <visual>
     <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
-    <global offwidth="224" offheight="224"/>
+    <global offwidth="640" offheight="640"/>
   </visual>
   <asset>
     <material name="table_mat" rgba="0.28 0.30 0.33 1"/>
@@ -17,6 +17,7 @@
     <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="table_mat"/>
     <camera name="front" pos="0.5 -0.65 0.45" xyaxes="1 0 0 0 0.496 0.868" fovy="50"/>
+    <camera name="wide" pos="1.2 -1.2 0.9" xyaxes="0.8 0.6 0 -0.223 0.297 0.929" fovy="52"/>
     <body name="tube" pos="0.5 0 0.051">
       <freejoint name="tube_free"/>
       <geom name="tube_geom" type="cylinder" size="0.014 0.05" material="tube_mat" mass="0.02" friction="1 0.005 0.0001"/>

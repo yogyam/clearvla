@@ -71,30 +71,33 @@ class BlenderBridge:
         w.node_tree.nodes["Background"].inputs[1].default_value = 0.15
 
     def _import_robot(self, model, asset_dir: Path):
-        """One empty per MuJoCo body; visual-group mesh geoms imported once and parented with their local offset."""
-        body_objs = {}
-        mat_cache = {}
+        """One empty per MuJoCo body. Visual-group mesh geoms are built from MuJoCo's *compiled* vertex
+        buffers (model.mesh_vert/mesh_face), which are already recentred, so geom_pos/geom_quat apply as-is.
+        (Importing the raw OBJ files double-applies the recentring offset.) asset_dir is unused but kept for API."""
+        body_objs, mat_cache, mesh_cache = {}, {}, {}
         for g in range(model.ngeom):
             if model.geom_type[g] != mujoco.mjtGeom.mjGEOM_MESH or model.geom_group[g] != 2: continue
             b = model.geom_bodyid[g]
             if b not in body_objs:
-                e = bpy.data.objects.new(f"body_{b}", None); bpy.context.scene.collection.objects.link(e); body_objs[b] = e
-            mesh_name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_MESH, model.geom_dataid[g])
-            path = asset_dir / f"{mesh_name}.obj"
-            if not path.exists(): continue
-            before = set(bpy.data.objects)
-            bpy.ops.wm.obj_import(filepath=str(path), forward_axis='Y', up_axis='Z')
-            new = [o for o in bpy.data.objects if o not in before]
+                e = bpy.data.objects.new(f"body_{b}", None); bpy.context.scene.collection.objects.link(e)
+                e.rotation_mode = 'QUATERNION'; body_objs[b] = e
+            mid_mesh = model.geom_dataid[g]
+            if mid_mesh not in mesh_cache:
+                va, vn = model.mesh_vertadr[mid_mesh], model.mesh_vertnum[mid_mesh]
+                fa, fn = model.mesh_faceadr[mid_mesh], model.mesh_facenum[mid_mesh]
+                verts = model.mesh_vert[va:va+vn].tolist(); faces = model.mesh_face[fa:fa+fn].tolist()
+                me = bpy.data.meshes.new(f"mjmesh_{mid_mesh}"); me.from_pydata(verts, [], faces); me.update()
+                for p in me.polygons: p.use_smooth = True
+                mesh_cache[mid_mesh] = me
+            o = bpy.data.objects.new(f"geom_{g}", mesh_cache[mid_mesh]); bpy.context.scene.collection.objects.link(o)
+            o.parent = body_objs[b]; o.location = Vector(model.geom_pos[g])
+            o.rotation_mode = 'QUATERNION'; o.rotation_quaternion = Quaternion(model.geom_quat[g])
             mid = model.geom_matid[g]
-            if mid >= 0 and mid not in mat_cache:
-                rgba = tuple(model.mat_rgba[mid]); mat_cache[mid] = _principled(f"mjmat_{mid}", base=rgba, rough=0.5)
-            for o in new:
-                o.parent = body_objs[b]; o.location = Vector(model.geom_pos[g])
-                o.rotation_mode = 'QUATERNION'; o.rotation_quaternion = Quaternion(model.geom_quat[g])
-                if mid >= 0:
-                    o.data.materials.clear(); o.data.materials.append(mat_cache[mid])
-                for p in o.data.polygons: p.use_smooth = True
-        for e in body_objs.values(): e.rotation_mode = 'QUATERNION'
+            if mid >= 0:
+                if mid not in mat_cache: mat_cache[mid] = _principled(f"mjmat_{mid}", base=tuple(model.mat_rgba[mid]), rough=0.5)
+                o.data.materials.append(mat_cache[mid]) if mat_cache[mid].name not in o.data.materials else None
+            else:
+                o.data.materials.append(_principled(f"geomrgba_{g}", base=tuple(model.geom_rgba[g]), rough=0.5))
         self.n_robot_meshes = sum(1 for o in bpy.data.objects if o.type == "MESH" and o.parent in body_objs.values())
         return body_objs
 
