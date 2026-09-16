@@ -1,0 +1,22 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+# large artifacts — never commit
+cache/
+renders/
+datasets/
+checkpoints/
+*.memmap
+*.npy
+*.h5
+*.safetensors
+*.pt
+*.blend1
+# results: JSONL episode logs ARE tracked (small, reproducibility); plots regenerated
+results/**/*.png
+# misc
+.DS_Store
+logs/
+AutoBio/
