@@ -4,9 +4,11 @@ with failure triage. Optionally renders review frames through Blender.
   python scripts/verify_experts.py --trials 100                       # success table -> results/week1/expert_success.md
   python scripts/verify_experts.py --render --frames 20 --trials 2    # Blender frames -> results/week1/frames/
 """
+import os
+for _v in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS", "VECLIB_MAXIMUM_THREADS"): os.environ.setdefault(_v, "1")
 import argparse, sys, json, time, collections
 from pathlib import Path
-from multiprocessing import Pool
+import multiprocessing as mp
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
 
 
@@ -23,7 +25,10 @@ def _run(args):
 def verify(trials, tasks, materials, workers, out_dir):
     jobs = [(t, m, s) for t in tasks for m in materials for s in range(trials)]
     t0 = time.perf_counter()
-    with Pool(workers) as pool: rows = pool.map(_run, jobs, chunksize=4)
+    if workers > 1:
+        with mp.get_context("spawn").Pool(workers) as pool: rows = pool.map(_run, jobs, chunksize=4)
+    else:
+        rows = [_run(j) for j in jobs]
     wall = time.perf_counter() - t0
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "expert_episodes.jsonl").write_text("\n".join(json.dumps(r) for r in rows) + "\n")

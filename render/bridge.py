@@ -26,11 +26,19 @@ BEAKER_WALL = 0.002
 
 def _principled(name, base=(0.8, 0.8, 0.8, 1), rough=0.5, transmission=0.0, ior=1.45, emission=None):
     m = bpy.data.materials.new(name); m.use_nodes = True
-    b = m.node_tree.nodes["Principled BSDF"]
+    nt = m.node_tree; b = nt.nodes["Principled BSDF"]
     b.inputs["Base Color"].default_value = base; b.inputs["Roughness"].default_value = rough
     b.inputs["IOR"].default_value = ior; b.inputs["Transmission Weight"].default_value = transmission
     if emission is not None:
         b.inputs["Emission Color"].default_value = emission; b.inputs["Emission Strength"].default_value = 0.4
+    if transmission > 0.5:
+        # Glass with caustics disabled casts an opaque black shadow, and you see that shadow *through* the object.
+        # Route shadow rays to a Transparent BSDF so glass shadows are light, as in the real world.
+        out = nt.nodes["Material Output"]; lp = nt.nodes.new("ShaderNodeLightPath"); tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+        tr.inputs[0].default_value = (0.9, 0.9, 0.9, 1)
+        mix = nt.nodes.new("ShaderNodeMixShader")
+        nt.links.new(lp.outputs["Is Shadow Ray"], mix.inputs[0]); nt.links.new(b.outputs[0], mix.inputs[1]); nt.links.new(tr.outputs[0], mix.inputs[2])
+        nt.links.new(mix.outputs[0], out.inputs["Surface"])
     return m
 
 

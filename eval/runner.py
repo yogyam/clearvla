@@ -41,7 +41,7 @@ def run_episode(task, policy, seed: int, render: str | None = None, bridge=None,
     obs = task.reset(seed)
     log = EpisodeLog(task.name, task.material, seed, instruction_id=obs["instruction_id"], instruction=obs["instruction"])
     mj = MujocoFrames(task.model, task.info) if (render or frames_dir) else None
-    if bridge is not None: bridge.rebind(task.model, task.info)
+    if bridge is not None: bridge.rebind(task.model, task.info, task.material)
     done = False; idle = 0
     while not done:
         if (render or frames_dir) and task.t % frame_every == 0:

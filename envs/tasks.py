@@ -20,6 +20,10 @@ INSTRUCTIONS = yaml.safe_load((Path(__file__).parent / "instructions.yaml").read
 HORIZON = 300
 INSERT_HOLD = 0.035        # tube centre sits this far below the TCP when it starts in-hand (fingers clear the holder walls)
 SETTLE_STEPS = 100          # physics steps after reset
+# Sticky gripper: when the gripper is commanded closed and the tube is between the pads, a weld constraint
+# attaches it to the hand; commanding open releases it. Contact physics stays on. This removes grasp-slip
+# noise (a contact-model artefact of the Menagerie pads) from what is a perception study. Reported in the paper.
+PINCH_LATERAL = 0.020       # tube axis within this distance of the TCP in the pad plane
 
 
 class Task:
@@ -34,6 +38,7 @@ class Task:
         self.t = 0
         self.instruction = ""; self.instruction_id = -1
         self.liquid: LiquidState | None = None
+        self.attached = False
 
     # ---- lifecycle -------------------------------------------------------------------------
     def reset(self, seed: int):
@@ -46,6 +51,7 @@ class Task:
         self.instruction_id = int(rng.integers(len(INSTRUCTIONS[self.name])))
         self.instruction = INSTRUCTIONS[self.name][self.instruction_id]
         self.t = 0
+        self.attached = False
         self._task_reset(rng)
         for _ in range(SETTLE_STEPS): mujoco.mj_step(self.model, self.data)
         self._after_settle()
@@ -55,12 +61,39 @@ class Task:
     def _after_settle(self): pass
 
     def step(self, action: np.ndarray):
-        self.ctrl.step(self.data, action)
+        self.ctrl.apply_action(self.data, action)
+        for _ in range(self.ctrl.substeps):
+            self._update_weld(float(action[9]))
+            mujoco.mj_step(self.model, self.data)
         self._task_step()
         self.t += 1
         return self.obs(), self.t >= HORIZON
 
     def _task_step(self): pass
+
+    # ---- sticky gripper --------------------------------------------------------------------
+    def _tube_in_pinch(self) -> bool:
+        p, R = self.ctrl.tcp_pose(self.data)
+        rel = R.T @ (self.data.xpos[self.info.tube_body] - p)
+        return bool(abs(rel[0]) < PINCH_LATERAL and abs(rel[1]) < PINCH_LATERAL and abs(rel[2]) < TUBE_H / 2 - 0.005)
+
+    def _attach(self):
+        m, d, eq = self.model, self.data, self.info.weld_eq
+        hand = m.eq_obj1id[eq]; tube = m.eq_obj2id[eq]
+        R1 = d.xmat[hand].reshape(3, 3); relpos = R1.T @ (d.xpos[tube] - d.xpos[hand])
+        q1inv = np.zeros(4); mujoco.mju_negQuat(q1inv, d.xquat[hand])
+        relquat = np.zeros(4); mujoco.mju_mulQuat(relquat, q1inv, d.xquat[tube])
+        m.eq_data[eq, :3] = 0.0; m.eq_data[eq, 3:6] = relpos; m.eq_data[eq, 6:10] = relquat; m.eq_data[eq, 10] = 1.0
+        d.eq_active[eq] = 1; self.attached = True
+
+    def _detach(self):
+        self.data.eq_active[self.info.weld_eq] = 0; self.attached = False
+
+    def _update_weld(self, grip_cmd: float):
+        if not self.attached and grip_cmd < 0.5 and self.ctrl.gripper_opening(self.data) < 0.5 and self._tube_in_pinch():
+            self._attach()
+        elif self.attached and grip_cmd > 0.5:
+            self._detach()
 
     # ---- state ----------------------------------------------------------------------------
     def obs(self):
@@ -123,6 +156,7 @@ class Insert(Task):
         self.data.qpos[ARM_DOF:ARM_DOF + 2] = 0.0145
         self.data.ctrl[ARM_DOF] = 0.0                       # close
         mujoco.mj_forward(self.model, self.data)
+        self._attach()
 
     def success(self) -> bool:
         p, _ = self.tube_pose(); sc = self.info.slot_center

@@ -50,9 +50,9 @@ NOMINAL = dict(
     rack=np.array([0.55, 0.14, 0.0]),
     holder=np.array([0.55, 0.10, 0.0]),
     beaker=np.array([0.55, 0.10, 0.0]),
-    cam_pos=np.array([0.92, -0.06, 0.40]),   # front "agent view": faces the robot across the bench
-    cam_lookat=np.array([0.52, 0.00, 0.08]),
-    cam_fovy=40.0,
+    cam_pos=np.array([0.86, -0.52, 0.50]),   # diagonal agent view: beaker stays visible beside the hand during the pour
+    cam_lookat=np.array([0.53, 0.02, 0.06]),
+    cam_fovy=36.0,
     light_intensity=1.0,
 )
 RANDOM = dict(object_xy=0.05, fixture_xy=0.03, light=0.20, cam_pos=0.01, cam_deg=2.0)
@@ -82,6 +82,7 @@ class SceneInfo:
     cam_pos: np.ndarray | None = None
     cam_xyaxes: np.ndarray | None = None
     light_intensity: float = 1.0
+    weld_eq: int = -1
 
 
 def _lookat_xyaxes(pos, target):
@@ -229,6 +230,10 @@ def build_scene(task: str, material: str, seed: int, randomize: bool = True):
         rliq, floor_top = _add_beaker(beaker, "beaker", BEAKER_R, BEAKER_H, BEAKER_WALL, BEAKER_SEGS, rgba["tube"], mark, rgba["liquid"])
         info.beaker_center = bp + np.array([0, 0, floor_top]); info.mark_level = mark
 
+    # sticky gripper: weld hand<->tube, inactive until the task attaches it on a closed grasp (see envs/tasks.py)
+    eq = spec.add_equality(name="grasp_weld", type=mujoco.mjtEq.mjEQ_WELD, objtype=mujoco.mjtObj.mjOBJ_BODY,
+                           name1="hand", name2="tube", active=False)
+    eq.solref = [0.004, 1.0]
     # extend the Franka 'home' keyframe with the tube's free joint so mj_resetDataKeyframe places it correctly
     tube_spawn = [float(v) for v in spec.body("tube").pos]
     spec.keys[0].qpos = list(spec.keys[0].qpos) + tube_spawn + [1, 0, 0, 0]
@@ -237,6 +242,7 @@ def build_scene(task: str, material: str, seed: int, randomize: bool = True):
     info.tube_geom = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_GEOM, "tube_geom")
     info.tube_qposadr = int(model.jnt_qposadr[mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, "tube_free")])
     info.tcp_site = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_SITE, "tcp")
+    info.weld_eq = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_EQUALITY, "grasp_weld")
     info.cam_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_CAMERA, "front")
     fixture = {"grasp": "rack", "insert": "holder", "pour": "beaker"}[task]
     info.fixture_body = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, fixture)

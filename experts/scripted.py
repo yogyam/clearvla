@@ -129,7 +129,7 @@ class InsertExpert(Expert):
 
 
 class PourExpert(Expert):
-    TILT = math.radians(105)
+    TILT = math.radians(95)
     POUR_ROT = math.radians(35)      # slower rotation while holding the tube
     TILT_AXIS = 0                    # hand axis index to rotate about: 0 = x (pads lock the tube), 1 = y (torsional friction only)
     BASE_YAW = math.radians(-45)     # grasp yaw added to the per-episode jitter (x-axis tilt reachable, joint 7 mid-range)

@@ -24,12 +24,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--engine", default="cycles"); ap.add_argument("--frame", type=int, default=0)
     ap.add_argument("--dir", default="results/week0/render")
+    ap.add_argument("--glass", default=None); ap.add_argument("--opaque", default=None)   # explicit file pair (Week 1+)
     # tube bbox in image coords (x0,y0,x1,y1) in 224 px; default from the bench scene camera. Refine with a mask later.
     ap.add_argument("--tube-box", default="auto")
     a = ap.parse_args()
     d = Path(a.dir)
-    g = Image.open(d / f"{a.engine}_glass_{a.frame:03d}.png").convert("RGB")
-    o = Image.open(d / f"{a.engine}_opaque_{a.frame:03d}.png").convert("RGB")
+    g = Image.open(a.glass or d / f"{a.engine}_glass_{a.frame:03d}.png").convert("RGB")
+    o = Image.open(a.opaque or d / f"{a.engine}_opaque_{a.frame:03d}.png").convert("RGB")
     dev = "mps" if torch.backends.mps.is_available() else "cpu"
     model = AutoModel.from_pretrained(MODEL).to(dev).eval(); proc = AutoProcessor.from_pretrained(MODEL)
     fg, fo = patch_feats(model, proc, g, dev), patch_feats(model, proc, o, dev)
@@ -60,5 +61,7 @@ def main():
     side.save(d / f"f4_side_by_side_{a.engine}.png")
     hm = (dist / dist.max() * 255).astype(np.uint8)
     Image.fromarray(hm).resize((224,224), Image.NEAREST).save(d / f"f4_patch_dist_{a.engine}.png")
+    n_patches = int(on.sum())
+    print(f"  on-object patches (bbox): {n_patches}")
     print(f"  wrote {d}/f4_side_by_side_{a.engine}.png and f4_patch_dist_{a.engine}.png")
 if __name__ == "__main__": main()
