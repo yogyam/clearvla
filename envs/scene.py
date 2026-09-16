@@ -31,6 +31,7 @@ BEAKER_R, BEAKER_H, BEAKER_WALL, BEAKER_SEGS = 0.025, 0.050, 0.002, 12
 LIQUID_MARGIN = 0.0015                                  # liquid radius = inner radius - margin
 TCP_OFFSET = 0.1034                                     # hand frame -> fingertip centre (m)
 GRIP_SCALE = 8.0                                        # gripper actuator gain/bias multiplier (Menagerie default peaks at ~4 N)
+NOSLIP_ITERS = 0                                        # MuJoCo noslip solver iterations: removes friction creep of held objects
 
 # MuJoCo rgba per material. glass/alpha look the same in MuJoCo; Blender makes the difference.
 RGBA = {
@@ -175,6 +176,7 @@ def build_scene(task: str, material: str, seed: int, randomize: bool = True):
     grip.gainprm[0] *= GRIP_SCALE; grip.biasprm[1] *= GRIP_SCALE; grip.biasprm[2] *= GRIP_SCALE
     spec.option.timestep = 0.002
     spec.option.integrator = mujoco.mjtIntegrator.mjINT_IMPLICITFAST
+    spec.option.noslip_iterations = NOSLIP_ITERS
     spec.visual.global_.offwidth = 640; spec.visual.global_.offheight = 640
     wb = spec.worldbody
     rgba = RGBA[material]

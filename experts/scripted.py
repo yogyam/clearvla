@@ -87,7 +87,7 @@ class Expert:
 
 class GraspRackExpert(Expert):
     def build_phases(self):
-        t = self.task; tube = lambda: t.tube_pose()[0]
+        t = self.task; tube0 = t.tube_pose()[0].copy(); tube = lambda: tube0
         R_g = _rz(self.jit_yaw) @ self.R_down
         above = lambda: tube() + [0, 0, self.jit_h]
         grasp = lambda: tube() + [0, 0, self.grasp_dz]
@@ -101,7 +101,7 @@ class GraspRackExpert(Expert):
             dict(target=above, R=R_g, grip=1.0, done=self.reached),
             dict(target=grasp, R=R_g, grip=1.0, done=self.reached, speed=0.08),
             dict(target=grasp, R=R_g, grip=0.0, done=self.gripper_closed_on_tube, hold=3),
-            dict(target=lambda: (self._set_held(), np.array([grasp()[0], grasp()[1], self.lift_z]))[1], R=R_g, grip=0.0, done=self.reached, speed=0.10),
+            dict(target=lambda: np.array([self.cmd_pos[0], self.cmd_pos[1], self.lift_z]), R=R_g, grip=0.0, done=self.reached, speed=0.10),
             dict(target=place_high, R=R_g, grip=0.0, done=self.reached),
             dict(target=place_low, R=R_g, grip=0.0, done=self.reached, speed=0.06, hold=2),
             dict(target=place_low, R=R_g, grip=1.0, done=self.gripper_open, hold=3),
@@ -132,21 +132,29 @@ class PourExpert(Expert):
     TILT = math.radians(105)
     POUR_ROT = math.radians(35)      # slower rotation while holding the tube
     TILT_AXIS = 0                    # hand axis index to rotate about: 0 = x (pads lock the tube), 1 = y (torsional friction only)
-    BASE_YAW = math.radians(90)      # grasp yaw added to the per-episode jitter (chosen for IK reachability of the tilt)
+    BASE_YAW = math.radians(-45)     # grasp yaw added to the per-episode jitter (x-axis tilt reachable, joint 7 mid-range)
+    PRE_MARGIN = math.radians(25)    # pre-tilt this far below the pouring threshold
 
     def build_phases(self):
-        t = self.task; tube = lambda: t.tube_pose()[0]
+        t = self.task; tube0 = t.tube_pose()[0].copy(); tube = lambda: tube0
         R_g = _rz(self.BASE_YAW + self.jit_yaw) @ self.R_down
         Q = _rot_axis(R_g[:, self.TILT_AXIS], self.TILT)
         R_tilt = Q @ R_g
         above = lambda: tube() + [0, 0, self.jit_h]
         grasp = lambda: tube() + [0, 0, self.grasp_dz]
         bc = t.info.beaker_center; rim = bc[2] + BEAKER_H
-        lift = lambda: np.array([grasp()[0], grasp()[1], rim + 0.15])
-        # tube opening sits `top` above the TCP while upright; after the hand rotation it is at Q @ (0,0,top)
-        top = TUBE_H / 2 - self.grasp_dz
+        lift = lambda: np.array([self.cmd_pos[0], self.cmd_pos[1], rim + 0.15])   # commanded xy: no feedback via the held tube
+        # Opening offset from the TCP, measured once after the lift (oracle) so it reflects how the tube actually
+        # sits in the grip; then the TCP target for the tilted pose is static (no feedback through the held tube).
+        from envs.liquid import opening_world
         target_opening = np.array([bc[0], bc[1], rim + 0.035])
-        pour_pos = lambda: target_opening - Q @ np.array([0, 0, top])
+        self._rel_top = None
+        def rel_top():
+            if self._rel_top is None:
+                p, Rm = t.tube_pose(); tcp, Rh = t.ctrl.tcp_pose(t.data)
+                self._rel_top = Rh.T @ (opening_world(p, Rm, TUBE_H / 2) - tcp)      # in the hand frame
+            return self._rel_top
+        pour_pos = lambda: target_opening - R_tilt @ rel_top()
         place = lambda: np.array([bc[0] - 0.10, bc[1] - 0.10, TUBE_H / 2 + self.grasp_dz + 0.003])
         place_high = lambda: place() + [0, 0, 0.10]
         self.mark = t.info.mark_level
@@ -159,7 +167,7 @@ class PourExpert(Expert):
         tilted = lambda obs, tg: ang_to(R_tilt, obs) < math.radians(3)
         upright = lambda obs, tg: ang_to(R_g, obs) < math.radians(3)
         # pre-tilt just below the pouring threshold at a safe height, descend, then finish the tilt in place
-        PRE = TILT_THRESH - math.radians(8)
+        PRE = TILT_THRESH - self.PRE_MARGIN
         Qp = _rot_axis(R_g[:, self.TILT_AXIS], PRE); R_pre = Qp @ R_g
         pre_pour = lambda: pour_pos() + np.array([0, 0, 0.12])
         near = lambda obs, tg: ang_to(R_pre, obs) < math.radians(3)

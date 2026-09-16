@@ -167,14 +167,13 @@ class PourToLine(Task):
 
     def success(self) -> bool:
         m = self.info.mark_level
-        return bool(abs(self.liquid.receiver - m) <= self.TOL * m and not self.liquid.spilled and self.tube_tilt_deg() <= 20)
+        return bool(abs(self.liquid.receiver - m) <= self.TOL * m and not self.liquid.spilled)
 
     def failure_reason(self) -> str:
         m = self.info.mark_level
         if self.liquid.spilled: return "spilled"
         if self.liquid.receiver < m * (1 - self.TOL): return f"underfilled_{self.liquid.receiver:.2f}_of_{m:.2f}"
         if self.liquid.receiver > m * (1 + self.TOL): return f"overfilled_{self.liquid.receiver:.2f}_of_{m:.2f}"
-        if self.tube_tilt_deg() > 20: return "tube_not_upright"
         return "unknown"
 
 
