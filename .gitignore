@@ -22,3 +22,4 @@ logs/
 AutoBio/
 # vendored upstream checkouts (needed Franka files are copied into envs/franka)
 third_party/
+checkpoints/

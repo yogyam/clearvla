@@ -1,0 +1,15 @@
+# Model A training config (design doc §7 starting point)
+lr: 1.0e-4
+lr_min: 1.0e-5
+warmup: 1000
+wd: 0.01
+batch: 64
+steps: 50000
+clip: 1.0
+ema: 0.999
+amp: fp16
+val_every: 1000
+val_batches: 8
+ckpt_every: 5000
+n_val: 15
+seed: 0

@@ -1,0 +1,5 @@
+train 27716 frames / 810 episodes; val 3094 frames
+params: 30.281M
+/Users/yogyamehrotra/Desktop/ClearVLA/data/dataset.py:64: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  vis = torch.from_numpy(np.asarray(self._mm(t, m)[row]))                                   # (196,768) fp16
+{'step': 100, 'loss': 1.3998231494426727, 'lr': 1e-05, 'gn': 3.382300853729248, 'it_s': 2.681544384403525}
