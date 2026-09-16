@@ -1,0 +1,33 @@
+{
+  "bpy": "5.0.1",
+  "results": {
+    "cycles/glass": {
+      "engine": "CYCLES/METAL",
+      "frames": 5,
+      "mean_s": 0.35,
+      "median_s": 0.349,
+      "max_s": 0.36
+    },
+    "cycles/opaque": {
+      "engine": "CYCLES/METAL",
+      "frames": 5,
+      "mean_s": 0.345,
+      "median_s": 0.342,
+      "max_s": 0.351
+    },
+    "eevee/glass": {
+      "engine": "BLENDER_EEVEE",
+      "frames": 5,
+      "mean_s": 0.092,
+      "median_s": 0.093,
+      "max_s": 0.096
+    },
+    "eevee/opaque": {
+      "engine": "BLENDER_EEVEE",
+      "frames": 5,
+      "mean_s": 0.073,
+      "median_s": 0.073,
+      "max_s": 0.076
+    }
+  }
+}

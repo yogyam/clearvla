@@ -1,0 +1,20 @@
+# clearvla conda env (python 3.11) — pinned after Week 0 install, 2026-09-15
+mujoco==3.13.0
+torch==2.14.0
+torchvision
+transformers
+accelerate
+numpy
+scipy
+pandas
+matplotlib
+h5py
+pyyaml
+tqdm
+pillow
+sentencepiece
+protobuf
+mlx
+modal
+bpy==5.0.1
+# lerobot: install separately, only needed for dataset export + SmolVLA jobs
