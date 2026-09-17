@@ -1,3 +1,11 @@
 [transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
 [transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
 Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 13388.07it/s]
+grasp/opaque/rgb_blender_wrist: 7926 frames, 2.22 GB, 113 fps
+grasp/glass/rgb_blender_wrist: 7926 frames, 2.22 GB, 114 fps
+pour/opaque/rgb_blender_wrist: 17784 frames, 4.99 GB, 113 fps
+pour/glass/rgb_blender_wrist: 17784 frames, 4.99 GB, 109 fps
+insert/opaque/rgb_blender_wrist: 5100 frames, 1.43 GB, 107 fps
+insert/glass/rgb_blender_wrist: 5100 frames, 1.43 GB, 107 fps
+text: 24 instructions x (64, 768)
+cached 61620 frames from rgb_blender_wrist
