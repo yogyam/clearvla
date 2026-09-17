@@ -1,0 +1,26 @@
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10186.29it/s]
+00:08.566  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+/Users/yogyamehrotra/miniconda3/envs/clearvla/lib/python3.11/site-packages/transformers/image_processing_backends.py:135: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  image = torch.from_numpy(image).contiguous()
+00:09.718  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:10.139  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:10.547  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:10.955  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:11.394  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:11.804  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:12.199  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:12.598  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:12.992  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:13.380  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:13.773  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:14.160  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:14.552  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:14.964  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:15.436  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:15.831  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:16.224  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:16.616  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:17.008  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'
+00:17.402  render           | Saved: '/tmp/clearvla_eval_glass_73305.png'

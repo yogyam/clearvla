@@ -1,0 +1,1 @@
+{"task": "grasp", "material": "opaque", "seed": 1000, "success": true, "steps": 111, "failure": "", "fill": 0.0, "mark": 0.5, "n_obs": 14, "t_encoder": 0.028844378007176732, "t_policy": 0.04825527972674796, "wall": 7.192633499973454, "keep_sets": []}
