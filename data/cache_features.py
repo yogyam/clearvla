@@ -76,7 +76,7 @@ def verify(raw, feat, source, model, proc, dev, n=100):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw", default="datasets/raw"); ap.add_argument("--feat", default="datasets/features")
-    ap.add_argument("--source", default="rgb_blender", choices=["rgb_blender", "rgb_alpha"]); ap.add_argument("--batch", type=int, default=64)
+    ap.add_argument("--source", default="rgb_blender"); ap.add_argument("--batch", type=int, default=64)
     ap.add_argument("--tasks", default="grasp,pour,insert"); ap.add_argument("--materials", default="opaque,glass"); ap.add_argument("--verify", action="store_true")
     a = ap.parse_args(); raw, feat = ROOT / a.raw, ROOT / a.feat; feat.mkdir(parents=True, exist_ok=True)
     dev = "mps" if torch.backends.mps.is_available() else "cpu"; model, proc = load_model(dev)
