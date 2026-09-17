@@ -6,7 +6,7 @@ have a complete /rgb_blender are skipped. One bpy process per invocation; run on
 
   python data/render_demos.py --material glass --resume
 """
-import argparse, sys, time, json
+import argparse, os, sys, time, json
 from pathlib import Path
 import numpy as np, h5py, mujoco
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     ap.add_argument("--raw", default="datasets/raw"); ap.add_argument("--samples", type=int, default=32)
     ap.add_argument("--resume", action="store_true"); ap.add_argument("--limit", type=int, default=0); ap.add_argument("--camera", default="front")
     a = ap.parse_args()
-    raw = ROOT / a.raw; tmp = Path("/tmp") / f"clearvla_render_{a.material}_{a.camera}.png"
+    raw = ROOT / a.raw; tmp = Path("/tmp") / f"clearvla_render_{a.material}_{a.camera}_{os.getpid()}.png"   # per-process: concurrent renders must never share a temp file
     files = [p for t in a.tasks.split(",") for p in sorted((raw / f"{t}_{a.material}").glob("ep_*.h5"))]
     if a.limit: files = files[:a.limit]
     # bootstrap the bridge from the first episode's scene
