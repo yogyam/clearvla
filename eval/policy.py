@@ -25,7 +25,8 @@ class ModelAPolicy:
     def __init__(self, ckpt_dir: str | Path, dev=None, exec_horizon=8, n_steps=10, accel=None):
         ckpt_dir = Path(ckpt_dir); self.dev = torch.device(dev or ("mps" if torch.backends.mps.is_available() else "cpu"))
         state = torch.load(ckpt_dir / "best.pt", map_location="cpu")
-        self.model = ClearVLA().to(self.dev).eval(); self.model.load_state_dict(state["model"])
+        n_vis = state["model"]["prefix.pos_vis"].shape[1]; self.views = ["front", "wrist"][: n_vis // 196]
+        self.model = ClearVLA(n_vis=n_vis).to(self.dev).eval(); self.model.load_state_dict(state["model"])
         self.norm = json.load(open(ckpt_dir / "norm.json")); self.enc = LiveSigLIP(self.dev)
         feat = ckpt_dir.parents[1] / "datasets/features"
         import pandas as pd
@@ -41,9 +42,10 @@ class ModelAPolicy:
 
     @torch.no_grad()
     def observe(self, img_uint8, obs, task_name):
-        """Consume a rendered frame + low-dim obs, refill the action queue with `exec_horizon` actions."""
+        """Consume rendered frame(s) (one per view) + low-dim obs, refill the action queue with `exec_horizon` actions."""
         t0 = time.perf_counter()
-        vis = self.enc(img_uint8); t1 = time.perf_counter()
+        imgs = img_uint8 if isinstance(img_uint8, (list, tuple)) else [img_uint8]
+        vis = torch.cat([self.enc(im) for im in imgs], 1); t1 = time.perf_counter()
         row, L = self.text_row[(task_name, obs["instruction_id"])]
         txt = torch.from_numpy(self.text[row])[None].to(self.dev); txt_mask = torch.zeros(1, 64, dtype=torch.bool, device=self.dev); txt_mask[0, :L] = True
         prop = np.concatenate([obs["qpos"], tcp10(obs["tcp_pos"], obs["tcp_R"], np.float32(obs["gripper"]))]).astype(np.float32)

@@ -30,6 +30,11 @@ HOLDER_SLOT, HOLDER_DEPTH = 0.030, 0.060                # insert: 1 mm clearance
 BEAKER_R, BEAKER_H, BEAKER_WALL, BEAKER_SEGS = 0.025, 0.050, 0.002, 12
 LIQUID_MARGIN = 0.0015                                  # liquid radius = inner radius - margin
 TCP_OFFSET = 0.1034                                     # hand frame -> fingertip centre (m)
+# wrist camera in the hand frame: beside the fingers (+x), above the pads, looking along +z (tool axis) tilted 20 deg inward.
+# MuJoCo cameras look along their -z: rotate 180 deg about x (camera -z = hand +z), then tilt about hand y.
+WRIST_CAM_POS = (0.055, 0.0, 0.01)
+WRIST_CAM_FOVY = 80.0
+WRIST_CAM_QUAT = (0.0, 0.9848, 0.0, 0.1736)             # camera -z = hand +z tilted 20 deg toward -x (derived numerically, see results/week3/wrist_check)
 GRIP_SCALE = 8.0                                        # gripper actuator gain/bias multiplier (Menagerie default peaks at ~4 N)
 NOSLIP_ITERS = 0                                        # MuJoCo noslip solver iterations: removes friction creep of held objects
 
@@ -203,8 +208,10 @@ def build_scene(task: str, material: str, seed: int, randomize: bool = True):
     x, y = xyaxes[:3], xyaxes[3:]; z = np.cross(x, y); R = np.stack([x, y, z], 1)
     q = np.zeros(4); mujoco.mju_mat2Quat(q, R.reshape(-1)); cam.quat = q.tolist()
 
-    # TCP site on the hand
+    # TCP site on the hand, plus a rigidly mounted wrist camera looking down the tool axis at the fingertips
     hand = spec.body("hand"); hand.add_site(name="tcp", pos=[0, 0, TCP_OFFSET], size=[0.005, 0, 0], rgba=[0, 1, 0, 0.0])
+    wc = hand.add_camera(name="wrist", pos=list(WRIST_CAM_POS), fovy=WRIST_CAM_FOVY)
+    wc.quat = list(WRIST_CAM_QUAT)
 
     info = SceneInfo(task=task, material=material, seed=seed)
     if task == "grasp":

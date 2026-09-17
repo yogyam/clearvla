@@ -19,11 +19,11 @@ PROPRIO_DIM = 19
 
 
 class Prefix(nn.Module):
-    def __init__(self, d=512, heads=8, layers=6):
-        super().__init__()
+    def __init__(self, d=512, heads=8, layers=6, n_vis=N_VIS):
+        super().__init__(); self.n_vis = n_vis
         self.vis_proj = nn.Linear(D_ENC, d); self.txt_proj = nn.Linear(D_ENC, d)
         self.prop_mlp = nn.Sequential(nn.Linear(PROPRIO_DIM, d), nn.GELU(), nn.Linear(d, d))
-        self.pos_vis = nn.Parameter(torch.randn(1, N_VIS, d) * 0.02); self.pos_txt = nn.Parameter(torch.randn(1, N_TXT, d) * 0.02)
+        self.pos_vis = nn.Parameter(torch.randn(1, n_vis, d) * 0.02); self.pos_txt = nn.Parameter(torch.randn(1, N_TXT, d) * 0.02)
         self.pos_prop = nn.Parameter(torch.randn(1, 1, d) * 0.02)
         self.type_emb = nn.Parameter(torch.randn(3, d) * 0.02)
         self.blocks = nn.ModuleList([EncoderBlock(d, heads) for _ in range(layers)])
@@ -39,7 +39,7 @@ class Prefix(nn.Module):
         """Returns memory (B,T',d), key mask (B,T'), token index (B,T') into the original 261 slots, attn maps."""
         B = vis.shape[0]
         x = self.embed(vis, txt, prop)
-        key_mask = torch.cat([torch.ones(B, N_VIS, dtype=torch.bool, device=x.device), txt_mask.bool(),
+        key_mask = torch.cat([torch.ones(B, self.n_vis, dtype=torch.bool, device=x.device), txt_mask.bool(),
                               torch.ones(B, 1, dtype=torch.bool, device=x.device)], 1)
         index = torch.arange(x.shape[1], device=x.device)[None].expand(B, -1)
         attns = []
@@ -47,7 +47,7 @@ class Prefix(nn.Module):
             x, att, _ = blk(x, key_mask=key_mask, return_attn=return_attn or (keep_visual is not None and i == prune_after))
             if return_attn: attns.append(att)
             if keep_visual is not None and i == prune_after:
-                keep = torch.cat([keep_visual.bool(), torch.ones(B, x.shape[1] - N_VIS, dtype=torch.bool, device=x.device)], 1)
+                keep = torch.cat([keep_visual.bool(), torch.ones(B, x.shape[1] - self.n_vis, dtype=torch.bool, device=x.device)], 1)
                 # all rows keep the same count (budget), so gather to a dense tensor
                 n = int(keep[0].sum()); idx = keep.nonzero()[:, 1].view(B, n)
                 x = torch.gather(x, 1, idx[..., None].expand(-1, -1, x.shape[-1]))
@@ -72,9 +72,9 @@ class ActionExpert(nn.Module):
 
 
 class ClearVLA(nn.Module):
-    def __init__(self, d_prefix=512, d_expert=384, prefix_layers=6, expert_layers=4, heads=8):
+    def __init__(self, d_prefix=512, d_expert=384, prefix_layers=6, expert_layers=4, heads=8, n_vis=N_VIS):
         super().__init__()
-        self.prefix = Prefix(d_prefix, heads, prefix_layers); self.expert = ActionExpert(d_expert, heads, expert_layers, d_prefix)
+        self.prefix = Prefix(d_prefix, heads, prefix_layers, n_vis=n_vis); self.expert = ActionExpert(d_expert, heads, expert_layers, d_prefix)
 
     def n_params(self): return sum(p.numel() for p in self.parameters() if p.requires_grad)
 

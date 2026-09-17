@@ -78,12 +78,14 @@ if __name__ == "__main__":
     ap.add_argument("--tasks", default="grasp,pour,insert"); ap.add_argument("--per-cell", type=int, default=150)
     ap.add_argument("--stride", type=int, default=4); ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--out", default="datasets/raw"); ap.add_argument("--check", action="store_true")
+    ap.add_argument("--seed-start", type=int, default=0); ap.add_argument("--append", action="store_true", help="extend an existing manifest instead of overwriting")
     a = ap.parse_args(); out_root = ROOT / a.out
     if a.check: check(out_root); sys.exit()
     tasks = a.tasks.split(","); t0 = time.perf_counter()
     manifest = dict(per_cell=a.per_cell, stride=a.stride, tasks=tasks, kept={}, rejected={}, steps={})
+    old = json.loads((out_root / "manifest.json").read_text()) if (a.append and (out_root / "manifest.json").exists()) else None
     for task_name in tasks:
-        kept, rejected, seed, batch = [], {}, 0, max(a.per_cell + 10, 40)
+        kept, rejected, seed, batch = [], {}, a.seed_start, max(a.per_cell + 10, 40)
         while len(kept) < a.per_cell:
             jobs = [(task_name, s, a.stride, str(out_root)) for s in range(seed, seed + batch)]
             with mp.get_context("spawn").Pool(a.workers) as pool: results = pool.map(_job, jobs, chunksize=2)
@@ -99,6 +101,10 @@ if __name__ == "__main__":
             seed += batch; batch = max(a.per_cell - len(kept) + 5, 8)
             print(f"{task_name}: kept {len(kept)}/{a.per_cell}, rejected {len(rejected)}, next seed {seed}  ({time.perf_counter()-t0:.0f} s)", flush=True)
         manifest["kept"][task_name] = kept; manifest["rejected"][task_name] = rejected
+    if old:
+        for t in tasks:
+            manifest["kept"][t] = old["kept"].get(t, []) + manifest["kept"][t]; manifest["rejected"][t] = {**old["rejected"].get(t, {}), **manifest["rejected"][t]}
+        manifest["steps"] = {**old["steps"], **manifest["steps"]}; manifest["per_cell"] = old["per_cell"] + a.per_cell
     (out_root / "manifest.json").write_text(json.dumps(manifest, indent=1))
     print(f"done in {time.perf_counter()-t0:.0f} s; manifest at {out_root/'manifest.json'}")
     check(out_root)

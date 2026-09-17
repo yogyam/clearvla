@@ -144,7 +144,8 @@ class BlenderBridge:
         self.m_fixture = _principled("fixture", base=(0.2, 0.2, 0.22, 1), rough=0.5)
         self.m_mark = _principled("mark", base=(0.85, 0.15, 0.15, 1), rough=0.4, emission=(0.85, 0.15, 0.15, 1))
         self.mj_mats = {}
-        self.cam.data.angle_y = math.radians(model.cam_fovy[info.cam_id])
+        self.cams = {n: mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_CAMERA, n) for n in ("front", "wrist")}
+        self.cams = {n: i for n, i in self.cams.items() if i >= 0}
         li = getattr(info, "light_intensity", 1.0)
         self.key.data.energy = 50 * li; self.fill.data.energy = 15 * li
         mesh_cache = {}
@@ -208,15 +209,16 @@ class BlenderBridge:
             t = _torus(nm, R, 0.0008); t.data.materials.append(self.m_mark); t.parent = parent; t.location = (0, 0, zm); self.geom_objs.append(t)
 
     # ---- per-frame ----------------------------------------------------------------------------
-    def sync(self, data, **_):
-        m = self.model
+    def sync(self, data, camera="front", **_):
+        m = self.model; cid = self.cams[camera]
+        self.cam.data.angle_y = math.radians(m.cam_fovy[cid])
         for b, e in self.body_objs.items():
             e.location = Vector(data.xpos[b]); e.rotation_quaternion = Quaternion(data.xquat[b])
         for g, o in self.liquids.items():
             h = 2 * m.geom_size[g, 1]
             o.scale = (1, 1, max(h, 1e-4)); o.location = Vector(m.geom_pos[g])
-        R = Matrix(np.array(data.cam_xmat[self.info.cam_id]).reshape(3, 3).tolist())
-        self.cam.matrix_world = Matrix.Translation(Vector(data.cam_xpos[self.info.cam_id])) @ R.to_4x4()
+        R = Matrix(np.array(data.cam_xmat[cid]).reshape(3, 3).tolist())
+        self.cam.matrix_world = Matrix.Translation(Vector(data.cam_xpos[cid])) @ R.to_4x4()
 
     def render(self, path: str):
         bpy.context.scene.render.filepath = path
