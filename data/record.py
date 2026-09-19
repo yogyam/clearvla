@@ -17,13 +17,13 @@ ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
 MATERIALS = ("opaque", "glass")
 
 
-def record_episode(task_name, material, seed, stride, out_dir):
+def record_episode(task_name, material, seed, stride, out_dir, exec_noise=0.0):
     import numpy as np, h5py, mujoco
     from envs.tasks import make_task
     from experts.scripted import make_expert
     from eval.runner import MujocoFrames
     task = make_task(task_name, material); obs = task.reset(seed); ex = make_expert(task, seed)
-    frames = MujocoFrames(task.model, task.info)
+    frames = MujocoFrames(task.model, task.info); rng_noise = np.random.default_rng(seed + 30_000)
     T = dict(action=[], ctrl=[], qpos=[], qvel=[], qpos_full=[], tcp_pos=[], tcp_R=[], gripper=[], fill=[], liquid=[], attached=[], tube_pose=[])
     S = dict(step=[], rgb=[], mask_crit=[], mask_tube=[])
     done = False; idle = 0
@@ -33,7 +33,10 @@ def record_episode(task_name, material, seed, stride, out_dir):
             crit, tube = frames.masks(task.data)
             S["step"].append(t); S["rgb"].append(frames.rgb(task.data)); S["mask_crit"].append(crit); S["mask_tube"].append(tube)
         a = ex(obs)
-        T["action"].append(a.copy()); T["qpos"].append(obs["qpos"]); T["qvel"].append(obs["qvel"]); T["qpos_full"].append(task.data.qpos.copy())
+        T["action"].append(a.copy())          # label = clean expert action
+        if exec_noise > 0:                    # DART-style: execute a perturbed action so the recorded states cover recovery
+            a = a.copy(); a[:3] += rng_noise.normal(0, exec_noise, 3); a[9] = float(np.clip(a[9] + rng_noise.normal(0, 0.05), 0, 1))
+        T["action"][-1] = T["action"][-1]; T["qpos"].append(obs["qpos"]); T["qvel"].append(obs["qvel"]); T["qpos_full"].append(task.data.qpos.copy())
         T["tcp_pos"].append(obs["tcp_pos"]); T["tcp_R"].append(obs["tcp_R"]); T["gripper"].append(obs["gripper"]); T["fill"].append(obs["fill"])
         T["liquid"].append([task.liquid.source, task.liquid.receiver] if task.liquid else [0.0, 0.0])
         T["attached"].append(task.attached); T["tube_pose"].append(np.concatenate(task.tube_pose()[0:1] + (task.data.xquat[task.info.tube_body],)))
@@ -48,7 +51,7 @@ def record_episode(task_name, material, seed, stride, out_dir):
     with h5py.File(out_dir / f"ep_{seed:04d}.h5", "w") as f:
         f.attrs.update(task=task_name, material=material, seed=seed, instruction=task.instruction, instruction_id=task.instruction_id,
                        params=json.dumps(task.info.params), mark_level=float(task.info.mark_level), n_steps=task.t, stride=stride,
-                       success=True, critical_geoms=json.dumps([int(g) for g in task.info.critical_geoms]), tube_geom=int(task.info.tube_geom))
+                       success=True, critical_geoms=json.dumps([int(g) for g in task.info.critical_geoms]), tube_geom=int(task.info.tube_geom), exec_noise=float(exec_noise))
         for k, v in T.items(): f.create_dataset(k, data=np.asarray(v, dtype=np.float32 if k != "attached" else bool))
         f.create_dataset("sample_steps", data=np.asarray(S["step"], np.int32))
         f.create_dataset("rgb_alpha", data=np.stack(S["rgb"]).astype(np.uint8), compression="gzip", compression_opts=1)
@@ -58,8 +61,8 @@ def record_episode(task_name, material, seed, stride, out_dir):
 
 
 def _job(args):
-    task_name, seed, stride, out_root = args
-    res = [record_episode(task_name, m, seed, stride, Path(out_root) / f"{task_name}_{m}") for m in MATERIALS]
+    task_name, seed, stride, out_root, exec_noise = args
+    res = [record_episode(task_name, m, seed, stride, Path(out_root) / f"{task_name}_{m}", exec_noise) for m in MATERIALS]
     return res
 
 
@@ -79,6 +82,7 @@ if __name__ == "__main__":
     ap.add_argument("--stride", type=int, default=4); ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--out", default="datasets/raw"); ap.add_argument("--check", action="store_true")
     ap.add_argument("--seed-start", type=int, default=0); ap.add_argument("--append", action="store_true", help="extend an existing manifest instead of overwriting")
+    ap.add_argument("--exec-noise", type=float, default=0.0, help="std (m) of Gaussian noise added to the EXECUTED xyz action; labels stay clean (DART)")
     a = ap.parse_args(); out_root = ROOT / a.out
     if a.check: check(out_root); sys.exit()
     tasks = a.tasks.split(","); t0 = time.perf_counter()
@@ -87,7 +91,7 @@ if __name__ == "__main__":
     for task_name in tasks:
         kept, rejected, seed, batch = [], {}, a.seed_start, max(a.per_cell + 10, 40)
         while len(kept) < a.per_cell:
-            jobs = [(task_name, s, a.stride, str(out_root)) for s in range(seed, seed + batch)]
+            jobs = [(task_name, s, a.stride, str(out_root), a.exec_noise) for s in range(seed, seed + batch)]
             with mp.get_context("spawn").Pool(a.workers) as pool: results = pool.map(_job, jobs, chunksize=2)
             for pair in results:
                 s = pair[0]["seed"]

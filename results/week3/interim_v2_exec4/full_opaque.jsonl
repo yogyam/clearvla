@@ -1,0 +1,1 @@
+{"task": "pour", "material": "opaque", "seed": 1000, "success": false, "steps": 300, "failure": "underfilled_0.00_of_0.58", "fill": 0.0, "mark": 0.5795583113562582, "n_obs": 75, "t_encoder": 0.07902764669464281, "t_policy": 0.05479653383935026, "wall": 98.66895858300268, "keep_sets": []}
