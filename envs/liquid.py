@@ -55,12 +55,14 @@ def opening_world(xpos, xmat, half_height: float) -> np.ndarray:
 
 
 def pour_point_world(xpos, xmat, half_height: float, radius: float) -> np.ndarray:
-    """Where liquid actually leaves a tilted tube: the lowest point of the mouth's rim. That is the mouth centre
-    displaced by `radius` along the horizontal projection of the tube axis (the side the tube leans toward)."""
-    R = np.asarray(xmat).reshape(3, 3); axis = R[:, 2]; centre = np.asarray(xpos) + axis * half_height
-    h = np.array([axis[0], axis[1], 0.0]); n = np.linalg.norm(h)
-    if n < 1e-6: return centre                      # upright: no preferred side
-    return centre + (h / n) * radius - np.array([0, 0, radius * n])   # rim point also sits lower than the centre
+    """Where liquid leaves a tilted tube: the lowest point of the mouth's rim. The rim is a circle of `radius`
+    perpendicular to the tube axis a; its lowest point is the mouth centre + radius * d, with
+    d = -(z_hat - a_z a) / sqrt(1 - a_z^2)  (the unit vector in the rim plane pointing most downward)."""
+    R = np.asarray(xmat).reshape(3, 3); a = R[:, 2]; centre = np.asarray(xpos) + a * half_height
+    s = math.sqrt(max(1.0 - a[2] ** 2, 0.0))
+    if s < 1e-6: return centre                      # upright tube: every rim point is at the same height
+    d = -(np.array([0.0, 0.0, 1.0]) - a[2] * a) / s
+    return centre + radius * d
 
 
 def over_receiver(pour_pt: np.ndarray, beaker_center: np.ndarray, beaker_r: float, beaker_h: float) -> bool:
