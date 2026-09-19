@@ -1,0 +1,12 @@
+pour: kept 142/150, rejected 18, next seed 560  (151 s)
+pour: kept 150/150, rejected 18, next seed 573  (163 s)
+grasp: kept 150/150, rejected 0, next seed 560  (229 s)
+insert: kept 150/150, rejected 0, next seed 560  (280 s)
+done in 280 s; manifest at /Users/yogyamehrotra/Desktop/ClearVLA/datasets/raw_dart/manifest.json
+pour/opaque: 150 episodes on disk, 150 kept in manifest
+pour/glass: 150 episodes on disk, 150 kept in manifest
+grasp/opaque: 150 episodes on disk, 150 kept in manifest
+grasp/glass: 150 episodes on disk, 150 kept in manifest
+insert/opaque: 150 episodes on disk, 150 kept in manifest
+insert/glass: 150 episodes on disk, 150 kept in manifest
+PASS

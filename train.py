@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT))
 from model.vla import ClearVLA
 from data.dataset import FrameDataset
 
-DEFAULT = dict(views=["rgb_blender"], action_mode="abs", lr=1e-4, lr_min=1e-5, warmup=1000, wd=0.01, batch=64, steps=50000, clip=1.0, ema=0.999, amp="fp16",
+DEFAULT = dict(views=["rgb_blender"], action_mode="abs", sources=None, lr=1e-4, lr_min=1e-5, warmup=1000, wd=0.01, batch=64, steps=50000, clip=1.0, ema=0.999, amp="fp16",
                val_every=1000, val_batches=8, ckpt_every=5000, n_val=15, seed=0)
 
 
@@ -40,8 +40,8 @@ def main():
     out = ROOT / "checkpoints" / a.run; out.mkdir(parents=True, exist_ok=True)
     res = ROOT / "results/week3"; res.mkdir(parents=True, exist_ok=True)
 
-    train = FrameDataset("train", n_val=cfg["n_val"], limit=a.overfit or None, views=cfg["views"], action_mode=cfg["action_mode"])
-    val = FrameDataset("val", n_val=cfg["n_val"], norm=train.norm, views=cfg["views"], action_mode=cfg["action_mode"]) if not a.overfit else train
+    train = FrameDataset("train", n_val=cfg["n_val"], limit=a.overfit or None, views=cfg["views"], action_mode=cfg["action_mode"], sources=cfg["sources"])
+    val = FrameDataset("val", n_val=cfg["n_val"], norm=train.norm, views=cfg["views"], action_mode=cfg["action_mode"], sources=cfg["sources"]) if not a.overfit else train
     json.dump(train.norm, open(out / "norm.json", "w")); json.dump(cfg, open(out / "config.json", "w"))
     print(f"train {len(train)} frames / {len(train.episodes)} episodes; val {len(val)} frames", flush=True)
     dl = DataLoader(train, batch_size=cfg["batch"], shuffle=True, drop_last=True, num_workers=0)

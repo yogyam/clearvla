@@ -22,31 +22,37 @@ def tcp10(tcp_pos, tcp_R, grip):
 
 class FrameDataset(Dataset):
     def __init__(self, split="train", n_val=15, source="rgb_blender", feat_dir="datasets/features", raw_dir="datasets/raw",
-                 tasks=TASKS, materials=MATERIALS, norm=None, limit=None, views=None, action_mode="abs"):
+                 tasks=TASKS, materials=MATERIALS, norm=None, limit=None, views=None, action_mode="abs", sources=None):
+        """sources: list of (raw_dir, feat_dir) pairs; default is the single (raw_dir, feat_dir). Validation episodes
+        are held out from the FIRST source only (clean demos); extra sources (e.g. noise-injected) are train-only."""
         self.views = list(views) if views else [source]; self.action_mode = action_mode
-        self.feat, self.raw = ROOT / feat_dir, ROOT / raw_dir
+        self.sources = [(ROOT / r, ROOT / f) for r, f in (sources or [(raw_dir, feat_dir)])]
+        self.feat, self.raw = self.sources[0][1], self.sources[0][0]
         self.text = np.load(self.feat / "text_tokens.fp16.npy"); tidx = pd.read_parquet(self.feat / "text_index.parquet")
         self.text_row = {(r.task, int(r.instruction_id)): i for i, r in tidx.iterrows()}
         self.text_len = {i: int(r.n_tokens) for i, r in tidx.iterrows()}
-        man = json.loads((self.raw / "manifest.json").read_text())
         self.cells, self.samples, self.episodes = {}, [], {}
-        for t in tasks:
-            kept = man["kept"][t]; val_seeds = set(kept[-n_val:]); use = (lambda s: s in val_seeds) if split == "val" else (lambda s: s not in val_seeds)
-            for m in materials:
-                key = f"{t}_{m}_{self.views[0]}"; idx = pd.read_parquet(self.feat / f"{key}.index.parquet")
-                for v in self.views:
-                    vidx = pd.read_parquet(self.feat / f"{t}_{m}_{v}.index.parquet"); assert len(vidx) == len(idx), f"view index mismatch {t}/{m}/{v}"
-                    self.cells[(t, m, v)] = dict(path=self.feat / f"{t}_{m}_{v}.fp16.memmap", n=len(idx), mm=None)
-                for row, (seed, step) in enumerate(zip(idx.seed.values, idx.step.values)):
-                    seed, step = int(seed), int(step)
-                    if not use(seed): continue
-                    if (t, m, seed) not in self.episodes: self.episodes[(t, m, seed)] = self._load_episode(t, m, seed)
-                    self.samples.append((t, m, seed, step, row))
+        for si, (raw, feat) in enumerate(self.sources):
+            man = json.loads((raw / "manifest.json").read_text())
+            for t in tasks:
+                kept = man["kept"][t]; val_seeds = set(kept[-n_val:]) if si == 0 else set()
+                use = (lambda s: s in val_seeds) if split == "val" else (lambda s: s not in val_seeds)
+                if split == "val" and si > 0: continue
+                for m in materials:
+                    key = f"{t}_{m}_{self.views[0]}"; idx = pd.read_parquet(feat / f"{key}.index.parquet")
+                    for v in self.views:
+                        vidx = pd.read_parquet(feat / f"{t}_{m}_{v}.index.parquet"); assert len(vidx) == len(idx), f"view index mismatch {t}/{m}/{v}"
+                        self.cells[(si, t, m, v)] = dict(path=feat / f"{t}_{m}_{v}.fp16.memmap", n=len(idx), mm=None)
+                    for row, (seed, step) in enumerate(zip(idx.seed.values, idx.step.values)):
+                        seed, step = int(seed), int(step)
+                        if not use(seed): continue
+                        if (si, t, m, seed) not in self.episodes: self.episodes[(si, t, m, seed)] = self._load_episode(raw, t, m, seed)
+                        self.samples.append((si, t, m, seed, step, row))
         if limit: self.samples = self.samples[:limit]
         self.norm = norm or self.compute_norm()
 
-    def _load_episode(self, t, m, seed):
-        with h5py.File(self.raw / f"{t}_{m}" / f"ep_{seed:04d}.h5", "r") as f:
+    def _load_episode(self, raw, t, m, seed):
+        with h5py.File(raw / f"{t}_{m}" / f"ep_{seed:04d}.h5", "r") as f:
             act = f["action"][:].astype(np.float32)
             prop = np.concatenate([f["qpos"][:], tcp10(f["tcp_pos"][:], f["tcp_R"][:], f["gripper"][:])], -1).astype(np.float32)
             return dict(act=act, prop=prop, instr=int(f.attrs["instruction_id"]))
@@ -66,16 +72,16 @@ class FrameDataset(Dataset):
         return dict(act_mean=acts.mean(0).tolist(), act_std=(acts.std(0) + 1e-3).tolist(), prop_mean=props.mean(0).tolist(), prop_std=(props.std(0) + 1e-3).tolist(),
                     action_mode=self.action_mode)
 
-    def _mm(self, t, m, v):
-        c = self.cells[(t, m, v)]
+    def _mm(self, si, t, m, v):
+        c = self.cells[(si, t, m, v)]
         if c["mm"] is None: c["mm"] = np.memmap(c["path"], dtype=np.float16, mode="r", shape=(c["n"], 196, 768))
         return c["mm"]
 
     def __len__(self): return len(self.samples)
 
     def __getitem__(self, i):
-        t, m, seed, step, row = self.samples[i]; ep = self.episodes[(t, m, seed)]; n = self.norm
-        vis = torch.from_numpy(np.concatenate([np.asarray(self._mm(t, m, v)[row]) for v in self.views]))   # (196*views,768) fp16
+        si, t, m, seed, step, row = self.samples[i]; ep = self.episodes[(si, t, m, seed)]; n = self.norm
+        vis = torch.from_numpy(np.concatenate([np.asarray(self._mm(si, t, m, v)[row]) for v in self.views]))   # (196*views,768) fp16
         tr = self.text_row[(t, ep["instr"])]; txt = torch.from_numpy(self.text[tr]); L = self.text_len[tr]
         txt_mask = torch.zeros(64, dtype=torch.bool); txt_mask[:L] = True
         prop = (ep["prop"][step] - n["prop_mean"]) / n["prop_std"]
