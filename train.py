@@ -30,6 +30,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="configs/model_a.yaml"); ap.add_argument("--run", required=True)
     ap.add_argument("--steps", type=int); ap.add_argument("--overfit", type=int, default=0); ap.add_argument("--amp", default=None)
+    ap.add_argument("--resume", action="store_true", help="continue from checkpoints/<run>/last.pt")
     a = ap.parse_args()
     cfg = dict(DEFAULT); cfg.update(yaml.safe_load(open(ROOT / a.config)) if (ROOT / a.config).exists() else {})
     if a.steps: cfg["steps"] = a.steps
@@ -52,7 +53,14 @@ def main():
     opt = torch.optim.AdamW(model.parameters(), lr=cfg["lr"], weight_decay=cfg["wd"], betas=(0.9, 0.95))
     amp = cfg["amp"] != "none"; dtype = torch.float16 if cfg["amp"] == "fp16" else torch.bfloat16
     log = open(res / f"train_log_{a.run}.jsonl", "a"); step, t0, best = 0, time.perf_counter(), float("inf")
-    losses = []
+    losses = []; t_run = time.perf_counter()
+    if a.resume and (out / "last.pt").exists():
+        ck = torch.load(out / "last.pt", map_location="cpu")
+        model.load_state_dict(ck["raw"]); ema.load_state_dict(ck["model"]); opt.load_state_dict(ck["opt"]); step = int(ck["step"])
+        if (out / "best.pt").exists(): best = float(torch.load(out / "best.pt", map_location="cpu")["val"])
+        t0 = time.perf_counter() - step / 1.0   # keeps the it/s print sane
+        print(f"resumed from step {step} (best val so far {best:.4f})", flush=True)
+    t_run = time.perf_counter()
     while step < cfg["steps"]:
         for batch in dl:
             if step >= cfg["steps"]: break
@@ -67,7 +75,7 @@ def main():
                 for pe, pm in zip(ema.parameters(), model.parameters()): pe.mul_(cfg["ema"]).add_(pm.detach(), alpha=1 - cfg["ema"])
             losses.append(loss.item()); step += 1
             if step % 100 == 0:
-                rec = dict(step=step, loss=float(np.mean(losses[-100:])), lr=lr_at(step, cfg), gn=float(gn), it_s=step / (time.perf_counter() - t0))
+                rec = dict(step=step, loss=float(np.mean(losses[-100:])), lr=lr_at(step, cfg), gn=float(gn), it_s=len(losses) / (time.perf_counter() - t_run))
                 log.write(json.dumps(rec) + "\n"); log.flush(); print(rec, flush=True)
             if step % cfg["val_every"] == 0 or step == cfg["steps"]:
                 vl = []
