@@ -23,9 +23,18 @@ def replay_frame(model, data, info, qpos_full, liquid):
     mujoco.mj_forward(model, data)
 
 
+def _h5(path, mode, tries=120):
+    """Open an HDF5 file, retrying while another render process holds its lock (front/wrist share episode files)."""
+    for i in range(tries):
+        try: return h5py.File(path, mode)
+        except (OSError, BlockingIOError):
+            if i == tries - 1: raise
+            time.sleep(0.5 + 0.5 * np.random.rand())
+
+
 def render_episode(bridge, path: Path, tmp: Path, samples: int, camera: str = "front"):
     key = "rgb_blender" if camera == "front" else f"rgb_blender_{camera}"
-    with h5py.File(path, "r") as f:
+    with _h5(path, "r") as f:
         task, material, seed = f.attrs["task"], f.attrs["material"], int(f.attrs["seed"])
         steps = f["sample_steps"][:]; qpos = f["qpos_full"][:]; liquid = f["liquid"][:]
         if key in f and f[key].shape[0] == len(steps): return 0
@@ -35,7 +44,7 @@ def render_episode(bridge, path: Path, tmp: Path, samples: int, camera: str = "f
     for i, t in enumerate(steps):
         replay_frame(model, data, info, qpos[t], liquid[t]); bridge.sync(data, camera=camera); bridge.render(str(tmp))
         out[i] = np.asarray(Image.open(tmp).convert("RGB"))
-    with h5py.File(path, "a") as f:
+    with _h5(path, "a") as f:
         if key in f: del f[key]
         f.create_dataset(key, data=out, compression="gzip", compression_opts=1)
     return len(steps)
