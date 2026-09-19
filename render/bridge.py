@@ -138,6 +138,12 @@ class BlenderBridge:
         for o in self.geom_objs + list(self.body_objs.values()):
             bpy.data.objects.remove(o, do_unlink=True)
         self.geom_objs, self.body_objs, self.liquids = [], {}, {}
+        # purge the datablocks the removed objects leave behind (meshes, materials, images); without this every
+        # rebind leaks ~75 meshes + materials and a 450-episode render grows into gigabytes of swap
+        for coll in (bpy.data.meshes, bpy.data.materials, bpy.data.images):
+            for blk in [b for b in coll if b.users == 0]:
+                try: coll.remove(blk)
+                except Exception: pass
         mats = MATS[material]
         self.m_tube = _principled("tube_mat", **mats["tube"]); self.m_liquid = _principled("liquid_mat", **mats["liquid"])
         self.m_table = _principled("table", base=(0.28, 0.30, 0.33, 1), rough=0.7)
