@@ -12,9 +12,9 @@ import mujoco
 import yaml
 
 from envs.scene import (build_scene, home, reset_tube_pose, set_liquid_height, SceneInfo,
-                        TUBE_H, TUBE_WALL, BEAKER_H, HOLDER_SLOT, RACK_SLOT)
+                        TUBE_H, TUBE_WALL, TUBE_R, BEAKER_H, HOLDER_SLOT, RACK_SLOT)
 from envs.control import Controller, ARM_DOF
-from envs.liquid import LiquidState, tube_tilt, opening_world, over_receiver
+from envs.liquid import LiquidState, tube_tilt, opening_world, pour_point_world, over_receiver
 
 INSTRUCTIONS = yaml.safe_load((Path(__file__).parent / "instructions.yaml").read_text())
 HORIZON = 300
@@ -191,8 +191,8 @@ class PourToLine(Task):
 
     def opening_over_beaker(self) -> bool:
         b = self.info.tube_body
-        op = opening_world(self.data.xpos[b], self.data.xmat[b], TUBE_H / 2)
-        return over_receiver(op, self.info.beaker_center, self.info.beaker_r, self.info.beaker_h)
+        pp = pour_point_world(self.data.xpos[b], self.data.xmat[b], TUBE_H / 2, TUBE_R - TUBE_WALL)
+        return over_receiver(pp, self.info.beaker_center, self.info.beaker_r, self.info.beaker_h)
 
     def _task_step(self):
         tilt = tube_tilt(self.data.xmat[self.info.tube_body])
