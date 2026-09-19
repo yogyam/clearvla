@@ -1,0 +1,17 @@
+# Model A v3: two views, 300 demos per cell, DELTA xyz actions (offsets from the current TCP), 35k steps.
+views: [rgb_blender, rgb_blender_wrist]
+action_mode: delta
+lr: 1.0e-4
+lr_min: 1.0e-5
+warmup: 1000
+wd: 0.01
+batch: 64
+steps: 35000
+clip: 1.0
+ema: 0.999
+amp: fp16
+val_every: 1000
+val_batches: 8
+ckpt_every: 5000
+n_val: 30
+seed: 0

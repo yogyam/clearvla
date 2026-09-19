@@ -55,6 +55,7 @@ class ModelAPolicy:
             chunk, d = self.model.act(vis, txt, txt_mask, prop_t, n_steps=self.n_steps, keep_visual=keep_visual, return_attn=self.accel.get("return_attn", False))
         t2 = time.perf_counter()
         acts = denormalise_act(chunk[0].float().cpu().numpy(), self.norm)
+        if self.norm.get("action_mode", "abs") == "delta": acts[:, :3] += np.asarray(obs["tcp_pos"], np.float32)
         self.queue = list(acts[: self.exec_horizon]); self.prev_img = img_uint8
         self.timings.append(dict(encoder=t1 - t0, policy=t2 - t1))
         if keep_visual is not None: self.diag.append(keep_visual[0].cpu().numpy().astype(bool))

@@ -22,8 +22,8 @@ def tcp10(tcp_pos, tcp_R, grip):
 
 class FrameDataset(Dataset):
     def __init__(self, split="train", n_val=15, source="rgb_blender", feat_dir="datasets/features", raw_dir="datasets/raw",
-                 tasks=TASKS, materials=MATERIALS, norm=None, limit=None, views=None):
-        self.views = list(views) if views else [source]
+                 tasks=TASKS, materials=MATERIALS, norm=None, limit=None, views=None, action_mode="abs"):
+        self.views = list(views) if views else [source]; self.action_mode = action_mode
         self.feat, self.raw = ROOT / feat_dir, ROOT / raw_dir
         self.text = np.load(self.feat / "text_tokens.fp16.npy"); tidx = pd.read_parquet(self.feat / "text_index.parquet")
         self.text_row = {(r.task, int(r.instruction_id)): i for i, r in tidx.iterrows()}
@@ -51,9 +51,20 @@ class FrameDataset(Dataset):
             prop = np.concatenate([f["qpos"][:], tcp10(f["tcp_pos"][:], f["tcp_R"][:], f["gripper"][:])], -1).astype(np.float32)
             return dict(act=act, prop=prop, instr=int(f.attrs["instruction_id"]))
 
+    def _chunk(self, ep, step):
+        """Action chunk a[step:step+16] (last action repeated past the end). In delta mode xyz is relative to the
+        TCP position at `step` (prop[9:12]), so the policy predicts offsets from where the gripper is now."""
+        T = len(ep["act"]); idx = np.minimum(np.arange(step, step + CHUNK), T - 1)
+        act = ep["act"][idx].copy()
+        if self.action_mode == "delta": act[:, :3] -= ep["prop"][step, 9:12]
+        return act, (np.arange(step, step + CHUNK) < T).astype(np.float32)
+
     def compute_norm(self):
-        acts = np.concatenate([e["act"] for e in self.episodes.values()]); props = np.concatenate([e["prop"] for e in self.episodes.values()])
-        return dict(act_mean=acts.mean(0).tolist(), act_std=(acts.std(0) + 1e-3).tolist(), prop_mean=props.mean(0).tolist(), prop_std=(props.std(0) + 1e-3).tolist())
+        rng = np.random.default_rng(0)
+        acts = np.concatenate([self._chunk(e, int(t))[0] for e in self.episodes.values() for t in rng.choice(len(e["act"]), size=min(8, len(e["act"])), replace=False)])
+        props = np.concatenate([e["prop"] for e in self.episodes.values()])
+        return dict(act_mean=acts.mean(0).tolist(), act_std=(acts.std(0) + 1e-3).tolist(), prop_mean=props.mean(0).tolist(), prop_std=(props.std(0) + 1e-3).tolist(),
+                    action_mode=self.action_mode)
 
     def _mm(self, t, m, v):
         c = self.cells[(t, m, v)]
@@ -68,8 +79,7 @@ class FrameDataset(Dataset):
         tr = self.text_row[(t, ep["instr"])]; txt = torch.from_numpy(self.text[tr]); L = self.text_len[tr]
         txt_mask = torch.zeros(64, dtype=torch.bool); txt_mask[:L] = True
         prop = (ep["prop"][step] - n["prop_mean"]) / n["prop_std"]
-        T = len(ep["act"]); idx = np.minimum(np.arange(step, step + CHUNK), T - 1)
-        act = (ep["act"][idx] - n["act_mean"]) / n["act_std"]; act_mask = (np.arange(step, step + CHUNK) < T).astype(np.float32)
+        act, act_mask = self._chunk(ep, step); act = (act - n["act_mean"]) / n["act_std"]
         return dict(vis=vis, txt=txt, txt_mask=txt_mask, prop=torch.tensor(prop, dtype=torch.float32),
                     act=torch.tensor(act, dtype=torch.float32), act_mask=torch.tensor(act_mask), task=TASK_ID[t], material=int(m == "glass"))
 
