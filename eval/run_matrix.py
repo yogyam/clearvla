@@ -11,7 +11,6 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
 from envs.tasks import make_task, HORIZON
 from render.bridge import BlenderBridge, MaskRenderer
-from eval.policy import ModelAPolicy
 from PIL import Image
 
 
@@ -48,13 +47,19 @@ if __name__ == "__main__":
     ap.add_argument("--ckpt", required=True); ap.add_argument("--config", default="full"); ap.add_argument("--material", required=True)
     ap.add_argument("--tasks", default="grasp,pour,insert"); ap.add_argument("--seeds", default="1000-1099"); ap.add_argument("--out", default="results/week3")
     ap.add_argument("--exec", type=int, default=8); ap.add_argument("--strips", type=int, default=3); ap.add_argument("--ckpt-file", default="best.pt")
+    ap.add_argument("--policy", default="modela", choices=["modela", "smolvla"])
     a = ap.parse_args(); out = ROOT / a.out; out.mkdir(parents=True, exist_ok=True); strip_dir = out / "rollouts"; strip_dir.mkdir(exist_ok=True)
     log_path = out / f"{a.config}_{a.material}.jsonl"
     done = {(r["task"], r["seed"]) for r in (json.loads(l) for l in log_path.read_text().splitlines())} if log_path.exists() else set()
     accel = {}
     if a.config != "full":
         from accel import make_accel; accel = make_accel(a.config)
-    policy = ModelAPolicy(ROOT / a.ckpt, exec_horizon=a.exec, accel=accel, ckpt_file=a.ckpt_file)
+    if a.policy == "smolvla":
+        from eval.policy_smolvla import SmolVLAPolicyWrapper
+        policy = SmolVLAPolicyWrapper(ROOT / a.ckpt, exec_horizon=a.exec, accel=accel)
+    else:
+        from eval.policy import ModelAPolicy
+        policy = ModelAPolicy(ROOT / a.ckpt, exec_horizon=a.exec, accel=accel, ckpt_file=a.ckpt_file)
     tmp = Path("/tmp") / f"clearvla_eval_{a.material}_{os.getpid()}.png"; bridge = None
     seeds = parse_seeds(a.seeds); t_start = time.perf_counter(); n = 0
     with open(log_path, "a") as log:
