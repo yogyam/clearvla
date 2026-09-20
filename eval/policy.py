@@ -22,9 +22,9 @@ class LiveSigLIP:
 
 
 class ModelAPolicy:
-    def __init__(self, ckpt_dir: str | Path, dev=None, exec_horizon=8, n_steps=10, accel=None):
+    def __init__(self, ckpt_dir: str | Path, dev=None, exec_horizon=8, n_steps=10, accel=None, ckpt_file="best.pt"):
         ckpt_dir = Path(ckpt_dir); self.dev = torch.device(dev or ("mps" if torch.backends.mps.is_available() else "cpu"))
-        state = torch.load(ckpt_dir / "best.pt", map_location="cpu")
+        state = torch.load(ckpt_dir / ckpt_file, map_location="cpu")   # best.pt (EMA, best val) or last.pt (EMA at the final step)
         n_vis = state["model"]["prefix.pos_vis"].shape[1]; self.views = ["front", "wrist"][: n_vis // 196]
         self.model = ClearVLA(n_vis=n_vis).to(self.dev).eval(); self.model.load_state_dict(state["model"])
         self.norm = json.load(open(ckpt_dir / "norm.json")); self.enc = LiveSigLIP(self.dev)
