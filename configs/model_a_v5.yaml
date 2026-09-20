@@ -1,0 +1,21 @@
+# Model A v5: v4 + a second batch of 150 noise-injected recovery demos per cell (8 mm noise), 35k steps.
+views: [rgb_blender, rgb_blender_wrist]
+action_mode: delta
+sources:
+  - [datasets/raw, datasets/features]
+  - [datasets/raw_dart, datasets/features_dart]
+  - [datasets/raw_dart2, datasets/features_dart2]
+lr: 1.0e-4
+lr_min: 1.0e-5
+warmup: 1000
+wd: 0.01
+batch: 64
+steps: 35000
+clip: 1.0
+ema: 0.999
+amp: fp16
+val_every: 1000
+val_batches: 8
+ckpt_every: 5000
+n_val: 30
+seed: 0
