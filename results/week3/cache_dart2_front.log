@@ -1,0 +1,7 @@
+[transformers] Model config: bos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49406. This may result in unexpected behavior.
+[transformers] Model config: eos_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 49407. This may result in unexpected behavior.
+Loading weights:   0%|          | 0/408 [00:00<?, ?it/s]Loading weights: 100%|██████████| 408/408 [00:00<00:00, 10365.53it/s]
+grasp/opaque/rgb_blender: 4835 frames, 1.36 GB, 78 fps
+grasp/glass/rgb_blender: 4835 frames, 1.36 GB, 83 fps
+/Users/yogyamehrotra/miniconda3/envs/clearvla/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
