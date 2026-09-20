@@ -1,0 +1,1080 @@
+Map:   0%|          | 0/103 [00:00<?, ? examples/s]Map: 100%|██████████| 103/103 [00:00<00:00, 3692.93 examples/s]
+[libx264 @ 0x153540c10] frame I:52    Avg QP:21.40  size:   899
+[libx264 @ 0x153540c10] frame P:51    Avg QP:24.17  size:    49
+[libx264 @ 0x153540c10] mb I  I16..4: 52.0% 37.5% 10.5%
+[libx264 @ 0x153540c10] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.4%  0.2%  0.2%  0.0%  0.0%    skip:97.1%
+[libx264 @ 0x153540c10] 8x8 transform intra:37.4%
+[libx264 @ 0x153540c10] coded y,uvDC,uvAC intra: 20.2% 13.8% 0.0% inter: 0.0% 0.1% 0.0%
+[libx264 @ 0x153540c10] i16 v,h,dc,p: 38% 19% 22% 20%
+[libx264 @ 0x153540c10] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 13% 35%  6%  4%  3%  3%  6%  4%
+[libx264 @ 0x153540c10] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 30%  4%  3%  4%  6%  3%  4%
+[libx264 @ 0x153540c10] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x153540c10] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x153540c10] kb/s:38.24
+[libx264 @ 0x136a81090] frame I:52    Avg QP:21.40  size:   879
+[libx264 @ 0x136a81090] frame P:51    Avg QP:24.85  size:    48
+[libx264 @ 0x136a81090] mb I  I16..4: 50.7% 40.1%  9.2%
+[libx264 @ 0x136a81090] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.5%  0.2%  0.2%  0.0%  0.0%    skip:97.0%
+[libx264 @ 0x136a81090] 8x8 transform intra:40.0%
+[libx264 @ 0x136a81090] coded y,uvDC,uvAC intra: 23.5% 8.2% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x136a81090] i16 v,h,dc,p: 29% 33% 17% 21%
+[libx264 @ 0x136a81090] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 24% 41%  3%  4%  3%  6%  2%  4%
+[libx264 @ 0x136a81090] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 27% 23%  4%  4%  4%  9%  4%  2%
+[libx264 @ 0x136a81090] i8c dc,h,v,p: 91%  4%  5%  0%
+[libx264 @ 0x136a81090] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x136a81090] kb/s:37.38
+Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 4289.62 examples/s]
+[libx264 @ 0x102691f90] frame I:50    Avg QP:21.33  size:   903
+[libx264 @ 0x102691f90] frame P:50    Avg QP:24.25  size:    47
+[libx264 @ 0x102691f90] mb I  I16..4: 43.7% 46.0% 10.4%
+[libx264 @ 0x102691f90] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.0%  0.2%  0.1%  0.0%  0.0%    skip:97.7%
+[libx264 @ 0x102691f90] 8x8 transform intra:45.9%
+[libx264 @ 0x102691f90] coded y,uvDC,uvAC intra: 22.6% 10.1% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x102691f90] i16 v,h,dc,p: 37% 19% 22% 22%
+[libx264 @ 0x102691f90] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 11% 40%  5%  3%  3%  3%  5%  3%
+[libx264 @ 0x102691f90] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 22% 31%  3%  2%  3%  4%  2%  4%
+[libx264 @ 0x102691f90] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x102691f90] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x102691f90] kb/s:38.00
+[libx264 @ 0x10734a5b0] frame I:50    Avg QP:21.16  size:   840
+[libx264 @ 0x10734a5b0] frame P:50    Avg QP:25.98  size:    49
+[libx264 @ 0x10734a5b0] mb I  I16..4: 46.1% 46.4%  7.5%
+[libx264 @ 0x10734a5b0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.2%  0.2%  0.1%  0.0%  0.0%    skip:96.3%
+[libx264 @ 0x10734a5b0] 8x8 transform intra:46.3%
+[libx264 @ 0x10734a5b0] coded y,uvDC,uvAC intra: 24.2% 8.6% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x10734a5b0] i16 v,h,dc,p: 27% 31% 16% 26%
+[libx264 @ 0x10734a5b0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 21% 46%  2%  4%  3%  5%  2%  3%
+[libx264 @ 0x10734a5b0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 29% 19%  5%  4%  4% 10%  3%  3%
+[libx264 @ 0x10734a5b0] i8c dc,h,v,p: 92%  4%  5%  0%
+[libx264 @ 0x10734a5b0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x10734a5b0] kb/s:35.56
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b710c90] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b7190c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b7115e0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c85490] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1532a0f80] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x136c87a90] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/105 [00:00<?, ? examples/s]Map: 100%|██████████| 105/105 [00:00<00:00, 4234.02 examples/s]
+[libx264 @ 0x149940d00] frame I:53    Avg QP:21.38  size:   868
+[libx264 @ 0x149940d00] frame P:52    Avg QP:24.60  size:    50
+[libx264 @ 0x149940d00] mb I  I16..4: 44.9% 44.9% 10.1%
+[libx264 @ 0x149940d00] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  2.9%  0.2%  0.2%  0.0%  0.0%    skip:96.5%
+[libx264 @ 0x149940d00] 8x8 transform intra:44.9%
+[libx264 @ 0x149940d00] coded y,uvDC,uvAC intra: 21.4% 10.7% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x149940d00] i16 v,h,dc,p: 36% 15% 23% 25%
+[libx264 @ 0x149940d00] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27%  8% 48%  4%  2%  2%  1%  5%  4%
+[libx264 @ 0x149940d00] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 17% 34%  4%  3%  5%  4%  2%  5%
+[libx264 @ 0x149940d00] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x149940d00] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x149940d00] kb/s:37.03
+[libx264 @ 0x1537be8f0] frame I:53    Avg QP:21.30  size:   865
+[libx264 @ 0x1537be8f0] frame P:52    Avg QP:25.91  size:    49
+[libx264 @ 0x1537be8f0] mb I  I16..4: 44.2% 47.8%  8.0%
+[libx264 @ 0x1537be8f0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.2%  0.2%  0.2%  0.0%  0.0%    skip:96.3%
+[libx264 @ 0x1537be8f0] 8x8 transform intra:47.8%
+[libx264 @ 0x1537be8f0] coded y,uvDC,uvAC intra: 24.5% 10.1% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1537be8f0] i16 v,h,dc,p: 23% 32% 18% 27%
+[libx264 @ 0x1537be8f0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 22% 42%  3%  4%  3%  6%  2%  4%
+[libx264 @ 0x1537be8f0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 14% 27%  4%  7%  6% 11%  3%  4%
+[libx264 @ 0x1537be8f0] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x1537be8f0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1537be8f0] kb/s:36.88
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303eb160] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71e500] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303dbf40] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15327b140] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71e500] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x153287bc0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/104 [00:00<?, ? examples/s]Map: 100%|██████████| 104/104 [00:00<00:00, 4233.18 examples/s]
+[libx264 @ 0x15d914280] frame I:52    Avg QP:21.31  size:   864
+[libx264 @ 0x15d914280] frame P:52    Avg QP:24.33  size:    48
+[libx264 @ 0x15d914280] mb I  I16..4: 42.9% 46.7% 10.4%
+[libx264 @ 0x15d914280] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.4%  0.1%  0.0%  0.0%  0.0%    skip:97.3%
+[libx264 @ 0x15d914280] 8x8 transform intra:46.6%
+[libx264 @ 0x15d914280] coded y,uvDC,uvAC intra: 22.0% 8.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x15d914280] i16 v,h,dc,p: 36% 17% 22% 25%
+[libx264 @ 0x15d914280] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25%  8% 48%  4%  2%  2%  2%  6%  3%
+[libx264 @ 0x15d914280] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 20% 32%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x15d914280] i8c dc,h,v,p: 94%  2%  4%  0%
+[libx264 @ 0x15d914280] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x15d914280] kb/s:36.51
+[libx264 @ 0x1704a5e40] frame I:52    Avg QP:21.12  size:   853
+[libx264 @ 0x1704a5e40] frame P:52    Avg QP:26.12  size:    48
+[libx264 @ 0x1704a5e40] mb I  I16..4: 51.0% 40.3%  8.7%
+[libx264 @ 0x1704a5e40] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4:  3.3%  0.1%  0.3%  0.0%  0.0%    skip:96.2%
+[libx264 @ 0x1704a5e40] 8x8 transform intra:40.3%
+[libx264 @ 0x1704a5e40] coded y,uvDC,uvAC intra: 23.8% 9.0% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1704a5e40] i16 v,h,dc,p: 27% 33% 15% 25%
+[libx264 @ 0x1704a5e40] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 11% 22% 44%  3%  5%  4%  7%  2%  4%
+[libx264 @ 0x1704a5e40] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 20% 25%  5%  5%  5% 12%  2%  3%
+[libx264 @ 0x1704a5e40] i8c dc,h,v,p: 91%  4%  5%  0%
+[libx264 @ 0x1704a5e40] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1704a5e40] kb/s:36.06
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15326dc40] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b70cb30] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15326deb0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303eb160] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b70cb30] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303dc910] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/104 [00:00<?, ? examples/s]Map: 100%|██████████| 104/104 [00:00<00:00, 4010.81 examples/s]
+[libx264 @ 0x147d4e760] frame I:52    Avg QP:21.26  size:   890
+[libx264 @ 0x147d4e760] frame P:52    Avg QP:24.04  size:    50
+[libx264 @ 0x147d4e760] mb I  I16..4: 52.6% 37.0% 10.4%
+[libx264 @ 0x147d4e760] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.2%  0.2%  0.0%  0.0%    skip:96.6%
+[libx264 @ 0x147d4e760] 8x8 transform intra:37.0%
+[libx264 @ 0x147d4e760] coded y,uvDC,uvAC intra: 19.3% 17.3% 0.0% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x147d4e760] i16 v,h,dc,p: 41% 18% 22% 19%
+[libx264 @ 0x147d4e760] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27%  9% 40%  5%  3%  3%  3%  7%  4%
+[libx264 @ 0x147d4e760] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 19% 32%  4%  3%  4%  4%  3%  4%
+[libx264 @ 0x147d4e760] i8c dc,h,v,p: 90%  4%  6%  0%
+[libx264 @ 0x147d4e760] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x147d4e760] kb/s:37.58
+[libx264 @ 0x13f469ad0] frame I:52    Avg QP:20.98  size:   826
+[libx264 @ 0x13f469ad0] frame P:52    Avg QP:25.74  size:    48
+[libx264 @ 0x13f469ad0] mb I  I16..4: 55.0% 38.0%  7.0%
+[libx264 @ 0x13f469ad0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.1%  0.3%  0.0%  0.0%    skip:96.7%
+[libx264 @ 0x13f469ad0] 8x8 transform intra:38.0%
+[libx264 @ 0x13f469ad0] coded y,uvDC,uvAC intra: 22.0% 11.5% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x13f469ad0] i16 v,h,dc,p: 32% 32% 17% 20%
+[libx264 @ 0x13f469ad0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 11% 25% 40%  3%  5%  3%  6%  2%  4%
+[libx264 @ 0x13f469ad0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 23% 22%  6%  4%  5% 12%  4%  3%
+[libx264 @ 0x13f469ad0] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x13f469ad0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x13f469ad0] kb/s:34.93
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b714d90] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b7224d0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b7143c0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15327b460] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c743c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x153297550] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/102 [00:00<?, ? examples/s]Map: 100%|██████████| 102/102 [00:00<00:00, 4185.32 examples/s]
+[libx264 @ 0x12e3e04f0] frame I:51    Avg QP:21.30  size:   884
+[libx264 @ 0x12e3e04f0] frame P:51    Avg QP:24.13  size:    50
+[libx264 @ 0x12e3e04f0] mb I  I16..4: 46.1% 44.1%  9.9%
+[libx264 @ 0x12e3e04f0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.1%  0.1%  0.0%  0.0%    skip:96.9%
+[libx264 @ 0x12e3e04f0] 8x8 transform intra:44.0%
+[libx264 @ 0x12e3e04f0] coded y,uvDC,uvAC intra: 20.9% 16.5% 0.0% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x12e3e04f0] i16 v,h,dc,p: 38% 19% 22% 22%
+[libx264 @ 0x12e3e04f0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24%  9% 48%  4%  2%  2%  2%  6%  4%
+[libx264 @ 0x12e3e04f0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 33%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x12e3e04f0] i8c dc,h,v,p: 90%  4%  6%  0%
+[libx264 @ 0x12e3e04f0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x12e3e04f0] kb/s:37.36
+[libx264 @ 0x13d5314d0] frame I:51    Avg QP:21.08  size:   833
+[libx264 @ 0x13d5314d0] frame P:51    Avg QP:26.11  size:    48
+[libx264 @ 0x13d5314d0] mb I  I16..4: 51.2% 41.4%  7.4%
+[libx264 @ 0x13d5314d0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.9%  0.2%  0.2%  0.0%  0.0%    skip:96.7%
+[libx264 @ 0x13d5314d0] 8x8 transform intra:41.4%
+[libx264 @ 0x13d5314d0] coded y,uvDC,uvAC intra: 23.1% 10.1% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x13d5314d0] i16 v,h,dc,p: 25% 34% 17% 24%
+[libx264 @ 0x13d5314d0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 11% 25% 40%  3%  4%  3%  7%  2%  4%
+[libx264 @ 0x13d5314d0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 18% 23%  4%  5%  4% 12%  3%  4%
+[libx264 @ 0x13d5314d0] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x13d5314d0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x13d5314d0] kb/s:35.26
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153297550] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b719c80] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x153285f80] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b72d6a0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303f5670] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b7143c0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/102 [00:00<?, ? examples/s]Map: 100%|██████████| 102/102 [00:00<00:00, 4086.22 examples/s]
+[libx264 @ 0x157a7f670] frame I:51    Avg QP:21.36  size:   877
+[libx264 @ 0x157a7f670] frame P:51    Avg QP:24.30  size:    49
+[libx264 @ 0x157a7f670] mb I  I16..4: 42.7% 47.6%  9.7%
+[libx264 @ 0x157a7f670] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  2.5%  0.2%  0.2%  0.0%  0.0%    skip:96.9%
+[libx264 @ 0x157a7f670] 8x8 transform intra:47.5%
+[libx264 @ 0x157a7f670] coded y,uvDC,uvAC intra: 21.9% 12.2% 0.0% inter: 0.0% 0.1% 0.0%
+[libx264 @ 0x157a7f670] i16 v,h,dc,p: 38% 14% 23% 25%
+[libx264 @ 0x157a7f670] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26%  8% 48%  4%  2%  2%  2%  5%  3%
+[libx264 @ 0x157a7f670] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 18% 33%  4%  3%  6%  4%  2%  5%
+[libx264 @ 0x157a7f670] i8c dc,h,v,p: 92%  2%  6%  0%
+[libx264 @ 0x157a7f670] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x157a7f670] kb/s:37.03
+[libx264 @ 0x137c04f90] frame I:51    Avg QP:21.19  size:   840
+[libx264 @ 0x137c04f90] frame P:51    Avg QP:25.22  size:    48
+[libx264 @ 0x137c04f90] mb I  I16..4: 49.7% 42.3%  8.1%
+[libx264 @ 0x137c04f90] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.5%  0.2%  0.2%  0.0%  0.0%    skip:96.9%
+[libx264 @ 0x137c04f90] 8x8 transform intra:42.2%
+[libx264 @ 0x137c04f90] coded y,uvDC,uvAC intra: 23.5% 9.2% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x137c04f90] i16 v,h,dc,p: 31% 33% 15% 21%
+[libx264 @ 0x137c04f90] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 21% 42%  3%  4%  3%  6%  2%  5%
+[libx264 @ 0x137c04f90] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 20% 23%  4%  7%  5% 12%  3%  4%
+[libx264 @ 0x137c04f90] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x137c04f90] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x137c04f90] kb/s:35.53
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311ddc50] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311ddc50] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311d13a0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b72d6a0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311deae0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b717180] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/108 [00:00<?, ? examples/s]Map: 100%|██████████| 108/108 [00:00<00:00, 4158.30 examples/s]
+[libx264 @ 0x164cd95e0] frame I:54    Avg QP:21.31  size:   877
+[libx264 @ 0x164cd95e0] frame P:54    Avg QP:24.53  size:    50
+[libx264 @ 0x164cd95e0] mb I  I16..4: 47.7% 42.3%  9.9%
+[libx264 @ 0x164cd95e0] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  2.8%  0.1%  0.2%  0.0%  0.0%    skip:96.8%
+[libx264 @ 0x164cd95e0] 8x8 transform intra:42.3%
+[libx264 @ 0x164cd95e0] coded y,uvDC,uvAC intra: 20.9% 14.7% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x164cd95e0] i16 v,h,dc,p: 39% 17% 21% 24%
+[libx264 @ 0x164cd95e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29%  7% 45%  4%  2%  2%  2%  6%  4%
+[libx264 @ 0x164cd95e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 19% 33%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x164cd95e0] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x164cd95e0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x164cd95e0] kb/s:37.07
+[libx264 @ 0x15970d980] frame I:54    Avg QP:21.36  size:   889
+[libx264 @ 0x15970d980] frame P:54    Avg QP:25.67  size:    49
+[libx264 @ 0x15970d980] mb I  I16..4: 46.8% 45.0%  8.3%
+[libx264 @ 0x15970d980] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.0%  0.2%  0.2%  0.0%  0.0%    skip:96.6%
+[libx264 @ 0x15970d980] 8x8 transform intra:44.9%
+[libx264 @ 0x15970d980] coded y,uvDC,uvAC intra: 24.7% 9.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x15970d980] i16 v,h,dc,p: 24% 32% 18% 25%
+[libx264 @ 0x15970d980] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 23% 40%  3%  5%  4%  7%  2%  4%
+[libx264 @ 0x15970d980] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 17% 26%  4%  6%  5% 11%  4%  3%
+[libx264 @ 0x15970d980] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x15970d980] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x15970d980] kb/s:37.50
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153284880] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153284880] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1532a2460] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311e1340] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b70ce00] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311dab60] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/104 [00:00<?, ? examples/s]Map: 100%|██████████| 104/104 [00:00<00:00, 4222.85 examples/s]
+[libx264 @ 0x11b47dc50] frame I:52    Avg QP:21.40  size:   887
+[libx264 @ 0x11b47dc50] frame P:52    Avg QP:24.25  size:    46
+[libx264 @ 0x11b47dc50] mb I  I16..4: 45.5% 44.2% 10.3%
+[libx264 @ 0x11b47dc50] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  1.5%  0.1%  0.1%  0.0%  0.0%    skip:98.2%
+[libx264 @ 0x11b47dc50] 8x8 transform intra:44.2%
+[libx264 @ 0x11b47dc50] coded y,uvDC,uvAC intra: 21.1% 9.6% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x11b47dc50] i16 v,h,dc,p: 34% 20% 22% 23%
+[libx264 @ 0x11b47dc50] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27%  8% 44%  4%  2%  3%  2%  6%  4%
+[libx264 @ 0x11b47dc50] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 20% 33%  4%  3%  3%  4%  2%  3%
+[libx264 @ 0x11b47dc50] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x11b47dc50] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x11b47dc50] kb/s:37.32
+[libx264 @ 0x136544f90] frame I:52    Avg QP:21.21  size:   888
+[libx264 @ 0x136544f90] frame P:52    Avg QP:25.65  size:    47
+[libx264 @ 0x136544f90] mb I  I16..4: 43.2% 48.5%  8.3%
+[libx264 @ 0x136544f90] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4:  2.4%  0.2%  0.1%  0.0%  0.0%    skip:97.3%
+[libx264 @ 0x136544f90] 8x8 transform intra:48.5%
+[libx264 @ 0x136544f90] coded y,uvDC,uvAC intra: 25.7% 7.9% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x136544f90] i16 v,h,dc,p: 25% 34% 17% 24%
+[libx264 @ 0x136544f90] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 21% 44%  3%  4%  3%  6%  2%  4%
+[libx264 @ 0x136544f90] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 23% 22%  6%  5%  4% 12%  4%  3%
+[libx264 @ 0x136544f90] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x136544f90] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x136544f90] kb/s:37.41
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c80560] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c80560] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x136c858f0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c80560] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b72f160] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x136c87b90] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/99 [00:00<?, ? examples/s]Map: 100%|██████████| 99/99 [00:00<00:00, 4029.35 examples/s]
+[libx264 @ 0x1404ea5e0] frame I:50    Avg QP:21.41  size:   904
+[libx264 @ 0x1404ea5e0] frame P:49    Avg QP:24.27  size:    48
+[libx264 @ 0x1404ea5e0] mb I  I16..4: 51.3% 38.9%  9.8%
+[libx264 @ 0x1404ea5e0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.1%  0.2%  0.1%  0.0%  0.0%    skip:97.5%
+[libx264 @ 0x1404ea5e0] 8x8 transform intra:38.9%
+[libx264 @ 0x1404ea5e0] coded y,uvDC,uvAC intra: 20.0% 17.7% 0.0% inter: 0.0% 0.1% 0.0%
+[libx264 @ 0x1404ea5e0] i16 v,h,dc,p: 42% 16% 23% 19%
+[libx264 @ 0x1404ea5e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25%  9% 43%  4%  3%  3%  3%  7%  4%
+[libx264 @ 0x1404ea5e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 21% 32%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x1404ea5e0] i8c dc,h,v,p: 90%  4%  6%  0%
+[libx264 @ 0x1404ea5e0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1404ea5e0] kb/s:38.41
+[libx264 @ 0x14aa64020] frame I:50    Avg QP:21.20  size:   878
+[libx264 @ 0x14aa64020] frame P:49    Avg QP:24.98  size:    49
+[libx264 @ 0x14aa64020] mb I  I16..4: 54.2% 37.4%  8.4%
+[libx264 @ 0x14aa64020] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.1%  0.1%  0.2%  0.0%  0.0%    skip:96.5%
+[libx264 @ 0x14aa64020] 8x8 transform intra:37.4%
+[libx264 @ 0x14aa64020] coded y,uvDC,uvAC intra: 23.6% 10.3% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14aa64020] i16 v,h,dc,p: 36% 30% 16% 18%
+[libx264 @ 0x14aa64020] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 23% 39%  4%  5%  3%  7%  2%  5%
+[libx264 @ 0x14aa64020] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 21% 21%  4%  5%  4% 14%  4%  4%
+[libx264 @ 0x14aa64020] i8c dc,h,v,p: 91%  4%  5%  0%
+[libx264 @ 0x14aa64020] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14aa64020] kb/s:37.38
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303f0cf0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303f0cf0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303ef0b0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303f0cf0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1532add00] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303ee260] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/105 [00:00<?, ? examples/s]Map: 100%|██████████| 105/105 [00:00<00:00, 4208.89 examples/s]
+[libx264 @ 0x1510744a0] frame I:53    Avg QP:21.30  size:   881
+[libx264 @ 0x1510744a0] frame P:52    Avg QP:24.26  size:    52
+[libx264 @ 0x1510744a0] mb I  I16..4: 46.3% 43.8%  9.9%
+[libx264 @ 0x1510744a0] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  3.0%  0.1%  0.2%  0.0%  0.0%    skip:96.5%
+[libx264 @ 0x1510744a0] 8x8 transform intra:43.7%
+[libx264 @ 0x1510744a0] coded y,uvDC,uvAC intra: 20.7% 17.3% 0.0% inter: 0.0% 0.3% 0.0%
+[libx264 @ 0x1510744a0] i16 v,h,dc,p: 38% 16% 23% 22%
+[libx264 @ 0x1510744a0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28%  8% 47%  4%  2%  2%  1%  5%  3%
+[libx264 @ 0x1510744a0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 18% 35%  4%  3%  5%  4%  2%  5%
+[libx264 @ 0x1510744a0] i8c dc,h,v,p: 91%  4%  6%  0%
+[libx264 @ 0x1510744a0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1510744a0] kb/s:37.62
+[libx264 @ 0x12f08cf10] frame I:53    Avg QP:21.08  size:   806
+[libx264 @ 0x12f08cf10] frame P:52    Avg QP:25.78  size:    51
+[libx264 @ 0x12f08cf10] mb I  I16..4: 48.7% 42.8%  8.5%
+[libx264 @ 0x12f08cf10] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.9%  0.2%  0.3%  0.0%  0.0%    skip:95.4%
+[libx264 @ 0x12f08cf10] 8x8 transform intra:42.8%
+[libx264 @ 0x12f08cf10] coded y,uvDC,uvAC intra: 23.1% 12.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x12f08cf10] i16 v,h,dc,p: 29% 32% 17% 22%
+[libx264 @ 0x12f08cf10] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 24% 40%  2%  4%  3%  6%  2%  4%
+[libx264 @ 0x12f08cf10] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 18% 23%  4%  5%  4% 12%  4%  4%
+[libx264 @ 0x12f08cf10] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x12f08cf10] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x12f08cf10] kb/s:34.55
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311dc830] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311f2050] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311f22f0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311dc830] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136cbc960] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311ec8a0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/108 [00:00<?, ? examples/s]Map: 100%|██████████| 108/108 [00:00<00:00, 4206.77 examples/s]
+[libx264 @ 0x135f87960] frame I:54    Avg QP:21.39  size:   869
+[libx264 @ 0x135f87960] frame P:54    Avg QP:24.12  size:    50
+[libx264 @ 0x135f87960] mb I  I16..4: 41.4% 48.7%  9.8%
+[libx264 @ 0x135f87960] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.1%  0.2%  0.0%  0.0%    skip:96.7%
+[libx264 @ 0x135f87960] 8x8 transform intra:48.7%
+[libx264 @ 0x135f87960] coded y,uvDC,uvAC intra: 22.1% 9.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x135f87960] i16 v,h,dc,p: 34% 16% 24% 26%
+[libx264 @ 0x135f87960] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 10% 46%  3%  2%  2%  2%  6%  3%
+[libx264 @ 0x135f87960] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 33%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x135f87960] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x135f87960] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x135f87960] kb/s:36.76
+[libx264 @ 0x14f15e100] frame I:54    Avg QP:21.36  size:   903
+[libx264 @ 0x14f15e100] frame P:54    Avg QP:25.94  size:    49
+[libx264 @ 0x14f15e100] mb I  I16..4: 46.7% 43.8%  9.5%
+[libx264 @ 0x14f15e100] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.9%  0.1%  0.2%  0.0%  0.0%    skip:96.7%
+[libx264 @ 0x14f15e100] 8x8 transform intra:43.7%
+[libx264 @ 0x14f15e100] coded y,uvDC,uvAC intra: 25.5% 9.5% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14f15e100] i16 v,h,dc,p: 22% 35% 18% 26%
+[libx264 @ 0x14f15e100] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 22% 39%  3%  5%  3%  7%  2%  4%
+[libx264 @ 0x14f15e100] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 18% 24%  4%  6%  4% 12%  4%  4%
+[libx264 @ 0x14f15e100] i8c dc,h,v,p: 91%  4%  5%  0%
+[libx264 @ 0x14f15e100] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14f15e100] kb/s:38.05
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311f0e80] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303f22d0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311f32b0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303db5f0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71e0b0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303e18f0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/103 [00:00<?, ? examples/s]Map: 100%|██████████| 103/103 [00:00<00:00, 4154.41 examples/s]
+[libx264 @ 0x11feb7e90] frame I:52    Avg QP:21.40  size:   869
+[libx264 @ 0x11feb7e90] frame P:51    Avg QP:24.31  size:    47
+[libx264 @ 0x11feb7e90] mb I  I16..4: 44.0% 46.4%  9.6%
+[libx264 @ 0x11feb7e90] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.1%  0.1%  0.1%  0.0%  0.0%    skip:97.6%
+[libx264 @ 0x11feb7e90] 8x8 transform intra:46.3%
+[libx264 @ 0x11feb7e90] coded y,uvDC,uvAC intra: 21.3% 9.8% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x11feb7e90] i16 v,h,dc,p: 35% 18% 24% 23%
+[libx264 @ 0x11feb7e90] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30%  8% 43%  4%  2%  2%  2%  5%  3%
+[libx264 @ 0x11feb7e90] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 34%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x11feb7e90] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x11feb7e90] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x11feb7e90] kb/s:36.98
+[libx264 @ 0x126cd3a60] frame I:52    Avg QP:21.16  size:   828
+[libx264 @ 0x126cd3a60] frame P:51    Avg QP:26.06  size:    47
+[libx264 @ 0x126cd3a60] mb I  I16..4: 48.5% 43.8%  7.8%
+[libx264 @ 0x126cd3a60] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.7%  0.2%  0.2%  0.0%  0.0%    skip:96.9%
+[libx264 @ 0x126cd3a60] 8x8 transform intra:43.7%
+[libx264 @ 0x126cd3a60] coded y,uvDC,uvAC intra: 23.5% 9.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x126cd3a60] i16 v,h,dc,p: 25% 32% 18% 25%
+[libx264 @ 0x126cd3a60] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 24% 40%  2%  4%  3%  6%  1%  3%
+[libx264 @ 0x126cd3a60] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 19% 23%  4%  5%  4% 12%  3%  4%
+[libx264 @ 0x126cd3a60] i8c dc,h,v,p: 91%  4%  5%  0%
+[libx264 @ 0x126cd3a60] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x126cd3a60] kb/s:35.33
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d73f0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d73f0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311e3290] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d73f0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1532b31c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311e3280] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/106 [00:00<?, ? examples/s]Map: 100%|██████████| 106/106 [00:00<00:00, 4071.95 examples/s]
+[libx264 @ 0x152874180] frame I:53    Avg QP:21.25  size:   895
+[libx264 @ 0x152874180] frame P:53    Avg QP:23.97  size:    49
+[libx264 @ 0x152874180] mb I  I16..4: 49.7% 39.9% 10.4%
+[libx264 @ 0x152874180] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4:  2.3%  0.2%  0.2%  0.0%  0.0%    skip:97.4%
+[libx264 @ 0x152874180] 8x8 transform intra:39.9%
+[libx264 @ 0x152874180] coded y,uvDC,uvAC intra: 20.1% 18.1% 0.0% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x152874180] i16 v,h,dc,p: 40% 17% 23% 20%
+[libx264 @ 0x152874180] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 10% 41%  5%  3%  3%  2%  6%  4%
+[libx264 @ 0x152874180] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 20% 30%  4%  3%  4%  5%  3%  4%
+[libx264 @ 0x152874180] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x152874180] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x152874180] kb/s:37.74
+[libx264 @ 0x1436154c0] frame I:53    Avg QP:21.12  size:   850
+[libx264 @ 0x1436154c0] frame P:53    Avg QP:25.59  size:    49
+[libx264 @ 0x1436154c0] mb I  I16..4: 48.2% 44.5%  7.3%
+[libx264 @ 0x1436154c0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.3%  0.1%  0.2%  0.0%  0.0%    skip:96.3%
+[libx264 @ 0x1436154c0] 8x8 transform intra:44.4%
+[libx264 @ 0x1436154c0] coded y,uvDC,uvAC intra: 24.2% 10.9% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1436154c0] i16 v,h,dc,p: 27% 34% 17% 22%
+[libx264 @ 0x1436154c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 25% 40%  3%  4%  3%  6%  2%  4%
+[libx264 @ 0x1436154c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 25% 23%  4%  4%  5%  9%  4%  2%
+[libx264 @ 0x1436154c0] i8c dc,h,v,p: 91%  4%  5%  0%
+[libx264 @ 0x1436154c0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1436154c0] kb/s:35.95
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153261390] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153261390] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x153285bd0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153261390] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b70e8e0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x153285bd0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/103 [00:00<?, ? examples/s]Map: 100%|██████████| 103/103 [00:00<00:00, 4144.73 examples/s]
+[libx264 @ 0x155179750] frame I:52    Avg QP:21.36  size:   886
+[libx264 @ 0x155179750] frame P:51    Avg QP:24.18  size:    51
+[libx264 @ 0x155179750] mb I  I16..4: 47.4% 42.4% 10.2%
+[libx264 @ 0x155179750] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.2%  0.1%  0.1%  0.0%  0.0%    skip:96.4%
+[libx264 @ 0x155179750] 8x8 transform intra:42.4%
+[libx264 @ 0x155179750] coded y,uvDC,uvAC intra: 20.8% 17.2% 0.0% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x155179750] i16 v,h,dc,p: 39% 19% 22% 20%
+[libx264 @ 0x155179750] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27%  8% 46%  4%  2%  2%  2%  6%  4%
+[libx264 @ 0x155179750] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 20% 32%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x155179750] i8c dc,h,v,p: 91%  4%  6%  0%
+[libx264 @ 0x155179750] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x155179750] kb/s:37.79
+[libx264 @ 0x1405428b0] frame I:52    Avg QP:21.16  size:   853
+[libx264 @ 0x1405428b0] frame P:51    Avg QP:25.09  size:    48
+[libx264 @ 0x1405428b0] mb I  I16..4: 51.4% 40.5%  8.1%
+[libx264 @ 0x1405428b0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.1%  0.1%  0.2%  0.0%  0.0%    skip:96.4%
+[libx264 @ 0x1405428b0] 8x8 transform intra:40.4%
+[libx264 @ 0x1405428b0] coded y,uvDC,uvAC intra: 23.1% 9.9% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1405428b0] i16 v,h,dc,p: 32% 33% 17% 19%
+[libx264 @ 0x1405428b0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 22% 40%  3%  5%  4%  7%  2%  4%
+[libx264 @ 0x1405428b0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 20% 22%  4%  5%  5% 12%  4%  3%
+[libx264 @ 0x1405428b0] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x1405428b0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1405428b0] kb/s:36.37
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311dc830] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303e3450] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311eed50] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153285bd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c82040] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15327fde0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/104 [00:00<?, ? examples/s]Map: 100%|██████████| 104/104 [00:00<00:00, 4132.79 examples/s]
+[libx264 @ 0x12ef65590] frame I:52    Avg QP:21.32  size:   908
+[libx264 @ 0x12ef65590] frame P:52    Avg QP:24.22  size:    48
+[libx264 @ 0x12ef65590] mb I  I16..4: 48.5% 40.7% 10.8%
+[libx264 @ 0x12ef65590] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.2%  0.1%  0.1%  0.0%  0.0%    skip:97.3%
+[libx264 @ 0x12ef65590] 8x8 transform intra:40.7%
+[libx264 @ 0x12ef65590] coded y,uvDC,uvAC intra: 20.7% 14.5% 0.0% inter: 0.0% 0.1% 0.0%
+[libx264 @ 0x12ef65590] i16 v,h,dc,p: 38% 20% 21% 21%
+[libx264 @ 0x12ef65590] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30% 11% 37%  5%  3%  3%  3%  5%  3%
+[libx264 @ 0x12ef65590] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 21% 31%  4%  3%  3%  5%  3%  4%
+[libx264 @ 0x12ef65590] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x12ef65590] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x12ef65590] kb/s:38.25
+[libx264 @ 0x1536b58f0] frame I:52    Avg QP:21.18  size:   847
+[libx264 @ 0x1536b58f0] frame P:52    Avg QP:26.03  size:    48
+[libx264 @ 0x1536b58f0] mb I  I16..4: 50.4% 41.7%  7.9%
+[libx264 @ 0x1536b58f0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.7%  0.1%  0.2%  0.0%  0.0%    skip:97.0%
+[libx264 @ 0x1536b58f0] 8x8 transform intra:41.7%
+[libx264 @ 0x1536b58f0] coded y,uvDC,uvAC intra: 24.1% 8.0% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1536b58f0] i16 v,h,dc,p: 28% 31% 18% 22%
+[libx264 @ 0x1536b58f0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 11% 26% 41%  3%  4%  3%  6%  2%  3%
+[libx264 @ 0x1536b58f0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 24% 23%  5%  4%  4%  8%  4%  3%
+[libx264 @ 0x1536b58f0] i8c dc,h,v,p: 93%  3%  4%  0%
+[libx264 @ 0x1536b58f0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1536b58f0] kb/s:35.79
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311e0ce0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311e0ce0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311df420] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1536f9510] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c83890] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b71d420] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/102 [00:00<?, ? examples/s]Map: 100%|██████████| 102/102 [00:00<00:00, 4100.36 examples/s]
+[libx264 @ 0x130e79340] frame I:51    Avg QP:21.37  size:   882
+[libx264 @ 0x130e79340] frame P:51    Avg QP:24.39  size:    50
+[libx264 @ 0x130e79340] mb I  I16..4: 45.6% 44.3% 10.2%
+[libx264 @ 0x130e79340] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  3.0%  0.2%  0.2%  0.0%  0.0%    skip:96.4%
+[libx264 @ 0x130e79340] 8x8 transform intra:44.2%
+[libx264 @ 0x130e79340] coded y,uvDC,uvAC intra: 21.9% 12.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x130e79340] i16 v,h,dc,p: 38% 17% 21% 23%
+[libx264 @ 0x130e79340] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25%  7% 49%  4%  2%  2%  1%  5%  4%
+[libx264 @ 0x130e79340] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 18% 35%  4%  3%  5%  4%  2%  5%
+[libx264 @ 0x130e79340] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x130e79340] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x130e79340] kb/s:37.30
+[libx264 @ 0x168e2c900] frame I:51    Avg QP:21.11  size:   815
+[libx264 @ 0x168e2c900] frame P:51    Avg QP:25.87  size:    49
+[libx264 @ 0x168e2c900] mb I  I16..4: 53.4% 39.2%  7.4%
+[libx264 @ 0x168e2c900] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.1%  0.2%  0.3%  0.0%  0.0%    skip:96.4%
+[libx264 @ 0x168e2c900] 8x8 transform intra:39.2%
+[libx264 @ 0x168e2c900] coded y,uvDC,uvAC intra: 22.9% 8.0% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x168e2c900] i16 v,h,dc,p: 30% 33% 16% 22%
+[libx264 @ 0x168e2c900] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 21% 42%  3%  5%  3%  7%  2%  5%
+[libx264 @ 0x168e2c900] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 16% 21%  4%  6%  5% 11%  4%  4%
+[libx264 @ 0x168e2c900] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x168e2c900] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x168e2c900] kb/s:34.55
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311df420] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311ff890] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311e0ce0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311e0ce0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136cbc140] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311df420] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/106 [00:00<?, ? examples/s]Map: 100%|██████████| 106/106 [00:00<00:00, 3808.43 examples/s]
+[libx264 @ 0x12f5e1370] frame I:53    Avg QP:21.26  size:   890
+[libx264 @ 0x12f5e1370] frame P:53    Avg QP:24.09  size:    52
+[libx264 @ 0x12f5e1370] mb I  I16..4: 50.7% 39.1% 10.2%
+[libx264 @ 0x12f5e1370] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.3%  0.2%  0.1%  0.0%  0.0%    skip:96.3%
+[libx264 @ 0x12f5e1370] 8x8 transform intra:39.1%
+[libx264 @ 0x12f5e1370] coded y,uvDC,uvAC intra: 19.5% 16.8% 0.0% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x12f5e1370] i16 v,h,dc,p: 38% 19% 22% 21%
+[libx264 @ 0x12f5e1370] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24%  9% 44%  5%  3%  3%  2%  6%  4%
+[libx264 @ 0x12f5e1370] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 21% 33%  4%  3%  3%  4%  2%  4%
+[libx264 @ 0x12f5e1370] i8c dc,h,v,p: 90%  4%  6%  0%
+[libx264 @ 0x12f5e1370] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x12f5e1370] kb/s:37.67
+[libx264 @ 0x14bcb3110] frame I:53    Avg QP:21.07  size:   840
+[libx264 @ 0x14bcb3110] frame P:53    Avg QP:26.27  size:    48
+[libx264 @ 0x14bcb3110] mb I  I16..4: 48.8% 42.8%  8.3%
+[libx264 @ 0x14bcb3110] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.2%  0.2%  0.0%  0.0%    skip:96.8%
+[libx264 @ 0x14bcb3110] 8x8 transform intra:42.8%
+[libx264 @ 0x14bcb3110] coded y,uvDC,uvAC intra: 23.4% 10.2% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14bcb3110] i16 v,h,dc,p: 28% 34% 15% 23%
+[libx264 @ 0x14bcb3110] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 25% 42%  2%  4%  3%  6%  1%  3%
+[libx264 @ 0x14bcb3110] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 26% 21%  6%  4%  4%  9%  4%  3%
+[libx264 @ 0x14bcb3110] i8c dc,h,v,p: 92%  3%  4%  0%
+[libx264 @ 0x14bcb3110] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14bcb3110] kb/s:35.51
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153285bd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153285bd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15327fde0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71dae0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b717520] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b71d420] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/103 [00:00<?, ? examples/s]Map: 100%|██████████| 103/103 [00:00<00:00, 3625.06 examples/s]
+[libx264 @ 0x11a5b59b0] frame I:52    Avg QP:21.44  size:   870
+[libx264 @ 0x11a5b59b0] frame P:51    Avg QP:24.26  size:    47
+[libx264 @ 0x11a5b59b0] mb I  I16..4: 43.9% 46.2%  9.9%
+[libx264 @ 0x11a5b59b0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.0%  0.1%  0.1%  0.0%  0.0%    skip:97.7%
+[libx264 @ 0x11a5b59b0] 8x8 transform intra:46.2%
+[libx264 @ 0x11a5b59b0] coded y,uvDC,uvAC intra: 21.8% 9.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x11a5b59b0] i16 v,h,dc,p: 34% 18% 24% 24%
+[libx264 @ 0x11a5b59b0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30%  8% 43%  4%  2%  2%  2%  6%  3%
+[libx264 @ 0x11a5b59b0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 21% 31%  4%  2%  4%  4%  2%  4%
+[libx264 @ 0x11a5b59b0] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x11a5b59b0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x11a5b59b0] kb/s:36.99
+[libx264 @ 0x14fb4e5b0] frame I:52    Avg QP:21.24  size:   867
+[libx264 @ 0x14fb4e5b0] frame P:51    Avg QP:24.79  size:    49
+[libx264 @ 0x14fb4e5b0] mb I  I16..4: 44.2% 47.1%  8.8%
+[libx264 @ 0x14fb4e5b0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.2%  0.2%  0.0%  0.0%    skip:96.7%
+[libx264 @ 0x14fb4e5b0] 8x8 transform intra:47.0%
+[libx264 @ 0x14fb4e5b0] coded y,uvDC,uvAC intra: 25.0% 7.9% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14fb4e5b0] i16 v,h,dc,p: 29% 34% 17% 21%
+[libx264 @ 0x14fb4e5b0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 20% 45%  3%  4%  3%  6%  2%  4%
+[libx264 @ 0x14fb4e5b0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 22% 23%  5%  5%  4% 12%  3%  3%
+[libx264 @ 0x14fb4e5b0] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x14fb4e5b0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14fb4e5b0] kb/s:36.97
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303fc590] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311ce950] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303e36d0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311dc830] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311dc830] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311dccb0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/100 [00:00<?, ? examples/s]Map: 100%|██████████| 100/100 [00:00<00:00, 4117.07 examples/s]
+[libx264 @ 0x14ae24e60] frame I:50    Avg QP:21.45  size:   883
+[libx264 @ 0x14ae24e60] frame P:50    Avg QP:24.28  size:    49
+[libx264 @ 0x14ae24e60] mb I  I16..4: 45.1% 44.9%  9.9%
+[libx264 @ 0x14ae24e60] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.5%  0.2%  0.2%  0.0%  0.0%    skip:97.0%
+[libx264 @ 0x14ae24e60] 8x8 transform intra:44.9%
+[libx264 @ 0x14ae24e60] coded y,uvDC,uvAC intra: 21.3% 9.5% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14ae24e60] i16 v,h,dc,p: 38% 15% 23% 23%
+[libx264 @ 0x14ae24e60] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29%  9% 42%  4%  2%  3%  2%  6%  4%
+[libx264 @ 0x14ae24e60] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 32%  5%  3%  4%  5%  2%  4%
+[libx264 @ 0x14ae24e60] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x14ae24e60] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14ae24e60] kb/s:37.26
+[libx264 @ 0x14fdbf850] frame I:50    Avg QP:21.27  size:   860
+[libx264 @ 0x14fdbf850] frame P:50    Avg QP:25.48  size:    48
+[libx264 @ 0x14fdbf850] mb I  I16..4: 48.6% 42.9%  8.5%
+[libx264 @ 0x14fdbf850] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.2%  0.2%  0.0%  0.0%    skip:96.7%
+[libx264 @ 0x14fdbf850] 8x8 transform intra:42.9%
+[libx264 @ 0x14fdbf850] coded y,uvDC,uvAC intra: 23.8% 8.6% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14fdbf850] i16 v,h,dc,p: 31% 32% 17% 21%
+[libx264 @ 0x14fdbf850] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 22% 41%  3%  4%  3%  7%  2%  4%
+[libx264 @ 0x14fdbf850] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 23% 22%  6%  5%  4% 12%  3%  3%
+[libx264 @ 0x14fdbf850] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x14fdbf850] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14fdbf850] kb/s:36.32
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303eb160] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303edc80] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303ed180] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71d420] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303f2110] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1536fe4e0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/110 [00:00<?, ? examples/s]Map: 100%|██████████| 110/110 [00:00<00:00, 4141.07 examples/s]
+[libx264 @ 0x154bceb50] frame I:55    Avg QP:21.39  size:   872
+[libx264 @ 0x154bceb50] frame P:55    Avg QP:24.15  size:    49
+[libx264 @ 0x154bceb50] mb I  I16..4: 42.1% 47.5% 10.4%
+[libx264 @ 0x154bceb50] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.6%  0.1%  0.2%  0.0%  0.0%    skip:97.0%
+[libx264 @ 0x154bceb50] 8x8 transform intra:47.4%
+[libx264 @ 0x154bceb50] coded y,uvDC,uvAC intra: 21.5% 9.2% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x154bceb50] i16 v,h,dc,p: 32% 19% 23% 26%
+[libx264 @ 0x154bceb50] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 10% 45%  3%  2%  2%  2%  6%  3%
+[libx264 @ 0x154bceb50] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 21% 30%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x154bceb50] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x154bceb50] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x154bceb50] kb/s:36.84
+[libx264 @ 0x1508a6730] frame I:55    Avg QP:21.29  size:   870
+[libx264 @ 0x1508a6730] frame P:55    Avg QP:26.57  size:    49
+[libx264 @ 0x1508a6730] mb I  I16..4: 42.6% 50.0%  7.4%
+[libx264 @ 0x1508a6730] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.5%  0.2%  0.2%  0.0%  0.0%    skip:96.0%
+[libx264 @ 0x1508a6730] 8x8 transform intra:49.9%
+[libx264 @ 0x1508a6730] coded y,uvDC,uvAC intra: 24.7% 9.6% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1508a6730] i16 v,h,dc,p: 21% 32% 20% 26%
+[libx264 @ 0x1508a6730] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 11% 28% 42%  2%  4%  3%  5%  2%  4%
+[libx264 @ 0x1508a6730] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 23% 23%  4%  4%  5% 11%  3%  3%
+[libx264 @ 0x1508a6730] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x1508a6730] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1508a6730] kb/s:36.76
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c84380] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c84380] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15bb17fd0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c84380] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b704780] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15bb17fd0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/105 [00:00<?, ? examples/s]Map: 100%|██████████| 105/105 [00:00<00:00, 4097.03 examples/s]
+[libx264 @ 0x15213ef10] frame I:53    Avg QP:21.35  size:   874
+[libx264 @ 0x15213ef10] frame P:52    Avg QP:24.06  size:    51
+[libx264 @ 0x15213ef10] mb I  I16..4: 46.8% 43.7%  9.5%
+[libx264 @ 0x15213ef10] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.1%  0.1%  0.2%  0.0%  0.0%    skip:96.5%
+[libx264 @ 0x15213ef10] 8x8 transform intra:43.7%
+[libx264 @ 0x15213ef10] coded y,uvDC,uvAC intra: 20.9% 16.2% 0.0% inter: 0.0% 0.3% 0.0%
+[libx264 @ 0x15213ef10] i16 v,h,dc,p: 38% 17% 23% 22%
+[libx264 @ 0x15213ef10] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29%  8% 44%  3%  2%  2%  2%  6%  4%
+[libx264 @ 0x15213ef10] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 18% 34%  5%  3%  4%  4%  2%  4%
+[libx264 @ 0x15213ef10] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x15213ef10] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x15213ef10] kb/s:37.30
+[libx264 @ 0x1291f9d70] frame I:53    Avg QP:21.16  size:   850
+[libx264 @ 0x1291f9d70] frame P:52    Avg QP:25.16  size:    48
+[libx264 @ 0x1291f9d70] mb I  I16..4: 47.8% 44.9%  7.4%
+[libx264 @ 0x1291f9d70] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.2%  0.3%  0.0%  0.0%    skip:96.6%
+[libx264 @ 0x1291f9d70] 8x8 transform intra:44.8%
+[libx264 @ 0x1291f9d70] coded y,uvDC,uvAC intra: 23.9% 10.5% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1291f9d70] i16 v,h,dc,p: 28% 31% 17% 24%
+[libx264 @ 0x1291f9d70] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 21% 43%  3%  4%  3%  7%  2%  4%
+[libx264 @ 0x1291f9d70] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 17% 25%  5%  6%  5% 12%  4%  4%
+[libx264 @ 0x1291f9d70] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x1291f9d70] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1291f9d70] kb/s:36.25
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1536f9510] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136cba8c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b71dae0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15bb17fd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b704240] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x136c889a0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/99 [00:00<?, ? examples/s]Map: 100%|██████████| 99/99 [00:00<00:00, 4137.22 examples/s]
+[libx264 @ 0x11f2fb310] frame I:50    Avg QP:21.53  size:   909
+[libx264 @ 0x11f2fb310] frame P:49    Avg QP:24.21  size:    49
+[libx264 @ 0x11f2fb310] mb I  I16..4: 44.2% 45.3% 10.5%
+[libx264 @ 0x11f2fb310] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.5%  0.1%  0.1%  0.0%  0.0%    skip:97.2%
+[libx264 @ 0x11f2fb310] 8x8 transform intra:45.2%
+[libx264 @ 0x11f2fb310] coded y,uvDC,uvAC intra: 22.0% 9.1% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x11f2fb310] i16 v,h,dc,p: 36% 18% 24% 23%
+[libx264 @ 0x11f2fb310] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 10% 42%  5%  3%  3%  3%  6%  3%
+[libx264 @ 0x11f2fb310] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 21% 31%  4%  3%  4%  5%  3%  4%
+[libx264 @ 0x11f2fb310] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x11f2fb310] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x11f2fb310] kb/s:38.65
+[libx264 @ 0x1275cd420] frame I:50    Avg QP:21.32  size:   882
+[libx264 @ 0x1275cd420] frame P:49    Avg QP:24.94  size:    49
+[libx264 @ 0x1275cd420] mb I  I16..4: 40.3% 51.8%  7.9%
+[libx264 @ 0x1275cd420] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.4%  0.1%  0.1%  0.0%  0.0%    skip:96.2%
+[libx264 @ 0x1275cd420] 8x8 transform intra:51.7%
+[libx264 @ 0x1275cd420] coded y,uvDC,uvAC intra: 26.0% 7.6% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1275cd420] i16 v,h,dc,p: 28% 33% 15% 25%
+[libx264 @ 0x1275cd420] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 21% 48%  2%  3%  2%  5%  2%  3%
+[libx264 @ 0x1275cd420] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 24% 20%  4%  5%  4% 11%  4%  3%
+[libx264 @ 0x1275cd420] i8c dc,h,v,p: 91%  4%  5%  0%
+[libx264 @ 0x1275cd420] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1275cd420] kb/s:37.60
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153285bd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153285bd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15327fde0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153285bd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b718400] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15327fde0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/107 [00:00<?, ? examples/s]Map: 100%|██████████| 107/107 [00:00<00:00, 4124.31 examples/s]
+[libx264 @ 0x14069c710] frame I:54    Avg QP:21.30  size:   895
+[libx264 @ 0x14069c710] frame P:53    Avg QP:24.29  size:    50
+[libx264 @ 0x14069c710] mb I  I16..4: 48.6% 41.3% 10.2%
+[libx264 @ 0x14069c710] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.7%  0.1%  0.2%  0.0%  0.0%    skip:97.0%
+[libx264 @ 0x14069c710] 8x8 transform intra:41.2%
+[libx264 @ 0x14069c710] coded y,uvDC,uvAC intra: 20.6% 15.8% 0.0% inter: 0.0% 0.1% 0.0%
+[libx264 @ 0x14069c710] i16 v,h,dc,p: 37% 19% 23% 22%
+[libx264 @ 0x14069c710] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 11% 40%  5%  3%  3%  3%  6%  3%
+[libx264 @ 0x14069c710] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 21% 31%  4%  2%  4%  5%  3%  4%
+[libx264 @ 0x14069c710] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x14069c710] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14069c710] kb/s:38.11
+[libx264 @ 0x15f106430] frame I:54    Avg QP:21.37  size:   882
+[libx264 @ 0x15f106430] frame P:53    Avg QP:25.78  size:    48
+[libx264 @ 0x15f106430] mb I  I16..4: 42.7% 48.7%  8.6%
+[libx264 @ 0x15f106430] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.5%  0.2%  0.3%  0.0%  0.0%    skip:96.9%
+[libx264 @ 0x15f106430] 8x8 transform intra:48.7%
+[libx264 @ 0x15f106430] coded y,uvDC,uvAC intra: 26.8% 8.9% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x15f106430] i16 v,h,dc,p: 22% 35% 19% 25%
+[libx264 @ 0x15f106430] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 25% 40%  3%  4%  3%  5%  2%  4%
+[libx264 @ 0x15f106430] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 25% 23%  5%  5%  4% 10%  4%  3%
+[libx264 @ 0x15f106430] i8c dc,h,v,p: 92%  3%  4%  0%
+[libx264 @ 0x15f106430] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x15f106430] kb/s:37.50
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1532656d0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1532656d0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15327fde0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71d420] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71e0b0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b7229b0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/101 [00:00<?, ? examples/s]Map: 100%|██████████| 101/101 [00:00<00:00, 4129.54 examples/s]
+[libx264 @ 0x1408e6be0] frame I:51    Avg QP:21.36  size:   885
+[libx264 @ 0x1408e6be0] frame P:50    Avg QP:23.95  size:    48
+[libx264 @ 0x1408e6be0] mb I  I16..4: 47.6% 41.9% 10.5%
+[libx264 @ 0x1408e6be0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.1%  0.2%  0.2%  0.0%  0.0%    skip:97.4%
+[libx264 @ 0x1408e6be0] 8x8 transform intra:41.9%
+[libx264 @ 0x1408e6be0] coded y,uvDC,uvAC intra: 21.1% 9.1% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1408e6be0] i16 v,h,dc,p: 38% 18% 23% 21%
+[libx264 @ 0x1408e6be0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 11% 40%  5%  3%  3%  3%  6%  3%
+[libx264 @ 0x1408e6be0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 32%  4%  3%  4%  5%  3%  4%
+[libx264 @ 0x1408e6be0] i8c dc,h,v,p: 93%  2%  4%  0%
+[libx264 @ 0x1408e6be0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1408e6be0] kb/s:37.68
+[libx264 @ 0x1237f8770] frame I:51    Avg QP:21.10  size:   841
+[libx264 @ 0x1237f8770] frame P:50    Avg QP:25.36  size:    47
+[libx264 @ 0x1237f8770] mb I  I16..4: 41.2% 49.8%  9.0%
+[libx264 @ 0x1237f8770] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.6%  0.2%  0.2%  0.0%  0.0%    skip:96.9%
+[libx264 @ 0x1237f8770] 8x8 transform intra:49.8%
+[libx264 @ 0x1237f8770] coded y,uvDC,uvAC intra: 24.6% 7.9% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1237f8770] i16 v,h,dc,p: 25% 32% 19% 25%
+[libx264 @ 0x1237f8770] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 21% 46%  2%  3%  3%  5%  1%  3%
+[libx264 @ 0x1237f8770] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 28% 23%  5%  4%  4%  8%  3%  2%
+[libx264 @ 0x1237f8770] i8c dc,h,v,p: 92%  4%  5%  0%
+[libx264 @ 0x1237f8770] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1237f8770] kb/s:35.85
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311dc830] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153284880] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311d9ae0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15327fde0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1532ab510] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15326d4d0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/101 [00:00<?, ? examples/s]Map: 100%|██████████| 101/101 [00:00<00:00, 4077.31 examples/s]
+[libx264 @ 0x11d3da810] frame I:51    Avg QP:21.45  size:   886
+[libx264 @ 0x11d3da810] frame P:50    Avg QP:24.36  size:    48
+[libx264 @ 0x11d3da810] mb I  I16..4: 41.4% 48.3% 10.3%
+[libx264 @ 0x11d3da810] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  2.2%  0.2%  0.2%  0.0%  0.0%    skip:97.3%
+[libx264 @ 0x11d3da810] 8x8 transform intra:48.2%
+[libx264 @ 0x11d3da810] coded y,uvDC,uvAC intra: 22.9% 9.0% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x11d3da810] i16 v,h,dc,p: 34% 16% 25% 25%
+[libx264 @ 0x11d3da810] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30%  8% 46%  3%  2%  2%  2%  5%  3%
+[libx264 @ 0x11d3da810] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 19% 35%  4%  3%  5%  4%  2%  5%
+[libx264 @ 0x11d3da810] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x11d3da810] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x11d3da810] kb/s:37.71
+[libx264 @ 0x157745930] frame I:51    Avg QP:21.23  size:   840
+[libx264 @ 0x157745930] frame P:50    Avg QP:25.89  size:    49
+[libx264 @ 0x157745930] mb I  I16..4: 56.7% 35.2%  8.1%
+[libx264 @ 0x157745930] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.2%  0.2%  0.1%  0.0%  0.0%    skip:96.4%
+[libx264 @ 0x157745930] 8x8 transform intra:35.1%
+[libx264 @ 0x157745930] coded y,uvDC,uvAC intra: 21.5% 10.0% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x157745930] i16 v,h,dc,p: 28% 33% 16% 23%
+[libx264 @ 0x157745930] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 25% 37%  3%  5%  4%  8%  2%  4%
+[libx264 @ 0x157745930] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 20%  5%  6%  5% 12%  3%  4%
+[libx264 @ 0x157745930] i8c dc,h,v,p: 90%  4%  5%  0%
+[libx264 @ 0x157745930] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x157745930] kb/s:35.84
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303fe4c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303fe4c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303f3d50] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303fe4c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303f53e0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303fbf80] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/103 [00:00<?, ? examples/s]Map: 100%|██████████| 103/103 [00:00<00:00, 4138.85 examples/s]
+[libx264 @ 0x138c139f0] frame I:52    Avg QP:21.38  size:   878
+[libx264 @ 0x138c139f0] frame P:51    Avg QP:24.12  size:    49
+[libx264 @ 0x138c139f0] mb I  I16..4: 47.9% 42.0% 10.1%
+[libx264 @ 0x138c139f0] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  2.8%  0.1%  0.1%  0.0%  0.0%    skip:96.8%
+[libx264 @ 0x138c139f0] 8x8 transform intra:41.9%
+[libx264 @ 0x138c139f0] coded y,uvDC,uvAC intra: 20.8% 9.7% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x138c139f0] i16 v,h,dc,p: 38% 18% 23% 21%
+[libx264 @ 0x138c139f0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28%  9% 41%  4%  3%  2%  2%  6%  4%
+[libx264 @ 0x138c139f0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 32%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x138c139f0] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x138c139f0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x138c139f0] kb/s:37.42
+[libx264 @ 0x14cffe1c0] frame I:52    Avg QP:21.19  size:   862
+[libx264 @ 0x14cffe1c0] frame P:51    Avg QP:25.39  size:    49
+[libx264 @ 0x14cffe1c0] mb I  I16..4: 49.2% 42.3%  8.5%
+[libx264 @ 0x14cffe1c0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.2%  0.3%  0.0%  0.0%    skip:96.5%
+[libx264 @ 0x14cffe1c0] 8x8 transform intra:42.3%
+[libx264 @ 0x14cffe1c0] coded y,uvDC,uvAC intra: 23.6% 7.9% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14cffe1c0] i16 v,h,dc,p: 29% 33% 16% 22%
+[libx264 @ 0x14cffe1c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 22% 44%  3%  4%  3%  6%  2%  4%
+[libx264 @ 0x14cffe1c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 23% 21%  5%  5%  5% 11%  3%  3%
+[libx264 @ 0x14cffe1c0] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x14cffe1c0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14cffe1c0] kb/s:36.76
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311dc830] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303df110] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311d4120] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c84380] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d0d70] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15bb17fd0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/107 [00:00<?, ? examples/s]Map: 100%|██████████| 107/107 [00:00<00:00, 4101.05 examples/s]
+[libx264 @ 0x139d785e0] frame I:54    Avg QP:21.35  size:   882
+[libx264 @ 0x139d785e0] frame P:53    Avg QP:24.15  size:    50
+[libx264 @ 0x139d785e0] mb I  I16..4: 49.1% 40.9% 10.0%
+[libx264 @ 0x139d785e0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.7%  0.2%  0.3%  0.0%  0.0%    skip:96.7%
+[libx264 @ 0x139d785e0] 8x8 transform intra:40.9%
+[libx264 @ 0x139d785e0] coded y,uvDC,uvAC intra: 20.3% 16.3% 0.0% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x139d785e0] i16 v,h,dc,p: 38% 18% 22% 22%
+[libx264 @ 0x139d785e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27%  9% 42%  4%  2%  3%  2%  6%  4%
+[libx264 @ 0x139d785e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 20% 33%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x139d785e0] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x139d785e0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x139d785e0] kb/s:37.60
+[libx264 @ 0x12bf074c0] frame I:54    Avg QP:21.40  size:   898
+[libx264 @ 0x12bf074c0] frame P:53    Avg QP:25.71  size:    47
+[libx264 @ 0x12bf074c0] mb I  I16..4: 45.6% 45.6%  8.8%
+[libx264 @ 0x12bf074c0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.7%  0.1%  0.2%  0.0%  0.0%    skip:96.9%
+[libx264 @ 0x12bf074c0] 8x8 transform intra:45.6%
+[libx264 @ 0x12bf074c0] coded y,uvDC,uvAC intra: 26.7% 9.0% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x12bf074c0] i16 v,h,dc,p: 25% 34% 17% 24%
+[libx264 @ 0x12bf074c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 16% 21% 40%  4%  4%  3%  6%  2%  4%
+[libx264 @ 0x12bf074c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 21% 21%  5%  5%  5% 12%  3%  3%
+[libx264 @ 0x12bf074c0] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x12bf074c0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x12bf074c0] kb/s:38.13
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b60be30] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b60be30] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303fbf80] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b60be30] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d0de0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303fbf80] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/102 [00:00<?, ? examples/s]Map: 100%|██████████| 102/102 [00:00<00:00, 4096.55 examples/s]
+[libx264 @ 0x151d61eb0] frame I:51    Avg QP:21.30  size:   900
+[libx264 @ 0x151d61eb0] frame P:51    Avg QP:24.05  size:    48
+[libx264 @ 0x151d61eb0] mb I  I16..4: 47.6% 41.8% 10.5%
+[libx264 @ 0x151d61eb0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.2%  0.2%  0.1%  0.0%  0.0%    skip:97.4%
+[libx264 @ 0x151d61eb0] 8x8 transform intra:41.8%
+[libx264 @ 0x151d61eb0] coded y,uvDC,uvAC intra: 20.9% 17.7% 0.0% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x151d61eb0] i16 v,h,dc,p: 38% 18% 22% 21%
+[libx264 @ 0x151d61eb0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 10% 43%  4%  3%  2%  2%  5%  3%
+[libx264 @ 0x151d61eb0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 21% 31%  4%  3%  3%  4%  2%  4%
+[libx264 @ 0x151d61eb0] i8c dc,h,v,p: 91%  4%  6%  0%
+[libx264 @ 0x151d61eb0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x151d61eb0] kb/s:37.93
+[libx264 @ 0x13bcc9da0] frame I:51    Avg QP:21.10  size:   835
+[libx264 @ 0x13bcc9da0] frame P:51    Avg QP:25.87  size:    50
+[libx264 @ 0x13bcc9da0] mb I  I16..4: 52.5% 40.1%  7.5%
+[libx264 @ 0x13bcc9da0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.6%  0.2%  0.3%  0.0%  0.0%    skip:95.8%
+[libx264 @ 0x13bcc9da0] 8x8 transform intra:40.0%
+[libx264 @ 0x13bcc9da0] coded y,uvDC,uvAC intra: 23.0% 10.9% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x13bcc9da0] i16 v,h,dc,p: 30% 33% 17% 20%
+[libx264 @ 0x13bcc9da0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 25% 41%  3%  4%  3%  7%  2%  4%
+[libx264 @ 0x13bcc9da0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 25% 20%  6%  3%  4% 10%  3%  3%
+[libx264 @ 0x13bcc9da0] i8c dc,h,v,p: 93%  3%  4%  0%
+[libx264 @ 0x13bcc9da0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x13bcc9da0] kb/s:35.40
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71b890] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71b890] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b71bb00] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b71b890] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136cb8cc0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b71bb00] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/104 [00:00<?, ? examples/s]Map: 100%|██████████| 104/104 [00:00<00:00, 4123.69 examples/s]
+[libx264 @ 0x133115610] frame I:52    Avg QP:21.38  size:   880
+[libx264 @ 0x133115610] frame P:52    Avg QP:24.54  size:    51
+[libx264 @ 0x133115610] mb I  I16..4: 42.6% 47.5%  9.9%
+[libx264 @ 0x133115610] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  3.3%  0.1%  0.2%  0.0%  0.0%    skip:96.2%
+[libx264 @ 0x133115610] 8x8 transform intra:47.5% inter:0.0%
+[libx264 @ 0x133115610] coded y,uvDC,uvAC intra: 22.6% 8.8% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x133115610] i16 v,h,dc,p: 33% 17% 23% 27%
+[libx264 @ 0x133115610] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26%  8% 47%  4%  2%  2%  1%  5%  3%
+[libx264 @ 0x133115610] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 18% 33%  4%  3%  5%  4%  2%  5%
+[libx264 @ 0x133115610] i8c dc,h,v,p: 94%  2%  4%  0%
+[libx264 @ 0x133115610] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x133115610] kb/s:37.25
+[libx264 @ 0x102705980] frame I:52    Avg QP:21.09  size:   834
+[libx264 @ 0x102705980] frame P:52    Avg QP:26.37  size:    49
+[libx264 @ 0x102705980] mb I  I16..4: 46.3% 46.9%  6.8%
+[libx264 @ 0x102705980] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4:  3.1%  0.3%  0.4%  0.0%  0.0%    skip:96.2%
+[libx264 @ 0x102705980] 8x8 transform intra:46.9%
+[libx264 @ 0x102705980] coded y,uvDC,uvAC intra: 24.8% 8.2% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x102705980] i16 v,h,dc,p: 24% 33% 14% 29%
+[libx264 @ 0x102705980] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 22% 42%  2%  4%  3%  6%  1%  4%
+[libx264 @ 0x102705980] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 15% 22%  6%  7%  6% 12%  4%  5%
+[libx264 @ 0x102705980] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x102705980] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x102705980] kb/s:35.31
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15bb17fd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b704240] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x136c889a0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d73f0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c817c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311d9a90] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/103 [00:00<?, ? examples/s]Map: 100%|██████████| 103/103 [00:00<00:00, 4035.24 examples/s]
+[libx264 @ 0x15006af90] frame I:52    Avg QP:21.37  size:   873
+[libx264 @ 0x15006af90] frame P:51    Avg QP:24.03  size:    49
+[libx264 @ 0x15006af90] mb I  I16..4: 46.9% 42.9% 10.2%
+[libx264 @ 0x15006af90] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.4%  0.1%  0.2%  0.0%  0.0%    skip:97.2%
+[libx264 @ 0x15006af90] 8x8 transform intra:42.8%
+[libx264 @ 0x15006af90] coded y,uvDC,uvAC intra: 20.9% 10.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x15006af90] i16 v,h,dc,p: 34% 19% 23% 23%
+[libx264 @ 0x15006af90] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 10% 42%  4%  3%  3%  2%  6%  4%
+[libx264 @ 0x15006af90] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 21% 32%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x15006af90] i8c dc,h,v,p: 92%  3%  5%  0%
+[libx264 @ 0x15006af90] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x15006af90] kb/s:37.22
+[libx264 @ 0x14a955c00] frame I:52    Avg QP:21.42  size:   886
+[libx264 @ 0x14a955c00] frame P:51    Avg QP:25.17  size:    48
+[libx264 @ 0x14a955c00] mb I  I16..4: 44.9% 46.4%  8.7%
+[libx264 @ 0x14a955c00] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  2.4%  0.2%  0.2%  0.0%  0.0%    skip:97.0%
+[libx264 @ 0x14a955c00] 8x8 transform intra:46.3%
+[libx264 @ 0x14a955c00] coded y,uvDC,uvAC intra: 25.1% 10.2% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14a955c00] i16 v,h,dc,p: 22% 32% 20% 26%
+[libx264 @ 0x14a955c00] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 23% 42%  3%  4%  3%  7%  2%  4%
+[libx264 @ 0x14a955c00] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 24% 21%  5%  4%  4% 12%  3%  3%
+[libx264 @ 0x14a955c00] i8c dc,h,v,p: 90%  4%  5%  0%
+[libx264 @ 0x14a955c00] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14a955c00] kb/s:37.70
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b7127b0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b7053c0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15b7059c0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x136c84380] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311f1080] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15bb17fd0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/111 [00:00<?, ? examples/s]Map: 100%|██████████| 111/111 [00:00<00:00, 4154.04 examples/s]
+[libx264 @ 0x152ef3b50] frame I:56    Avg QP:21.25  size:   875
+[libx264 @ 0x152ef3b50] frame P:55    Avg QP:24.22  size:    49
+[libx264 @ 0x152ef3b50] mb I  I16..4: 47.7% 42.2% 10.1%
+[libx264 @ 0x152ef3b50] mb P  I16..4:  0.2%  0.0%  0.0%  P16..4:  2.0%  0.2%  0.1%  0.0%  0.0%    skip:97.5%
+[libx264 @ 0x152ef3b50] 8x8 transform intra:42.1%
+[libx264 @ 0x152ef3b50] coded y,uvDC,uvAC intra: 19.6% 17.6% 0.0% inter: 0.0% 0.2% 0.0%
+[libx264 @ 0x152ef3b50] i16 v,h,dc,p: 37% 19% 22% 22%
+[libx264 @ 0x152ef3b50] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25%  9% 46%  4%  2%  2%  2%  6%  3%
+[libx264 @ 0x152ef3b50] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 19% 33%  3%  2%  4%  4%  2%  4%
+[libx264 @ 0x152ef3b50] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x152ef3b50] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x152ef3b50] kb/s:37.26
+[libx264 @ 0x14013d9e0] frame I:56    Avg QP:21.02  size:   814
+[libx264 @ 0x14013d9e0] frame P:55    Avg QP:26.50  size:    48
+[libx264 @ 0x14013d9e0] mb I  I16..4: 46.9% 46.2%  7.0%
+[libx264 @ 0x14013d9e0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.0%  0.2%  0.2%  0.0%  0.0%    skip:96.5%
+[libx264 @ 0x14013d9e0] 8x8 transform intra:46.1%
+[libx264 @ 0x14013d9e0] coded y,uvDC,uvAC intra: 23.8% 10.8% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x14013d9e0] i16 v,h,dc,p: 27% 36% 13% 25%
+[libx264 @ 0x14013d9e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 26% 42%  3%  4%  3%  5%  1%  4%
+[libx264 @ 0x14013d9e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 20% 23% 24%  6%  4%  5% 10%  3%  3%
+[libx264 @ 0x14013d9e0] i8c dc,h,v,p: 93%  3%  4%  0%
+[libx264 @ 0x14013d9e0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x14013d9e0] kb/s:34.76
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303e7a40] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b72aa80] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303dbf70] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x130ad2960] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x130ad2960] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15bb17fd0] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/101 [00:00<?, ? examples/s]Map: 100%|██████████| 101/101 [00:00<00:00, 4115.06 examples/s]
+[libx264 @ 0x1552be340] frame I:51    Avg QP:21.43  size:   877
+[libx264 @ 0x1552be340] frame P:50    Avg QP:24.23  size:    49
+[libx264 @ 0x1552be340] mb I  I16..4: 41.6% 48.6%  9.7%
+[libx264 @ 0x1552be340] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.4%  0.2%  0.2%  0.0%  0.0%    skip:97.2%
+[libx264 @ 0x1552be340] 8x8 transform intra:48.6%
+[libx264 @ 0x1552be340] coded y,uvDC,uvAC intra: 22.2% 9.4% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x1552be340] i16 v,h,dc,p: 34% 17% 24% 25%
+[libx264 @ 0x1552be340] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31%  8% 43%  3%  2%  2%  2%  5%  3%
+[libx264 @ 0x1552be340] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 19% 33%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x1552be340] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x1552be340] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x1552be340] kb/s:37.36
+[libx264 @ 0x153f2bb90] frame I:51    Avg QP:21.29  size:   859
+[libx264 @ 0x153f2bb90] frame P:50    Avg QP:24.88  size:    49
+[libx264 @ 0x153f2bb90] mb I  I16..4: 54.8% 37.1%  8.1%
+[libx264 @ 0x153f2bb90] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.9%  0.2%  0.2%  0.0%  0.0%    skip:96.6%
+[libx264 @ 0x153f2bb90] 8x8 transform intra:37.1%
+[libx264 @ 0x153f2bb90] coded y,uvDC,uvAC intra: 22.8% 9.6% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x153f2bb90] i16 v,h,dc,p: 30% 31% 19% 19%
+[libx264 @ 0x153f2bb90] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 22% 39%  4%  5%  3%  7%  3%  4%
+[libx264 @ 0x153f2bb90] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 20% 24%  4%  5%  5% 12%  3%  4%
+[libx264 @ 0x153f2bb90] i8c dc,h,v,p: 91%  3%  6%  0%
+[libx264 @ 0x153f2bb90] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x153f2bb90] kb/s:36.62
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15327b6a0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15327b6a0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x15328f990] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d73f0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15b72aa80] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311d4120] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/102 [00:00<?, ? examples/s]Map: 100%|██████████| 102/102 [00:00<00:00, 4119.03 examples/s]
+[libx264 @ 0x143e7d2e0] frame I:51    Avg QP:21.44  size:   873
+[libx264 @ 0x143e7d2e0] frame P:51    Avg QP:24.47  size:    48
+[libx264 @ 0x143e7d2e0] mb I  I16..4: 42.2% 47.8% 10.0%
+[libx264 @ 0x143e7d2e0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.4%  0.2%  0.1%  0.0%  0.0%    skip:97.2%
+[libx264 @ 0x143e7d2e0] 8x8 transform intra:47.8% inter:0.0%
+[libx264 @ 0x143e7d2e0] coded y,uvDC,uvAC intra: 22.0% 10.1% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x143e7d2e0] i16 v,h,dc,p: 37% 16% 23% 24%
+[libx264 @ 0x143e7d2e0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30%  8% 45%  3%  2%  2%  2%  5%  3%
+[libx264 @ 0x143e7d2e0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 19% 34%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x143e7d2e0] i8c dc,h,v,p: 93%  2%  5%  0%
+[libx264 @ 0x143e7d2e0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x143e7d2e0] kb/s:36.83
+[libx264 @ 0x151bb8f00] frame I:51    Avg QP:21.11  size:   841
+[libx264 @ 0x151bb8f00] frame P:51    Avg QP:25.81  size:    50
+[libx264 @ 0x151bb8f00] mb I  I16..4: 47.0% 45.1%  7.9%
+[libx264 @ 0x151bb8f00] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  3.5%  0.2%  0.3%  0.0%  0.0%    skip:96.0%
+[libx264 @ 0x151bb8f00] 8x8 transform intra:45.1%
+[libx264 @ 0x151bb8f00] coded y,uvDC,uvAC intra: 24.0% 7.7% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x151bb8f00] i16 v,h,dc,p: 29% 31% 15% 24%
+[libx264 @ 0x151bb8f00] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 20% 46%  3%  4%  3%  6%  2%  4%
+[libx264 @ 0x151bb8f00] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 18% 25%  5%  6%  5% 12%  4%  3%
+[libx264 @ 0x151bb8f00] i8c dc,h,v,p: 93%  3%  5%  0%
+[libx264 @ 0x151bb8f00] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x151bb8f00] kb/s:35.64
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x15326d4d0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1532a4b20] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x153298170] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d73f0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x153676dd0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311d2510] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/101 [00:00<?, ? examples/s]Map: 100%|██████████| 101/101 [00:00<00:00, 4134.25 examples/s]
+[libx264 @ 0x155bffca0] frame I:51    Avg QP:21.44  size:   876
+[libx264 @ 0x155bffca0] frame P:50    Avg QP:24.22  size:    48
+[libx264 @ 0x155bffca0] mb I  I16..4: 44.2% 45.7% 10.0%
+[libx264 @ 0x155bffca0] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.3%  0.2%  0.2%  0.0%  0.0%    skip:97.4%
+[libx264 @ 0x155bffca0] 8x8 transform intra:45.7%
+[libx264 @ 0x155bffca0] coded y,uvDC,uvAC intra: 22.7% 9.0% 0.0% inter: 0.0% 0.1% 0.0%
+[libx264 @ 0x155bffca0] i16 v,h,dc,p: 37% 16% 23% 24%
+[libx264 @ 0x155bffca0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29%  8% 43%  4%  3%  3%  2%  6%  3%
+[libx264 @ 0x155bffca0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 21% 32%  4%  3%  4%  4%  2%  4%
+[libx264 @ 0x155bffca0] i8c dc,h,v,p: 93%  2%  4%  0%
+[libx264 @ 0x155bffca0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x155bffca0] kb/s:37.28
+[libx264 @ 0x144f89120] frame I:51    Avg QP:21.25  size:   902
+[libx264 @ 0x144f89120] frame P:50    Avg QP:25.14  size:    48
+[libx264 @ 0x144f89120] mb I  I16..4: 48.3% 43.0%  8.7%
+[libx264 @ 0x144f89120] mb P  I16..4:  0.1%  0.0%  0.0%  P16..4:  2.8%  0.1%  0.1%  0.0%  0.0%    skip:96.9%
+[libx264 @ 0x144f89120] 8x8 transform intra:42.9%
+[libx264 @ 0x144f89120] coded y,uvDC,uvAC intra: 24.0% 8.7% 0.0% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0x144f89120] i16 v,h,dc,p: 29% 33% 17% 20%
+[libx264 @ 0x144f89120] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 24% 41%  3%  4%  3%  7%  2%  3%
+[libx264 @ 0x144f89120] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 22% 22%  5%  5%  5% 12%  3%  3%
+[libx264 @ 0x144f89120] i8c dc,h,v,p: 91%  4%  5%  0%
+[libx264 @ 0x144f89120] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x144f89120] kb/s:38.33
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d09b0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1311d09b0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1311d73f0] Starting second pass: moving the moov atom to the beginning of the file
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303ffaa0] Auto-inserting h264_mp4toannexb bitstream filter
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x1303ffaa0] Auto-inserting h264_mp4toannexb bitstream filter
+[mp4 @ 0x1303e2f90] Starting second pass: moving the moov atom to the beginning of the file
+Map:   0%|          | 0/108 [00:00<?, ? examples/s]Map: 100%|██████████| 108/108 [00:00<00:00, 4103.53 examples/s]
