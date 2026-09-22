@@ -20,15 +20,19 @@ def parse_seeds(s):
 
 def run(policy, task, bridge, masks, seed, tmp, strip_dir=None, strip_every=16):
     obs = task.reset(seed); policy.reset(); bridge.rebind(task.model, task.info, task.material)
-    masks = MaskRenderer(task.model, task.info)
+    masks = {v: MaskRenderer(task.model, task.info, camera=v) for v in policy.views}
+    def crit_patches():                                   # GT critical mask -> one bit per visual token (both views)
+        return np.concatenate([(masks[v](task.data)[0].reshape(14, 16, 14, 16).mean((1, 3)) >= 0.25).flatten() for v in policy.views])
     t0 = time.perf_counter(); done = False; keep_sets = []; frames = []; held = 0
     while not done:
         if policy.need_observation():
             imgs = []
             for v in policy.views:
                 bridge.sync(task.data, camera=v); bridge.render(str(tmp)); imgs.append(np.asarray(Image.open(tmp).convert("RGB")))
-            img = imgs[0]; policy.observe(imgs, obs, task.name)
-            if policy.diag: crit, _ = masks(task.data); keep_sets.append(dict(step=task.t, keep=policy.diag[-1].tolist(), crit_patches=(crit.reshape(14, 16, 14, 16).mean((1, 3)) >= 0.25).flatten().tolist()))
+            img = imgs[0]; crit = crit_patches() if getattr(policy, "accel", None) is not None else None
+            if crit is not None: policy.accel.gt_crit = crit
+            policy.observe(imgs, obs, task.name)
+            if crit is not None: keep_sets.append(dict(step=task.t, keep=np.packbits(policy.diag[-1]).tobytes().hex(), crit=np.packbits(crit).tobytes().hex(), n_keep=int(policy.diag[-1].sum()), n_crit=int(crit.sum()), recall=float((policy.diag[-1] & crit).sum() / max(crit.sum(), 1)), cost=policy.costs[-1]))
             if strip_dir is not None and task.t % strip_every == 0: frames.append(img)
         obs, done = task.step(policy.next_action(obs))
         held = held + 1 if task.success() else 0
@@ -39,7 +43,8 @@ def run(policy, task, bridge, masks, seed, tmp, strip_dir=None, strip_every=16):
     return dict(task=task.name, material=task.material, seed=seed, success=bool(succ), steps=task.t, failure="" if succ else task.failure_reason(),
                 fill=float(task.fill_level()), mark=float(task.info.mark_level), n_obs=len(policy.timings),
                 t_encoder=float(np.mean([x["encoder"] for x in policy.timings])), t_policy=float(np.mean([x["policy"] for x in policy.timings])),
-                wall=time.perf_counter() - t0, keep_sets=keep_sets)
+                wall=time.perf_counter() - t0, keep_sets=keep_sets,
+                gflops=float(np.mean([c["total_gflops"] for c in policy.costs])) if getattr(policy, "costs", None) else None)
 
 
 if __name__ == "__main__":
@@ -51,7 +56,7 @@ if __name__ == "__main__":
     a = ap.parse_args(); out = ROOT / a.out; out.mkdir(parents=True, exist_ok=True); strip_dir = out / "rollouts"; strip_dir.mkdir(exist_ok=True)
     log_path = out / f"{a.config}_{a.material}.jsonl"
     done = {(r["task"], r["seed"]) for r in (json.loads(l) for l in log_path.read_text().splitlines())} if log_path.exists() else set()
-    accel = {}
+    accel = None
     if a.config != "full":
         from accel import make_accel; accel = make_accel(a.config)
     if a.policy == "smolvla":

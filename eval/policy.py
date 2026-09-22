@@ -32,11 +32,14 @@ class ModelAPolicy:
         import pandas as pd
         self.text = np.load(feat / "text_tokens.fp16.npy"); tidx = pd.read_parquet(feat / "text_index.parquet")
         self.text_row = {(r.task, int(r.instruction_id)): (i, int(r.n_tokens)) for i, r in tidx.iterrows()}
-        self.exec_horizon, self.n_steps, self.accel = exec_horizon, n_steps, accel or {}
+        self.exec_horizon, self.n_steps, self.accel = exec_horizon, n_steps, (accel or None)
+        if self.accel is not None: self.accel.prepare(self.model)          # quant modifies the weights in place
+        self.n_vis = n_vis
         self.reset()
 
     def reset(self):
-        self.queue = []; self.timings = []; self.diag = []; self.prev_img = None; self.step_in_chunk = 0
+        self.queue = []; self.timings = []; self.diag = []; self.costs = []; self.prev_img = None; self.step_in_chunk = 0
+        if self.accel is not None: self.accel.reset()
 
     def need_observation(self): return len(self.queue) == 0
 
@@ -50,15 +53,16 @@ class ModelAPolicy:
         txt = torch.from_numpy(self.text[row])[None].to(self.dev); txt_mask = torch.zeros(1, 64, dtype=torch.bool, device=self.dev); txt_mask[0, :L] = True
         prop = np.concatenate([obs["qpos"], tcp10(obs["tcp_pos"], obs["tcp_R"], np.float32(obs["gripper"]))]).astype(np.float32)
         prop_t = torch.from_numpy(normalise_prop(prop, self.norm))[None].to(self.dev)
-        keep_visual = self.accel.get("keep_fn", lambda *_: None)(self, vis, img_uint8)
+        kw = self.accel.act_kwargs(self.n_vis, imgs, txt_mask, self.dev) if self.accel is not None else {}
         with torch.autocast(device_type=self.dev.type, dtype=torch.float16):
-            chunk, d = self.model.act(vis, txt, txt_mask, prop_t, n_steps=self.n_steps, keep_visual=keep_visual, return_attn=self.accel.get("return_attn", False))
+            chunk, d = self.model.act(vis, txt, txt_mask, prop_t, n_steps=self.n_steps, **kw)
         t2 = time.perf_counter()
         acts = denormalise_act(chunk[0].float().cpu().numpy(), self.norm)
         if self.norm.get("action_mode", "abs") == "delta": acts[:, :3] += np.asarray(obs["tcp_pos"], np.float32)
         self.queue = list(acts[: self.exec_horizon]); self.prev_img = img_uint8
         self.timings.append(dict(encoder=t1 - t0, policy=t2 - t1))
-        if keep_visual is not None: self.diag.append(keep_visual[0].cpu().numpy().astype(bool))
+        if self.accel is not None:
+            self.accel.finish(self.n_vis, txt_mask); self.diag.append(self.accel.last_keep.astype(bool)); self.costs.append(self.accel.last_cost)
         return acts
 
     def next_action(self, obs=None):

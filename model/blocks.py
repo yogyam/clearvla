@@ -47,6 +47,18 @@ class EncoderBlock(nn.Module):
         x = x + a; x = x + self.mlp(self.ln2(x))
         return x, att, kv_out
 
+    def forward_partial(self, x, r_idx, kv_cache, out_cache, key_mask=None):
+        """VLA-Cache-style step (B == 1): recompute only the tokens in `r_idx` (LongTensor (R,)). Their K/V and outputs
+        are fresh; every other token keeps the K/V and layer output cached from the previous observation.
+        x: (1,T,d) current layer input (only rows r_idx are read). Returns x_out (1,T,d), (k, v) (1,H,T,dh), att (1,H,R,T)."""
+        h = self.ln1(x[:, r_idx])
+        k_new, v_new = self.attn.kv(h)
+        k = kv_cache[0].clone(); v = kv_cache[1].clone(); k[:, :, r_idx] = k_new; v[:, :, r_idx] = v_new
+        a, att, _ = self.attn(h, key_mask=key_mask, kv=(k, v), return_attn=True)
+        xr = x[:, r_idx] + a; xr = xr + self.mlp(self.ln2(xr))
+        x_out = out_cache.clone(); x_out[:, r_idx] = xr
+        return x_out, (k, v), att
+
 
 class DecoderBlock(nn.Module):
     """Pre-norm block for the action expert: self-attention over the chunk + cross-attention to the prefix."""

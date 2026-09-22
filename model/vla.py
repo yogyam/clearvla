@@ -7,7 +7,9 @@ training: flow matching (velocity regression); inference: 10 Euler steps from no
 Acceleration hooks (Week 4):
   - forward_prefix(..., keep_visual=None, prune_after=2): boolean (B,196) mask applied after layer `prune_after`
     drops visual tokens from layers prune_after+1.. (FastV-style). Attention maps of every layer are returned.
-  - forward_prefix(..., reuse=None): dict {layer: (k, v, token_index)} for VLA-Cache-style K/V reuse (used later).
+  - forward_prefix(..., keep_fn=...): decide the keep set from layer-2 attention inside the forward (accel/prune.py).
+  - forward_prefix(..., cache=KVCache): layers 3.. recompute only the tokens in cache.r_idx, reusing cached K/V and
+    outputs for the rest (accel/cache.py, VLA-Cache-style).
 """
 from __future__ import annotations
 import torch, torch.nn as nn
@@ -35,8 +37,10 @@ class Prefix(nn.Module):
         p = self.prop_mlp(prop)[:, None] + self.pos_prop + self.type_emb[2]
         return torch.cat([v, t, p], 1)
 
-    def forward(self, vis, txt, txt_mask, prop, keep_visual=None, prune_after=2, return_attn=False):
-        """Returns memory (B,T',d), key mask (B,T'), token index (B,T') into the original 261 slots, attn maps."""
+    def forward(self, vis, txt, txt_mask, prop, keep_visual=None, prune_after=2, return_attn=False, keep_fn=None, cache=None):
+        """Returns memory (B,T',d), key mask (B,T'), token index (B,T') into the original slots, attn maps.
+        keep_fn(att, key_mask) -> (B,n_vis) bool is called with layer `prune_after`'s attention to decide the keep set
+        (Prune / Protect). `cache` is an accel.cache.KVCache: layers after `prune_after` recompute only cache.r_idx."""
         B = vis.shape[0]
         x = self.embed(vis, txt, prop)
         key_mask = torch.cat([torch.ones(B, self.n_vis, dtype=torch.bool, device=x.device), txt_mask.bool(),
@@ -44,8 +48,15 @@ class Prefix(nn.Module):
         index = torch.arange(x.shape[1], device=x.device)[None].expand(B, -1)
         attns = []
         for i, blk in enumerate(self.blocks):
-            x, att, _ = blk(x, key_mask=key_mask, return_attn=return_attn or (keep_visual is not None and i == prune_after))
+            need_att = return_attn or (i == prune_after and (keep_visual is not None or keep_fn is not None))
+            if cache is not None and i > prune_after and cache.ready(i):
+                x, att = cache.apply(blk, i, x, key_mask)
+            else:
+                x_in = x
+                x, att, kv = blk(x, key_mask=key_mask, return_attn=need_att)
+                if cache is not None and i > prune_after: cache.store(i, x_in, kv, x)
             if return_attn: attns.append(att)
+            if i == prune_after and keep_visual is None and keep_fn is not None: keep_visual = keep_fn(att, key_mask)
             if keep_visual is not None and i == prune_after:
                 keep = torch.cat([keep_visual.bool(), torch.ones(B, x.shape[1] - self.n_vis, dtype=torch.bool, device=x.device)], 1)
                 # all rows keep the same count (budget), so gather to a dense tensor
@@ -88,9 +99,9 @@ class ClearVLA(nn.Module):
         return (err * act_mask).sum() / act_mask.sum()
 
     @torch.no_grad()
-    def act(self, vis, txt, txt_mask, prop, n_steps=10, keep_visual=None, return_attn=False):
+    def act(self, vis, txt, txt_mask, prop, n_steps=10, keep_visual=None, return_attn=False, keep_fn=None, cache=None):
         """Returns a normalised (B,16,10) action chunk plus prefix diagnostics."""
-        mem, mask, index, attns = self.prefix(vis, txt, txt_mask, prop, keep_visual=keep_visual, return_attn=return_attn)
+        mem, mask, index, attns = self.prefix(vis, txt, txt_mask, prop, keep_visual=keep_visual, return_attn=return_attn, keep_fn=keep_fn, cache=cache)
         B = vis.shape[0]; x = torch.randn(B, CHUNK, ACT_DIM, device=vis.device)
         ctx_kv = None
         for i in range(n_steps):
