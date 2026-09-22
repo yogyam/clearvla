@@ -34,8 +34,7 @@ def compute(material, ckpt="checkpoints/v4"):
         iid = f["instruction_id"][:]; qpos = f["qpos"][:]; tcp_pos = f["tcp_pos"][:]; tcp_R = f["tcp_R"][:]; grip = f["gripper"][:]; succ = f["expert_success"][:]
         out = open(ROOT / "results/week4" / f"h1_{material}.jsonl", "w"); prev = None
         for i in range(len(tasks)):
-            imgs = images[i]; crit_v = [crit_bits(masks[i][:1].repeat(2, 0))[:196], crit_bits(masks[i][1:].repeat(2, 0))[:196]]
-            crit = np.concatenate(crit_v)
+            imgs = images[i]; crit = crit_bits(masks[i])
             with torch.no_grad():
                 vis = torch.cat([pol.enc(im) for im in imgs], 1)
                 row, L = pol.text_row[(tasks[i], int(iid[i]))]
