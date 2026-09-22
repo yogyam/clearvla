@@ -53,7 +53,7 @@ class ModelAPolicy:
         txt = torch.from_numpy(self.text[row])[None].to(self.dev); txt_mask = torch.zeros(1, 64, dtype=torch.bool, device=self.dev); txt_mask[0, :L] = True
         prop = np.concatenate([obs["qpos"], tcp10(obs["tcp_pos"], obs["tcp_R"], np.float32(obs["gripper"]))]).astype(np.float32)
         prop_t = torch.from_numpy(normalise_prop(prop, self.norm))[None].to(self.dev)
-        kw = self.accel.act_kwargs(self.n_vis, imgs, txt_mask, self.dev) if self.accel is not None else {}
+        kw = self.accel.act_kwargs(self.n_vis, imgs, txt_mask, self.dev, vis=vis) if self.accel is not None else {}
         with torch.autocast(device_type=self.dev.type, dtype=torch.float16):
             chunk, d = self.model.act(vis, txt, txt_mask, prop_t, n_steps=self.n_steps, **kw)
         t2 = time.perf_counter()

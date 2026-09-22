@@ -1,6 +1,8 @@
 """Acceleration configs for Model A (Week 4). `make_accel(name)` -> Accel object consumed by eval.policy.ModelAPolicy.
 
-Names: full | prune50 prune25 prune12 | cache50 cache25 cache12 | quant4 | protect_prune25 protect_cache25
+Names: full | prune50 prune25 prune12 | cache50 cache25 cache12 | cachef50 cachef25 cachef12 | quant4 | protect_prune25 protect_cache25
+cachef = same K/V reuse as cache, but tokens are ranked by the change of their SigLIP feature vector (cosine) instead of
+their raw pixels (Week 5 variant: tests whether the pixel criterion or the reuse itself is what fails).
 Budget = fraction of the visual tokens (both views, 392 in v4) that get full prefix compute after layer 2.
 Protect = the same as prune25 / cache25 but tokens overlapping the GT critical mask (>= 25 % of the patch) are always
 kept / recomputed; the GT mask comes from the simulator, so Protect is an upper bound (H5)."""
@@ -18,26 +20,29 @@ BUDGETS = {"50": 0.5, "25": 0.25, "12": 0.125, "100": 1.0}
 class Accel:
     def __init__(self, name: str):
         self.name = name
-        m = re.fullmatch(r"(protect_)?(prune|cache)(\d+)", name)
+        m = re.fullmatch(r"(protect_)?(prune|cache|cachef)(\d+)", name)
         if name == "full": self.method, self.budget, self.protect = "full", 1.0, False
         elif name == "quant4": self.method, self.budget, self.protect = "quant", 1.0, False
         elif m: self.protect, self.method, self.budget = bool(m.group(1)), m.group(2), BUDGETS[m.group(3)]
         else: raise ValueError(f"unknown accel config {name}")
+        self.criterion = "feat" if self.method == "cachef" else "pixel"
+        if self.method == "cachef": self.method = "cache"
         self.needs_gt = self.protect
         self.cache = KVCache() if self.method == "cache" else None
         self.last_keep = None; self.last_cost = None; self.gt_crit = None; self.quant_stats = None
-        self._prev_imgs = None
+        self._prev_imgs = None; self._prev_vis = None
 
     def prepare(self, model):
         if self.method == "quant": self.quant_stats = fake_quant_model(model)
         return self
 
     def reset(self):
-        self._prev_imgs = None; self.last_keep = None
+        self._prev_imgs = None; self._prev_vis = None; self.last_keep = None
         if self.cache is not None: self.cache.reset()
 
-    def act_kwargs(self, n_vis: int, imgs: list, txt_mask: torch.Tensor, dev) -> dict:
-        """Called once per observation before model.act. `imgs`: list of uint8 views in token order."""
+    def act_kwargs(self, n_vis: int, imgs: list, txt_mask: torch.Tensor, dev, vis: torch.Tensor | None = None) -> dict:
+        """Called once per observation before model.act. `imgs`: list of uint8 views in token order; `vis`: (1,n_vis,768)
+        SigLIP features of this observation (used by the feature-change cache criterion)."""
         k = int(round(self.budget * n_vis)); n_txt_valid = int(txt_mask.sum())
         protect = None
         if self.protect:
@@ -56,11 +61,19 @@ class Accel:
         if self._prev_imgs is None:
             self.cache.r_idx = None; self.last_keep = np.ones(n_vis, bool); self.last_cost = cost("full", n_vis, n_txt_valid, n_vis)
         else:
-            m = changed_mask(self._prev_imgs, imgs, k, protect); self.last_keep = m
+            if self.criterion == "feat":
+                a, b = self._prev_vis, vis[0].float()
+                sim = ((a * b).sum(1) / (a.norm(dim=1) * b.norm(dim=1) + 1e-6)).cpu().numpy()
+                if protect is not None: sim = sim.copy(); sim[protect] = -np.inf
+                kk = max(k, int(protect.sum()) if protect is not None else 0)
+                m = np.zeros(n_vis, bool); m[np.argsort(sim)[:kk]] = True
+            else: m = changed_mask(self._prev_imgs, imgs, k, protect)
+            self.last_keep = m
             T = n_vis + txt_mask.shape[1] + 1
             r = np.concatenate([np.nonzero(m)[0], np.arange(n_vis, T)])
             self.cache.r_idx = torch.from_numpy(r).long().to(dev); self.last_cost = cost("cache", n_vis, n_txt_valid, int(m.sum()))
         self._prev_imgs = [np.asarray(im).copy() for im in imgs]
+        if vis is not None: self._prev_vis = vis[0].float().clone()
         return dict(cache=self.cache)
 
     def finish(self, n_vis: int, txt_mask: torch.Tensor):
