@@ -30,7 +30,7 @@ def run(policy, task, bridge, masks, seed, tmp, strip_dir=None, strip_every=16):
             img = imgs[0]; policy.observe(imgs, obs, task.name)
             if policy.diag: crit, _ = masks(task.data); keep_sets.append(dict(step=task.t, keep=policy.diag[-1].tolist(), crit_patches=(crit.reshape(14, 16, 14, 16).mean((1, 3)) >= 0.25).flatten().tolist()))
             if strip_dir is not None and task.t % strip_every == 0: frames.append(img)
-        obs, done = task.step(policy.next_action())
+        obs, done = task.step(policy.next_action(obs))
         held = held + 1 if task.success() else 0
         if held >= 20: break                      # success sustained for 2 s: terminate early
     succ = task.success()

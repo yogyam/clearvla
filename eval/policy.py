@@ -61,5 +61,5 @@ class ModelAPolicy:
         if keep_visual is not None: self.diag.append(keep_visual[0].cpu().numpy().astype(bool))
         return acts
 
-    def next_action(self):
+    def next_action(self, obs=None):
         a = self.queue.pop(0); a[9] = float(np.clip(a[9], 0, 1)); return a

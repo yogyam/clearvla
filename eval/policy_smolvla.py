@@ -5,7 +5,7 @@ The checkpoint dir is a lerobot `pretrained_model` folder (config.json, model.sa
 pre/post-processor pipelines). The saved preprocessor does everything the training pipeline did: renames our
 `front`/`wrist` views to the pretrained `camera1`/`camera2` slots, tokenises the instruction, normalises the
 9-D joint state with the dataset stats, and moves tensors to the device. The postprocessor de-normalises the
-10-D action [delta-xyz, rot6d, gripper]; we add the TCP back for xyz (dataset exported with delta actions).
+10-D action [delta-xyz, rot6d, gripper]; xyz is relative to the TCP at the executed step (see next_action).
 """
 from __future__ import annotations
 import json, time
@@ -59,8 +59,11 @@ class SmolVLAPolicyWrapper:
         a = self.policy.select_action(dict(self._batch))          # pops the queue; new inference only when it empties
         return self.post(a)[0].float().cpu().numpy()[:10].copy()
 
-    def next_action(self):
+    def next_action(self, obs=None):
         a = self._pending if self._n_since_obs == 0 else self._pop()
-        if self.delta: a[:3] += self._tcp
+        # the export stores each frame's xyz as (target - TCP at that same frame), so add the *live* TCP at
+        # execution time, not the TCP at observation time (that made the arm creep ~1 cm per chunk)
+        tcp = np.asarray(obs["tcp_pos"], np.float32) if obs is not None else self._tcp
+        if self.delta: a[:3] += tcp
         a[9] = float(np.clip(a[9], 0, 1)); self._n_since_obs += 1
         return a
