@@ -3,7 +3,7 @@
 set -u
 cd /Users/yogyamehrotra/Desktop/ClearVLA
 source ~/miniconda3/etc/profile.d/conda.sh
-RUN=${1:-smolvla_v1}; OUT=results/smolvla/v1
+RUN=${1:-smolvla_v1}; STEP=${2:-020000}; OUT=results/smolvla/v1   # `last` is a symlink the volume CLI cannot fetch; name the step dir
 log() { echo "$(date '+%H:%M:%S') $*" >> $OUT/orchestrate.log; }
 conda activate clearvla
 log "waiting for Modal run $RUN to exit"
@@ -14,7 +14,7 @@ done
 log "modal: $st"
 if ! echo "$st" | grep -q "^exit 0"; then log "training failed; stopping"; exit 1; fi
 rm -rf checkpoints/smolvla_v1/final && mkdir -p checkpoints/smolvla_v1/final
-modal volume get clearvla-data runs/$RUN/lerobot/checkpoints/last/pretrained_model checkpoints/smolvla_v1/final/ --force >> $OUT/orchestrate.log 2>&1
+modal volume get clearvla-data runs/$RUN/lerobot/checkpoints/$STEP/pretrained_model checkpoints/smolvla_v1/final/ --force >> $OUT/orchestrate.log 2>&1
 ls checkpoints/smolvla_v1/final/pretrained_model/model.safetensors || { log "download failed"; exit 1; }
 log "checkpoint downloaded: $(du -sh checkpoints/smolvla_v1/final | cut -f1)"
 conda activate lerobot311
