@@ -1,6 +1,6 @@
 # ClearVLA: do VLA speed-ups fail on transparent lab objects?
 
-**Pre-registered answer: no.** Token pruning, cross-observation token caching and INT4 weights cost the same task success on glass as on opaque lab objects at every usable budget. What the study found instead, on 6,100 paired closed-loop episodes with a from-scratch 30 M-parameter VLA:
+**Pre-registered answer: no.** Token pruning, cross-observation token caching and INT4 weights cost the same task success on glass as on opaque lab objects at every usable budget. What the study found instead, on 3,400 paired closed-loop episodes with the final instrument with a from-scratch 30 M-parameter VLA:
 
 1. **Attention-ranked pruning keeps the object's patches at chance and it barely matters** down to a 25 % budget: by layer 2 the object's information has left the visual tokens. An oracle that protects the object changes nothing.
 2. **Pixel-change token caching is catastrophic for a frozen-ViT policy** (0 % grasp and pour at 50 %, 25 %, and with a feature-change criterion): patches whose pixels do not move still have tokens that do (cosine 0.81 to the previous frame). Material-independent.

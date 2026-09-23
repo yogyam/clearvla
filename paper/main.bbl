@@ -1,0 +1,215 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Akbari et~al.(2026)Akbari, Akbari, Eskandar, Tan
+  et~al.}]{akbari2026actquant}
+Arash Akbari, Arman Akbari, Masih Eskandar, Qitao Tan, et~al. 2026.
+\newblock {ActQuant}: Sub-4-bit action-guided quantization for
+  vision-language-action models.
+\newblock \emph{arXiv preprint arXiv:2605.24011}.
+
+\bibitem[{Black et~al.(2025)Black, Brown, Driess, Esmail et~al.}]{black2025pi0}
+Kevin Black, Noah Brown, Danny Driess, Adnan Esmail, et~al. 2025.
+\newblock $\pi_0$: A vision-language-action flow model for general robot
+  control.
+\newblock In \emph{Robotics: Science and Systems (RSS)}.
+\newblock ArXiv:2410.24164.
+
+\bibitem[{{Blender Foundation}(2026)}]{blender2026}
+{Blender Foundation}. 2026.
+\newblock Blender 5.2 and the {Cycles} renderer.
+\newblock \url{https://www.blender.org}.
+
+\bibitem[{Cadene et~al.(2024)Cadene, Alibert, Soare, Gallouedec, Zouitine, and
+  Wolf}]{cadene2024lerobot}
+Remi Cadene, Simon Alibert, Alexander Soare, Quentin Gallouedec, Adil Zouitine,
+  and Thomas Wolf. 2024.
+\newblock {LeRobot}: State-of-the-art machine learning for real-world robotics
+  in {PyTorch}.
+\newblock \url{https://github.com/huggingface/lerobot}.
+
+\bibitem[{Chen et~al.(2024)Chen, Zhao, Liu, Bai, Lin, Zhou, and
+  Chang}]{chen2024fastv}
+Liang Chen, Haozhe Zhao, Tianyu Liu, Shuai Bai, Junyang Lin, Chang Zhou, and
+  Baobao Chang. 2024.
+\newblock An image is worth 1/2 tokens after layer 2: Plug-and-play inference
+  acceleration for large vision-language models.
+\newblock In \emph{European Conference on Computer Vision (ECCV)}.
+\newblock ArXiv:2403.06764.
+
+\bibitem[{Cheng et~al.(2026)Cheng, Li, Wang, Wang et~al.}]{cheng2026vlaiap}
+Jintao Cheng, Weibin Li, Haozhe Wang, Gang Wang, et~al. 2026.
+\newblock Training-free interaction-aligned visual token pruning for efficient
+  embodied manipulation.
+\newblock \emph{arXiv preprint arXiv:2603.22991}.
+
+\bibitem[{Fang et~al.(2026)Fang, Zhuang, and Miao}]{fang2026sevo}
+Tianchonghui Fang, Yuan Zhuang, and Fei Miao. 2026.
+\newblock {SEVO}: Semantic-enhanced virtual observation for robust {VLA}
+  manipulation via active illumination and data-centric collection.
+\newblock \emph{arXiv preprint arXiv:2605.11114}.
+
+\bibitem[{Fei et~al.(2025)Fei, Wang, Shi, Dai et~al.}]{fei2025liberoplus}
+Senyu Fei, Siyin Wang, Junhao Shi, Zihao Dai, et~al. 2025.
+\newblock {LIBERO-Plus}: In-depth robustness analysis of vision-language-action
+  models.
+\newblock \emph{arXiv preprint arXiv:2510.13626}.
+
+\bibitem[{Jabbour et~al.(2025)Jabbour, Kim, Smith, Patrikar
+  et~al.}]{jabbour2025scissors}
+Jason Jabbour, Dong-Ki Kim, Max Smith, Jay Patrikar, et~al. 2025.
+\newblock Don't run with scissors: Pruning breaks {VLA} models but they can be
+  recovered.
+\newblock \emph{arXiv preprint arXiv:2510.08464}.
+
+\bibitem[{Kim et~al.(2024)Kim, Pertsch, Karamcheti, Xiao
+  et~al.}]{kim2024openvla}
+Moo~Jin Kim, Karl Pertsch, Siddharth Karamcheti, Ted Xiao, et~al. 2024.
+\newblock {OpenVLA}: An open-source vision-language-action model.
+\newblock In \emph{Conference on Robot Learning (CoRL)}.
+\newblock ArXiv:2406.09246.
+
+\bibitem[{Lan et~al.(2025)Lan, Jiang, Wang, Xie et~al.}]{lan2025autobio}
+Zhiqian Lan, Yuxuan Jiang, Ruiqi Wang, Xuanbing Xie, et~al. 2025.
+\newblock {AutoBio}: A simulation and benchmark for robotic automation in
+  digital biology laboratory.
+\newblock \emph{arXiv preprint arXiv:2505.14030}.
+
+\bibitem[{Laskey et~al.(2017)Laskey, Lee, Fox, Dragan, and
+  Goldberg}]{laskey2017dart}
+Michael Laskey, Jonathan Lee, Roy Fox, Anca Dragan, and Ken Goldberg. 2017.
+\newblock {DART}: Noise injection for robust imitation learning.
+\newblock In \emph{Conference on Robot Learning (CoRL)}.
+\newblock ArXiv:1703.09327.
+
+\bibitem[{Li et~al.(2025)Li, Hu, Qu, Zhang et~al.}]{li2025labutopia}
+Rui Li, Zixuan Hu, Wenxi Qu, Jinouwen Zhang, et~al. 2025.
+\newblock {LabUtopia}: High-fidelity simulation and hierarchical benchmark for
+  scientific embodied agents.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS),
+  Datasets and Benchmarks Track}.
+\newblock ArXiv:2505.22634.
+
+\bibitem[{Li et~al.(2024)Li, Hsu, Gu, Pertsch et~al.}]{li2024simpler}
+Xuanlin Li, Kyle Hsu, Jiayuan Gu, Karl Pertsch, et~al. 2024.
+\newblock Evaluating real-world robot manipulation policies in simulation.
+\newblock In \emph{Conference on Robot Learning (CoRL)}.
+\newblock ArXiv:2405.05941.
+
+\bibitem[{Liu et~al.(2023)Liu, Zhu, Gao, Feng, Liu, Zhu, and
+  Stone}]{liu2023libero}
+Bo~Liu, Yifeng Zhu, Chongkai Gao, Yihao Feng, Qiang Liu, Yuke Zhu, and Peter
+  Stone. 2023.
+\newblock {LIBERO}: Benchmarking knowledge transfer for lifelong robot
+  learning.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS),
+  Datasets and Benchmarks Track}.
+\newblock ArXiv:2306.03310.
+
+\bibitem[{Liu et~al.(2025)Liu, Chen, Cai, Lin et~al.}]{liu2025vlapruner}
+Ziyan Liu, Yeqiu Chen, Hongyi Cai, Tao Lin, et~al. 2025.
+\newblock Bridging the semantic-action gap in visual token pruning for
+  efficient {VLA} inference.
+\newblock \emph{arXiv preprint arXiv:2511.16449}.
+
+\bibitem[{Morgan et~al.(2026)Morgan, Oh, Vijay, Song, Arora
+  et~al.}]{morgan2026colosseum}
+Jeremy Morgan, Hyeonho Oh, Prajwal Vijay, Jincen Song, Ashvin Arora, et~al.
+  2026.
+\newblock {Colosseum V2}: Benchmarking generalization for
+  vision-language-action models.
+\newblock \emph{IEEE Robotics and Automation Letters}.
+\newblock ArXiv:2605.27759.
+
+\bibitem[{Nosek et~al.(2018)Nosek, Ebersole, DeHaven, and
+  Mellor}]{nosek2018preregistration}
+Brian~A. Nosek, Charles~R. Ebersole, Alexander~C. DeHaven, and David~T. Mellor.
+  2018.
+\newblock The preregistration revolution.
+\newblock \emph{Proceedings of the National Academy of Sciences},
+  115(11):2600--2606.
+
+\bibitem[{Ren et~al.(2026)Ren, Liu, Chen, Liu et~al.}]{ren2026labvla}
+Baochang Ren, Xinjie Liu, Xi~Chen, Yanshuo Liu, et~al. 2026.
+\newblock {LabVLA}: Grounding vision-language-action models in scientific
+  laboratories.
+\newblock \emph{arXiv preprint arXiv:2606.13578}.
+
+\bibitem[{Shukor et~al.(2025)Shukor, Aubakirova, Capuano, Kooijmans
+  et~al.}]{shukor2025smolvla}
+Mustafa Shukor, Dana Aubakirova, Francesco Capuano, Pepijn Kooijmans, et~al.
+  2025.
+\newblock {SmolVLA}: A vision-language-action model for affordable and
+  efficient robotics.
+\newblock \emph{arXiv preprint arXiv:2506.01844}.
+
+\bibitem[{Todorov et~al.(2012)Todorov, Erez, and Tassa}]{todorov2012mujoco}
+Emanuel Todorov, Tom Erez, and Yuval Tassa. 2012.
+\newblock {MuJoCo}: A physics engine for model-based control.
+\newblock In \emph{IEEE/RSJ International Conference on Intelligent Robots and
+  Systems (IROS)}.
+
+\bibitem[{Wang et~al.(2026)Wang, Li, Lyu, Liu et~al.}]{wang2026holoq}
+Xinyu Wang, Mingze Li, Sicheng Lyu, Dongxiu Liu, et~al. 2026.
+\newblock {HoloQ-VLA}: Uniform {W4A4} quantization of vision-language-action
+  models.
+\newblock \emph{arXiv preprint arXiv:2605.28803}.
+
+\bibitem[{Wei et~al.(2026)Wei, Fan, Guo, Zhen et~al.}]{wei2026learnedcache}
+Yujie Wei, Jiahan Fan, Jiyu Guo, Ruichen Zhen, et~al. 2026.
+\newblock Learning to accelerate vision-language-action models through adaptive
+  visual token caching.
+\newblock \emph{arXiv preprint arXiv:2602.00686}.
+
+\bibitem[{Xu et~al.(2025)Xu, Wang, Xia, Zhu, Huang, and Xu}]{xu2025vlacache}
+Siyu Xu, Yunke Wang, Chenghao Xia, Dihao Zhu, Tao Huang, and Chang Xu. 2025.
+\newblock {VLA-Cache}: Efficient vision-language-action manipulation via
+  adaptive token caching.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}.
+\newblock ArXiv:2502.02175.
+
+\bibitem[{Yan et~al.(2026)Yan, Wan, Ye, Yu, Du, You, and Tsang}]{yan2026hbvla}
+Xin Yan, Zhenglin Wan, Feiyang Ye, Xingrui Yu, Hangyu Du, Yang You, and Ivor
+  Tsang. 2026.
+\newblock {HBVLA}: Pushing 1-bit post-training quantization for
+  vision-language-action models.
+\newblock \emph{arXiv preprint arXiv:2602.13710}.
+
+\bibitem[{Yang et~al.(2025)Yang, Wang, Wen, Zhongwei, Zou, Zhang, Wen, and
+  Zhang}]{yang2025efficientvla}
+Yantai Yang, Yuhao Wang, Zichen Wen, Luo Zhongwei, Chang Zou, Zhipeng Zhang,
+  Chuan Wen, and Linfeng Zhang. 2025.
+\newblock {EfficientVLA}: Training-free acceleration and compression for
+  vision-language-action models.
+\newblock \emph{arXiv preprint arXiv:2506.10100}.
+
+\bibitem[{Yu et~al.(2025)Yu, Wang, Zeng, Zhang et~al.}]{yu2025survey}
+Zhaoshu Yu, Bo~Wang, Pengpeng Zeng, Haonan Zhang, et~al. 2025.
+\newblock A survey on efficient vision-language-action models.
+\newblock \emph{arXiv preprint arXiv:2510.24795}.
+
+\bibitem[{Zakka et~al.(2022)Zakka, Tassa, and {MuJoCo Menagerie
+  Contributors}}]{menagerie2022}
+Kevin Zakka, Yuval Tassa, and {MuJoCo Menagerie Contributors}. 2022.
+\newblock {MuJoCo Menagerie}: A collection of high-quality simulation models
+  for {MuJoCo}.
+\newblock \url{https://github.com/google-deepmind/mujoco_menagerie}.
+
+\bibitem[{Zhai et~al.(2023)Zhai, Mustafa, Kolesnikov, and
+  Beyer}]{zhai2023siglip}
+Xiaohua Zhai, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer. 2023.
+\newblock Sigmoid loss for language image pre-training.
+\newblock In \emph{IEEE/CVF International Conference on Computer Vision
+  (ICCV)}.
+\newblock ArXiv:2303.15343.
+
+\bibitem[{Zhang et~al.(2026)Zhang, Hsieh, Wan, Lin et~al.}]{zhang2026quantvla}
+Jingxuan Zhang, Yunta Hsieh, Zhongwei Wan, Haokun Lin, et~al. 2026.
+\newblock {QuantVLA}: Scale-calibrated post-training quantization for
+  vision-language-action models.
+\newblock In \emph{IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}.
+\newblock ArXiv:2602.20309.
+
+\end{thebibliography}
