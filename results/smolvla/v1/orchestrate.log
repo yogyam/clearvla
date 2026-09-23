@@ -1,0 +1,17 @@
+21:36:24 waiting for Modal run smolvla_v1 to exit
+22:58:23 modal: exit 0 after 101.4 min
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ No such file or directory                                                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+22:58:24 download failed
+23:07:36 waiting for Modal run smolvla_v1 to exit
+23:07:42 modal: exit 0 after 101.4 min
+✓ Finished downloading files to local!
+23:08:29 checkpoint downloaded: 880M
+23:08:29 gate launched (opaque + glass in parallel)
+23:18:34 checkpoint already local; skipping wait/download
+23:18:34 waiting for Modal run smolvla_v1 to exit
+23:18:34 gate launched (opaque + glass in parallel)
+01:44:33 gate episodes done: done 300 new episodes in 142.4 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/smolvla/v1/full_opaque.jsonl | done 300 new episodes in 145.8 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/smolvla/v1/full_glass.jsonl
+01:44:34 gate report: results/smolvla/v1/gate_report_full.md
+01:44:34 gate done

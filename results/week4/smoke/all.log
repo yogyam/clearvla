@@ -1,0 +1,11 @@
+full: done 10 new episodes in 2.2 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/full_opaque.jsonl
+prune50: done 0 new episodes in 0.0 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/prune50_opaque.jsonl
+prune25: done 0 new episodes in 0.0 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/prune25_opaque.jsonl
+prune12: done 10 new episodes in 2.6 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/prune12_opaque.jsonl
+cache50: done 10 new episodes in 4.6 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/cache50_opaque.jsonl
+cache25: done 0 new episodes in 0.0 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/cache25_opaque.jsonl
+cache12: done 10 new episodes in 4.4 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/cache12_opaque.jsonl
+quant4: done 10 new episodes in 2.3 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/quant4_opaque.jsonl
+protect_prune25: done 10 new episodes in 2.4 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/protect_prune25_opaque.jsonl
+protect_cache25: done 10 new episodes in 4.4 min -> /Users/yogyamehrotra/Desktop/ClearVLA/results/week4/smoke/protect_cache25_opaque.jsonl
+smoke done

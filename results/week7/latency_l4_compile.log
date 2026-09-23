@@ -1,0 +1,77 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/atlas-verification/main/ap-XK5I3Qc8MpXrmdKdHiWqam
+✓ Created objects.
+├── 🔨 Created mount /Users/yogyamehrotra/Desktop/ClearVLA/jobs/latency_trt.py
+├── 🔨 Created mount PythonPackage:model
+└── 🔨 Created function run.
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 25.06 (build 177567386)
+PyTorch Version 2.8.0a0+5228986
+Container image Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Copyright (c) 2014-2024 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+
+W0923 07:37:51.878000 2 torch/_inductor/utils.py:1281] [0/0] Not enough SMs to use max_autotune_gemm mode
+compile full 5.44 ms
+compile prune50 5.17 ms
+compile prune25 4.88 ms
+compile prune12 4.67 ms
+siglip eager 5.477966999990258
+siglip compile 2.491171999992048
+{
+ "gpu": "NVIDIA L4",
+ "torch": "2.8.0a0+5228986c39.nv25.06",
+ "n": 300,
+ "runs": [
+  {
+   "mode": "compile",
+   "config": "full",
+   "tokens_after_l2": 457,
+   "ms_per_obs": 5.439604999999403
+  },
+  {
+   "mode": "compile",
+   "config": "prune50",
+   "tokens_after_l2": 261,
+   "ms_per_obs": 5.165695500004119
+  },
+  {
+   "mode": "compile",
+   "config": "prune25",
+   "tokens_after_l2": 163,
+   "ms_per_obs": 4.876905499997974
+  },
+  {
+   "mode": "compile",
+   "config": "prune12",
+   "tokens_after_l2": 114,
+   "ms_per_obs": 4.668241499999226
+  }
+ ],
+ "siglip_two_views_eager_ms": 5.477966999990258,
+ "siglip_two_views_compile_ms": 2.491171999992048
+}
+✓ App completed. View run at 
+https://modal.com/apps/atlas-verification/main/ap-XK5I3Qc8MpXrmdKdHiWqam

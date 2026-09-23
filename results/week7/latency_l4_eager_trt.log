@@ -1,0 +1,216 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/atlas-verification/main/ap-q4BcVzLTsiQyrIP7yraQyU
+✓ Created objects.
+├── 🔨 Created mount /Users/yogyamehrotra/Desktop/ClearVLA/jobs/latency_trt.py
+├── 🔨 Created mount PythonPackage:model
+└── 🔨 Created function run.
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 25.06 (build 177567386)
+PyTorch Version 2.8.0a0+5228986
+Container image Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Copyright (c) 2014-2024 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+
+eager full 64.84 ms
+eager prune50 65.27 ms
+eager prune25 64.05 ms
+eager prune12 64.09 ms
+W0923 07:31:18.796000 2 torch/_inductor/utils.py:1281] [0/0] Not enough SMs to use max_autotune_gemm mode
+compile full ERROR RuntimeError('Error: accessing tensor output of CUDAGraphs that has been overwritten by a subsequent run. Stack trace: File "/root/latency_trt.py", line 47, in forward\n    return s.p.ln_f(x). To prev
+compile prune50 ERROR AssertionError()
+compile prune25 ERROR AssertionError()
+compile prune12 ERROR AssertionError()
+WARNING:torch_tensorrt.dynamo.conversion.converter_utils:TensorRT-LLM is not installed. Please install TensorRT-LLM or set TRTLLM_PLUGINS_PATH to the directory containing libnvinfer_plugin_tensorrt_llm.so to use converters for torch.distributed ops
+[09/23/2026-07:32:07] [TRT] [W] Functionality provided through tensorrt.plugin module is experimental.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+tensorrt full 5.51 ms
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+tensorrt prune50 5.72 ms
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+tensorrt prune25 5.82 ms
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+tensorrt prune12 6.05 ms
+siglip eager 7.275992500012762
+siglip ERROR AssertionError()
+{
+ "gpu": "NVIDIA L4",
+ "torch": "2.8.0a0+5228986c39.nv25.06",
+ "n": 300,
+ "runs": [
+  {
+   "mode": "eager",
+   "config": "full",
+   "tokens_after_l2": 457,
+   "ms_per_obs": 64.84193200000021
+  },
+  {
+   "mode": "eager",
+   "config": "prune50",
+   "tokens_after_l2": 261,
+   "ms_per_obs": 65.27351900000156
+  },
+  {
+   "mode": "eager",
+   "config": "prune25",
+   "tokens_after_l2": 163,
+   "ms_per_obs": 64.04681999999795
+  },
+  {
+   "mode": "eager",
+   "config": "prune12",
+   "tokens_after_l2": 114,
+   "ms_per_obs": 64.08729649999856
+  },
+  {
+   "mode": "compile",
+   "config": "full",
+   "error": "RuntimeError('Error: accessing tensor output of CUDAGraphs that has been overwritten by a subsequent run. Stack trace: File \"/root/latency_trt.py\", line 47, in forward\\n    return s.p.ln_f(x). To prevent overwriting, clone the tensor outside of torch.compile() or call torch.compiler.cudagraph_mark_s"
+  },
+  {
+   "mode": "compile",
+   "config": "prune50",
+   "error": "AssertionError()"
+  },
+  {
+   "mode": "compile",
+   "config": "prune25",
+   "error": "AssertionError()"
+  },
+  {
+   "mode": "compile",
+   "config": "prune12",
+   "error": "AssertionError()"
+  },
+  {
+   "mode": "tensorrt",
+   "config": "full",
+   "tokens_after_l2": 457,
+   "ms_per_obs": 5.505112500003406
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune50",
+   "tokens_after_l2": 261,
+   "ms_per_obs": 5.72449300000244
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune25",
+   "tokens_after_l2": 163,
+   "ms_per_obs": 5.821542500001442
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune12",
+   "tokens_after_l2": 114,
+   "ms_per_obs": 6.0540460000027
+  }
+ ],
+ "siglip_two_views_eager_ms": 7.275992500012762,
+ "siglip_error": "AssertionError()"
+}
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/atlas-verification/main/ap-q4BcVzLTsiQyrIP7yraQyU

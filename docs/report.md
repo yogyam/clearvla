@@ -151,7 +151,7 @@ All 6,300 closed-loop episodes (3,400 with the final instrument) are committed a
 
 ## Appendix B. Every closed-loop measurement
 
-`results/week3/*/gate_report_full.md` (instrument gates v1–v4), `results/week5/matrix_report.md` (Table 2 with CIs and the ratio-based diff-in-diff), `results/week6/matrix_report.md` (budget curves), `results/week4/h1_report.md` (H1 per view and per task), `results/week7/*.json` (latency), `docs/week*_report.md` (weekly reports with incidents and decisions).
+`results/week3/*/gate_report_full.md` (instrument gates v1–v4), `results/week5/matrix_report.md` (Table 2 with CIs and the ratio-based diff-in-diff), `results/week6/matrix_report.md` (budget curves), `results/week4/h1_report.md` (H1 per view and per task), `results/week7/*.json` (latency).
 
 ## References
 

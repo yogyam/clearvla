@@ -23,3 +23,7 @@ AutoBio/
 # vendored upstream checkouts (needed Franka files are copied into envs/franka)
 third_party/
 checkpoints/
+
+# private working notes (never committed)
+private/
+.claude/

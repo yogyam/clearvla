@@ -1,0 +1,349 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/atlas-verification/main/ap-F9hftWdRRTKuqe1YXRmHPh
+Building image im-xZ375wjqDF6ad3jwY4PcFs
+
+=> Step 0: FROM nvcr.io/nvidia/pytorch:25.06-py3
+Getting image source signatures
+Copying blob sha256:3c313eb917ea07f6a2e8e8278cf840357ac5b88b3464f471efa90cedadc1e65a
+Copying blob sha256:f1af243d1e830ae7d4d0c27b2a39f13ebbd20eb3a64fc9ded54aada16af15d56
+Copying blob sha256:3f893d6c81004ca97381c46df634bc2bbc054b5b63e9831a8fa85984b51ca89d
+Copying blob sha256:47d8c16719752ae1120048af33336b3f82a7b613898c85e6f3981ae8d640cad2
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:cebaad6571a97399701575be85f05a33d3e7b5a0f24fc5473510a51e2aa673eb
+Copying blob sha256:fa8ec00ab1d43016e10ba67c230b6a2c742b4c93ba344147ea75250ffe465db9
+Copying blob sha256:7848405aa76a398a6014ea511d9b0b52fb00dafa8e3e24ce3e0d85982fdaff16
+Copying blob sha256:d9d352c11bbd3880007953ed6eec1cbace76898828f3434984a0ca60672fdf5a
+Copying blob sha256:9f11a52127b5ce6c65cf99d5afa9fb7f5b0fe56d3f34c2b3ab4670e08259564b
+Copying blob sha256:1f7fdc9ac51458ab136ae88743d5bbfc0d2b57717f872349ff9ada895b600aea
+Copying blob sha256:d1c1b0ca7e576b38870258a7c0667ad16b820970c171ee36dc50ba041dc0f1dd
+Copying blob sha256:d260da74816ae1ec63adc9f90044c2a2e96f143450997fecc0a98eafc3bc0de5
+Copying blob sha256:1d7d94b9f382ff484bf5c356f41fae712f2fa9a777d5f0ffe52f6e90833372e0
+Copying blob sha256:e21e46372e43c0c8ddd5593327607f990ed6c5ef7d9a81f4423e7b7a001edd69
+Copying blob sha256:e327fded2fe59c3698beb0943cf7845ab5d7d5dba445e1d04b13aaba7424f0c6
+Copying blob sha256:98d1cd1e264fb1e189debdfbcb78ae9aab91407e17b0a4d3515e347e0b8669df
+Copying blob sha256:57e194be082f9502172275266c867e10163bda932800b03f422d54504dd9833e
+Copying blob sha256:2fe22e30ede5741ed908721d70dc83fae5b64f149b00b786aaefbe0d059f47f2
+Copying blob sha256:c58367625a61af8b6ebbcc01de857bd7e4d854139e710f67ef5d7976ca591af1
+Copying blob sha256:1fcc2095320523937f930517a5f6f0859d931565a4e9a0ebd3d7d1c0f5a855dd
+Copying blob sha256:c1118e55ca0a0d13fd9068a67605b74646790e581efc4c54a33d5607d51aac6f
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:1fd0643fa149dd996c1f0a366bfd6720b8fad0e0364a163768e97ba408ace388
+Copying blob sha256:b632ad189d81063b5d6052dc22bbe4b836037c26f4456ce8bad6afd17844965b
+Copying blob sha256:ccf993b4001ed5d341713fe63ba48b279b88da540df833038948e63bfb3d8370
+Copying blob sha256:d54123f469003400f16a86b6f8576e6804e699ff943ac894a5f93bb00e7b1e67
+Copying blob sha256:dbf7276a508b9d89fd431c48f823dd6f201c60c376d7eb8edf6a6b8e4f481e5e
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:b5e287539ab025b44df56d5b4641e7d339c74e48717159c7cec24e4e2a2020f1
+Copying blob sha256:8fc3df16a73cd10c00b3bbc7c595cba492677f4b6da773d000d6ea314ab33cd9
+Copying blob sha256:a3dffce50035c2ac1a5ae5a8f1b3fd879db4245f97671623d5519e3ccfa9eec3
+Copying blob sha256:7d731a472eaf55482ccb545d31d7cbfea04325316a2686c800f7c1a021a09458
+Copying blob sha256:ea3b419012474d08968b9424ebe59a02cba858dbb4a72d763e17d7dc28b9dc63
+Copying blob sha256:95bfc6ee1340d9a449ff244e161df747489f98440f77d9afd67b208ddb5ab3a7
+Copying blob sha256:ef7ac0d6c440c31b722ded7c1c01e66d548cd6e123c8127f18caec6bf2c3176c
+Copying blob sha256:1ff567a80e8a46262e645ac5af566f00155e3bc4cfabe168a8195d4a37d1591e
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:833ceef9466d5e6d0dc4c159274c582ee84a4a9f9131210f7422d2033df93dc5
+Copying blob sha256:b834afe576443d7566979f3ffcb248cccfab74fe1254bb0cb1e05c3fbcd89dfa
+Copying blob sha256:f99b645a1a7f59afb1cd425645ce5cc9aa6513244c9a02575a6aeca42c617a7d
+Copying blob sha256:f6d715971816912d8a04b3381ee0a8e118175093e588cbc09347a5e4e4e3243c
+Copying blob sha256:1efbbb3e559e09f3a20bb0f88be259cc9280605fd649cb00f83d7b53e57690f6
+Copying blob sha256:9e7a7a2f250f43a9174d5a660be035819ff524544490368408d0b284345a879b
+Copying blob sha256:ba009bd75d43780e3d6125a7e5051289bcef186c18661bcbee613ca23d0c0da2
+Copying blob sha256:5d95a8fe9ba514a81cd01f95081deb262a887fef0d21d51d631cf9f34031d399
+Copying blob sha256:3fd2c195086d0156b89794ac02fb914a65f1c02006705985683f921903c18e07
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:a2bea83f54add0bef395ceff905f98b55c4f7ad6acf1ac5fa4604b4fc5548c17
+Copying blob sha256:cafe055054516295bff7d421f3042e33edc298080c59559969c2fab17141c583
+Copying blob sha256:9963b765221fefe8fac82ebfb5ac0a08d4d60624c6593eb4e24d7185339ab39c
+Copying blob sha256:ac8ca584bf479ac0526ad5a97ecf822a669ac426b05538b4dfeb99696450acd2
+Copying blob sha256:18749878119537de4d3cf5d4a8b634d56ed25af9a7bf1d9cf4c83d992bfae337
+Copying blob sha256:440e0189fc7a47c518761cd03079555af9fa07c112283436c304813f532a2f0b
+Copying blob sha256:f85026953fe73d54370a7f96072b63d53603f86f4e150b7f015be6f262420b06
+Copying blob sha256:160736157d2e712723b2eebc6efc35e185dedb7b6567422d0336ef694a66f7ad
+Copying blob sha256:ca0ddd1a8c38af7b37d1130c66f0a50f332cfad0bb9d43a80f38a178af6aaeda
+Copying blob sha256:162f79b5b388276b38f87a2fde699ab8d9106cf30d98584fc37909e9367ce10e
+Copying blob sha256:bf5b40570db1be3247115c2cf3698fa6ae08a20f9856416ccb8b710d92e94d47
+Copying blob sha256:a25409264d46a2ce98edb8ec59308b7bc56fd8af86825741f6d7e2f401145e32
+Copying blob sha256:e44523bf20109372c6636c82b13233e767d5e725e086704f4d08112690d4c6a6
+Copying blob sha256:27872fc3573e1c2d159cd41a4db30d77bfe8ac1963b87567dc78ad58674d71a5
+Copying blob sha256:b9ad851e1bef0c80fd03c06ebd62daba11ac4d79cb5d2d26acea2c0320474852
+Copying config sha256:5d7d252fb98757aac5fdf8c1f84627105f1f4d32a80de36e0230b610539103d7
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...     
+   • ... done                 
+   • unpacked image rootfs: /tmp/task-data/ta-01M36J30XDBWJ0VQJY8FRF2YNB/registry-unpack2Utpsh
+Copied image in 7.08s
+Saving image...
+Image saved, took 23.83s
+
+Built image im-xZ375wjqDF6ad3jwY4PcFs in 177.90s
+
+
+Building image im-AgUdWLcOc7YUGRlvalP4aU
+
+=> Step 0: FROM base
+
+=> Step 1: RUN python -m pip install transformers==4.46.3
+Looking in indexes: http://pypi-mirror.modal.local:5555/simple
+Collecting transformers==4.46.3
+  Downloading http://pypi-mirror.modal.local:5555/simple/transformers/transformers-4.46.3-py3-none-any.whl.metadata (44 kB)
+Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from transformers==4.46.3) (3.18.0)
+Collecting huggingface-hub<1.0,>=0.23.2 (from transformers==4.46.3)
+  Downloading http://pypi-mirror.modal.local:5555/simple/huggingface-hub/huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.12/dist-packages (from transformers==4.46.3) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.12/dist-packages (from transformers==4.46.3) (23.2)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib/python3.12/dist-packages (from transformers==4.46.3) (6.0.2)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.12/dist-packages (from transformers==4.46.3) (2024.11.6)
+Requirement already satisfied: requests in /usr/local/lib/python3.12/dist-packages (from transformers==4.46.3) (2.32.3)
+Collecting tokenizers<0.21,>=0.20 (from transformers==4.46.3)
+  Downloading http://pypi-mirror.modal.local:5555/simple/tokenizers/tokenizers-0.20.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Requirement already satisfied: safetensors>=0.4.1 in /usr/local/lib/python3.12/dist-packages (from transformers==4.46.3) (0.5.3)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.12/dist-packages (from transformers==4.46.3) (4.67.1)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub<1.0,>=0.23.2->transformers==4.46.3) (2025.5.1)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1.0,>=0.23.2->transformers==4.46.3)
+  Downloading http://pypi-mirror.modal.local:5555/simple/hf-xet/hf_xet-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub<1.0,>=0.23.2->transformers==4.46.3) (4.14.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.12/dist-packages (from requests->transformers==4.46.3) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.12/dist-packages (from requests->transformers==4.46.3) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.12/dist-packages (from requests->transformers==4.46.3) (2.0.7)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests->transformers==4.46.3) (2025.4.26)
+Downloading http://pypi-mirror.modal.local:5555/simple/transformers/transformers-4.46.3-py3-none-any.whl (10.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 240.1 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/huggingface-hub/huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 1.1 GB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/hf-xet/hf_xet-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 710.2 MB/s eta 0:00:00
+Downloading http://pypi-mirror.modal.local:5555/simple/tokenizers/tokenizers-0.20.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 373.1 MB/s eta 0:00:00
+Installing collected packages: hf-xet, huggingface-hub, tokenizers, transformers
+
+Successfully installed hf-xet-1.6.0 huggingface-hub-0.36.2 tokenizers-0.20.3 transformers-4.46.3
+Saving image...
+Image saved, took 5.40s
+
+Built image im-AgUdWLcOc7YUGRlvalP4aU in 18.44s
+
+
+✓ Created objects.
+├── 🔨 Created mount /Users/yogyamehrotra/Desktop/ClearVLA/jobs/latency_trt.py
+├── 🔨 Created mount PythonPackage:model
+└── 🔨 Created function run.
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 25.06 (build 177567386)
+PyTorch Version 2.8.0a0+5228986
+Container image Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+Copyright (c) 2014-2024 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+
+eager full ERROR RuntimeError('mat1 and mat2 must have the same dtype, but got Float and Half')
+eager prune50 ERROR RuntimeError('mat1 and mat2 must have the same dtype, but got Float and Half')
+eager prune25 ERROR RuntimeError('mat1 and mat2 must have the same dtype, but got Float and Half')
+eager prune12 ERROR RuntimeError('mat1 and mat2 must have the same dtype, but got Float and Half')
+W0923 07:22:58.458000 2 torch/_inductor/utils.py:1281] [0/0] Not enough SMs to use max_autotune_gemm mode
+compile full ERROR BackendCompilerFailed('backend=\'inductor\' raised:\nRuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do t
+compile prune50 ERROR BackendCompilerFailed('backend=\'inductor\' raised:\nRuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do t
+compile prune25 ERROR BackendCompilerFailed('backend=\'inductor\' raised:\nRuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do t
+compile prune12 ERROR BackendCompilerFailed('backend=\'inductor\' raised:\nRuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do t
+WARNING:torch_tensorrt.dynamo.conversion.converter_utils:TensorRT-LLM is not installed. Please install TensorRT-LLM or set TRTLLM_PLUGINS_PATH to the directory containing libnvinfer_plugin_tensorrt_llm.so to use converters for torch.distributed ops
+[09/23/2026-07:23:59] [TRT] [W] Functionality provided through tensorrt.plugin module is experimental.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.0.cross/bitwise_not_logical_not]_output_bitwise_not.default and e.blocks.0.cross/where_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.0.cross/div_2]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.1.cross/bitwise_not_1_logical_not]_output_bitwise_not.default and e.blocks.1.cross/where_1_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.1.cross/div_4]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.2.cross/bitwise_not_2_logical_not]_output_bitwise_not.default and e.blocks.2.cross/where_2_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.2.cross/div_6]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.3.cross/bitwise_not_3_logical_not]_output_bitwise_not.default and e.blocks.3.cross/where_3_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.3.cross/div_8]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+tensorrt full ERROR RuntimeError('[Error thrown at core/runtime/execute_engine.cpp:112] Expected inputs[i].dtype() == expected_type to be true but got false\nExpected input tensors to have type Half, found type float\n')
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.0.cross/bitwise_not_logical_not]_output_bitwise_not.default and e.blocks.0.cross/where_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.0.cross/div_2]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.1.cross/bitwise_not_1_logical_not]_output_bitwise_not.default and e.blocks.1.cross/where_1_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.1.cross/div_4]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.2.cross/bitwise_not_2_logical_not]_output_bitwise_not.default and e.blocks.2.cross/where_2_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.2.cross/div_6]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.3.cross/bitwise_not_3_logical_not]_output_bitwise_not.default and e.blocks.3.cross/where_3_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.3.cross/div_8]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+tensorrt prune50 ERROR RuntimeError('[Error thrown at core/runtime/execute_engine.cpp:112] Expected inputs[i].dtype() == expected_type to be true but got false\nExpected input tensors to have type Half, found type float\n')
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.0.cross/bitwise_not_logical_not]_output_bitwise_not.default and e.blocks.0.cross/where_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.0.cross/div_2]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.1.cross/bitwise_not_1_logical_not]_output_bitwise_not.default and e.blocks.1.cross/where_1_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.1.cross/div_4]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.2.cross/bitwise_not_2_logical_not]_output_bitwise_not.default and e.blocks.2.cross/where_2_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.2.cross/div_6]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.3.cross/bitwise_not_3_logical_not]_output_bitwise_not.default and e.blocks.3.cross/where_3_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.3.cross/div_8]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+tensorrt prune25 ERROR RuntimeError('[Error thrown at core/runtime/execute_engine.cpp:112] Expected inputs[i].dtype() == expected_type to be true but got false\nExpected input tensors to have type Half, found type float\n')
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:274: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  torch.tensor(inputs),
+
+WARNING:py.warnings:/usr/local/lib/python3.12/dist-packages/torch_tensorrt/dynamo/utils.py:423: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(tensor).dtype
+
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.0.cross/bitwise_not_logical_not]_output_bitwise_not.default and e.blocks.0.cross/where_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.0.cross/div_2]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.1.cross/bitwise_not_1_logical_not]_output_bitwise_not.default and e.blocks.1.cross/where_1_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.1.cross/div_4]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.2.cross/bitwise_not_2_logical_not]_output_bitwise_not.default and e.blocks.2.cross/where_2_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.2.cross/div_6]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:ISelectLayer with inputs [UNARY]-[aten_ops.bitwise_not.default]-[e.blocks.3.cross/bitwise_not_3_logical_not]_output_bitwise_not.default and e.blocks.3.cross/where_3_input_broadcast_output and [ELEMENTWISE]-[aten_ops.div.Tensor]-[e.blocks.3.cross/div_8]_output_div.Tensor: thenInput input has type Half but elseInput has type Float.
+WARNING:torch_tensorrt [TensorRT Conversion Context]:sizeInBytes -1 should not be negative value, IBuilderConfig::setL2LimitForTiling(-1) has no effect.
+tensorrt prune12 ERROR RuntimeError('[Error thrown at core/runtime/execute_engine.cpp:112] Expected inputs[i].dtype() == expected_type to be true but got false\nExpected input tensors to have type Half, found type float\n')
+siglip eager 7.5645919999942635
+siglip compile 2.6804200000185574
+{
+ "gpu": "NVIDIA L4",
+ "torch": "2.8.0a0+5228986c39.nv25.06",
+ "n": 300,
+ "runs": [
+  {
+   "mode": "eager",
+   "config": "full",
+   "error": "RuntimeError('mat1 and mat2 must have the same dtype, but got Float and Half')"
+  },
+  {
+   "mode": "eager",
+   "config": "prune50",
+   "error": "RuntimeError('mat1 and mat2 must have the same dtype, but got Float and Half')"
+  },
+  {
+   "mode": "eager",
+   "config": "prune25",
+   "error": "RuntimeError('mat1 and mat2 must have the same dtype, but got Float and Half')"
+  },
+  {
+   "mode": "eager",
+   "config": "prune12",
+   "error": "RuntimeError('mat1 and mat2 must have the same dtype, but got Float and Half')"
+  },
+  {
+   "mode": "compile",
+   "config": "full",
+   "error": "BackendCompilerFailed('backend=\\'inductor\\' raised:\\nRuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LO"
+  },
+  {
+   "mode": "compile",
+   "config": "prune50",
+   "error": "BackendCompilerFailed('backend=\\'inductor\\' raised:\\nRuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LO"
+  },
+  {
+   "mode": "compile",
+   "config": "prune25",
+   "error": "BackendCompilerFailed('backend=\\'inductor\\' raised:\\nRuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LO"
+  },
+  {
+   "mode": "compile",
+   "config": "prune12",
+   "error": "BackendCompilerFailed('backend=\\'inductor\\' raised:\\nRuntimeError: mat1 and mat2 must have the same dtype, but got Float and Half\\n\\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LO"
+  },
+  {
+   "mode": "tensorrt",
+   "config": "full",
+   "error": "RuntimeError('[Error thrown at core/runtime/execute_engine.cpp:112] Expected inputs[i].dtype() == expected_type to be true but got false\\nExpected input tensors to have type Half, found type float\\n')"
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune50",
+   "error": "RuntimeError('[Error thrown at core/runtime/execute_engine.cpp:112] Expected inputs[i].dtype() == expected_type to be true but got false\\nExpected input tensors to have type Half, found type float\\n')"
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune25",
+   "error": "RuntimeError('[Error thrown at core/runtime/execute_engine.cpp:112] Expected inputs[i].dtype() == expected_type to be true but got false\\nExpected input tensors to have type Half, found type float\\n')"
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune12",
+   "error": "RuntimeError('[Error thrown at core/runtime/execute_engine.cpp:112] Expected inputs[i].dtype() == expected_type to be true but got false\\nExpected input tensors to have type Half, found type float\\n')"
+  }
+ ],
+ "siglip_two_views_eager_ms": 7.5645919999942635,
+ "siglip_two_views_compile_ms": 2.6804200000185574
+}
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/atlas-verification/main/ap-F9hftWdRRTKuqe1YXRmHPh

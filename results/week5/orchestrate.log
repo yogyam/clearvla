@@ -1,0 +1,15 @@
+15:21:09 matrix launched: full prune25 cache25 cachef25 quant4 protect_prune25
+16:02:20 full opaque: done 150 new episodes in 41.1 min -> /Users/yogyamehrotra/De
+16:02:25 full glass: done 150 new episodes in 41.1 min -> /Users/yogyamehrotra/De
+16:44:56 prune25 glass: done 150 new episodes in 42.4 min -> /Users/yogyamehrotra/De
+16:46:20 prune25 opaque: done 150 new episodes in 43.9 min -> /Users/yogyamehrotra/De
+17:55:51 cache25 glass: done 150 new episodes in 70.8 min -> /Users/yogyamehrotra/De
+17:57:20 cache25 opaque: done 150 new episodes in 70.9 min -> /Users/yogyamehrotra/De
+19:04:53 cachef25 glass: done 150 new episodes in 68.9 min -> /Users/yogyamehrotra/De
+19:07:30 cachef25 opaque: done 150 new episodes in 70.0 min -> /Users/yogyamehrotra/De
+19:46:53 quant4 glass: done 150 new episodes in 41.9 min -> /Users/yogyamehrotra/De
+19:48:51 quant4 opaque: done 150 new episodes in 41.2 min -> /Users/yogyamehrotra/De
+20:28:37 protect_prune25 glass: done 150 new episodes in 41.6 min -> /Users/yogyamehrotra/De
+20:29:05 protect_prune25 opaque: done 150 new episodes in 40.1 min -> /Users/yogyamehrotra/De
+20:29:05 episodes done
+20:29:05 matrix done

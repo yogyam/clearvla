@@ -1,0 +1,9 @@
+00:15:39 matrix launched: prune50 prune12 cache50
+00:57:23 prune50 opaque: done 150 new episodes in 41.6 min -> /Users/yogyamehrotra/De
+00:58:49 prune50 glass: done 150 new episodes in 43.0 min -> /Users/yogyamehrotra/De
+01:37:20 prune12 glass: done 150 new episodes in 38.4 min -> /Users/yogyamehrotra/De
+01:41:32 prune12 opaque: done 150 new episodes in 44.0 min -> /Users/yogyamehrotra/De
+04:04:43 cache50 glass: done 150 new episodes in 63.3 min -> /Users/yogyamehrotra/De
+04:12:09 cache50 opaque: done 150 new episodes in 66.6 min -> /Users/yogyamehrotra/De
+04:12:09 episodes done
+04:12:10 matrix done
