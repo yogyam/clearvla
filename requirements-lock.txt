@@ -1,0 +1,13 @@
+bpy==5.0.1
+h5py==3.16.0
+huggingface_hub==1.31.0
+matplotlib==3.11.2
+modal==1.5.5
+mujoco==3.13.0
+numpy==1.26.4
+pandas==3.0.5
+pillow==12.3.0
+PyYAML==6.0.3
+torch==2.14.0
+torchvision==0.29.0
+transformers==5.17.0

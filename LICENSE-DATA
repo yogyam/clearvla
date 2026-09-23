@@ -1,0 +1,6 @@
+The ClearVLA simulated dataset (datasets/, the Hugging Face dataset yogyamehrotra/clearvla-sim) and the
+Model A v4 checkpoint (yogyamehrotra/clearvla-model-a-v4) are released under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Attribution: Yogya Mehrotra, "ClearVLA: do VLA speed-ups fail on transparent lab objects?", 2026,
+https://github.com/yogyam/clearvla
