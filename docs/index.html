@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClearVLA</title>
+<meta name="description" content="Static pixels are not static tokens: a pre-registered study of VLA acceleration (token pruning, token caching, INT4) on transparent lab objects.">
+<meta property="og:title" content="Static Pixels Are Not Static Tokens">
+<meta property="og:description" content="Do VLA speed-ups fail on glass? A pre-registered negative result: pruning, caching and INT4 cost the same on glass as on opaque objects. What breaks is material-independent: pixel-change caching is catastrophic for a frozen ViT, pruning keeps the object at chance and doesn't care, and nothing gets faster.">
+<meta property="og:image" content="https://yogyam.github.io/clearvla/figures/fig2_budget_curve.png">
+<style>
+  :root {
+    --ink: #0b0b0b; --ink2: #52514e; --surface: #fcfcfb; --card: #ffffff;
+    --blue: #2a78d6; --orange: #eb6834; --rule: #e5e4e0;
+  }
+  :root:not([data-theme="light"]) { color-scheme: light dark; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f0efec; --ink2: #b0afaa; --surface: #141413; --card: #1d1c1b; --rule: #33322f;
+    }
+  }
+  :root[data-theme="dark"] { --ink: #f0efec; --ink2: #b0afaa; --surface: #141413; --card: #1d1c1b; --rule: #33322f; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--surface); color: var(--ink);
+    font: 17px/1.65 Georgia, 'Times New Roman', serif;
+    padding: 0 20px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding-block: 48px 80px; }
+  h1 { font-size: 1.9em; line-height: 1.25; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .subtitle { font-size: 1.15em; color: var(--ink2); margin: 0 0 18px; }
+  .author { margin: 0 0 20px; color: var(--ink2); }
+  .author b { color: var(--ink); font-weight: 600; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 36px; font-family: system-ui, sans-serif; font-size: 0.85em; }
+  .links a {
+    display: inline-block; padding: 8px 18px; border-radius: 999px;
+    background: var(--ink); color: var(--surface); text-decoration: none; font-weight: 600;
+  }
+  .links a.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  h2 { font-size: 1.25em; margin: 44px 0 12px; }
+  p { margin: 0 0 16px; }
+  .tldr {
+    background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--blue);
+    border-radius: 8px; padding: 18px 22px; margin: 0 0 8px;
+  }
+  .tldr p:last-child { margin-bottom: 0; }
+  figure { margin: 28px 0; }
+  figure img { max-width: 100%; border-radius: 8px; border: 1px solid var(--rule); background: #fcfcfb; }
+  figcaption { font-size: 0.85em; color: var(--ink2); margin-top: 8px; font-family: system-ui, sans-serif; line-height: 1.5; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 620px) { .two { grid-template-columns: 1fr; } }
+  table { border-collapse: collapse; width: 100%; margin: 20px 0; font-family: system-ui, sans-serif; font-size: 0.82em; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .hl { color: var(--blue); font-weight: 700; }
+  .warn { color: var(--orange); font-weight: 700; }
+  pre {
+    background: var(--card); border: 1px solid var(--rule); border-radius: 8px;
+    padding: 16px; overflow-x: auto; font-size: 0.78em; line-height: 1.5;
+  }
+  .foot { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--ink2); font-size: 0.85em; font-family: system-ui, sans-serif; }
+  a { color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Static Pixels Are Not Static&nbsp;Tokens</h1>
+<p class="subtitle">A pre-registered study of VLA acceleration on transparent lab objects</p>
+<p class="author"><b>Yogya Mehrotra</b> · independent undergraduate research · September 2026</p>
+
+<div class="links">
+  <a href="paper.pdf">📄 Paper (PDF)</a>
+  <a class="ghost" href="https://github.com/yogyam/clearvla">Code &amp; Episode Logs</a>
+  <a class="ghost" href="https://huggingface.co/datasets/yogyamehrotra/clearvla-sim">Dataset</a>
+  <a class="ghost" href="https://huggingface.co/yogyamehrotra/clearvla-model-a-v4">Checkpoint</a>
+</div>
+
+<div class="tldr">
+<p><b>TL;DR.</b> VLA speed-ups (token pruning, token caching, 4-bit weights) are benchmarked on opaque blocks and mugs; labs are made of glass, whose thin, low-texture, slowly changing appearance is exactly what these methods discard. I pre-registered the hypothesis that they cost more task success on glass, built a paired opaque/glass lab simulator and a fully instrumented 30M-parameter VLA to test it, and the hypothesis is <b>false</b>: at every usable budget, glass and opaque objects lose the same. What came out true is material-independent. Pruning keeps the object's patches at <i>chance</i> and it doesn't matter, because the object's information has left the visual tokens by layer 2. Pixel-change caching is catastrophic (0% success), because patches whose pixels don't move still have ViT tokens that do. And none of it is faster on an L4 or an M5 Pro.</p>
+</div>
+
+<h2>The setup</h2>
+<p>Every scene is built from a seed in MuJoCo and rendered in Blender Cycles with real refraction; the same seed gives the same geometry, expert actions and masks with either an opaque or a glass test tube, so every comparison is paired. Three lab tasks (grasp and rack, pour to a line, insert into a holder), 2,700 scripted demonstrations, and a from-scratch VLA (frozen SigLIP → 6-layer prefix → flow-matching action expert) whose every attention map and key/value cache is mine to read. Four accelerations run on identical weights: FastV-style pruning, VLA-Cache-style pixel-change K/V reuse, fake INT4, and an oracle that protects the object's patches. Five hypotheses, metrics and decision rules were fixed before any model was trained.</p>
+
+<h2>The hypothesis is false</h2>
+<p>On 50 paired seeds per cell (3,400 closed-loop episodes with the final instrument), no method loses more on glass than on opaque at the 25% budget; every confidence interval on the material difference includes zero, and the design rules out glass-specific losses of about 20 points or more. INT4 is material-neutral within 2 points. The one significant material effect, at a brutal 12.5% budget, runs the <i>other</i> way: pruning costs the opaque tube 28 points of grasp success and the glass tube nothing.</p>
+
+<figure>
+  <img src="figures/fig2_budget_curve.png" alt="Closed-loop success vs budget per task; prune is flat to 25%, cache is at the floor, INT4 tracks full">
+  <figcaption>Closed-loop success vs. budget. Circles: pruning; squares: caching; stars: INT4; black opaque, blue glass. Pruning is flat down to 25% on every task and both materials; caching is at the floor at 50% and 25%; INT4 tracks the full model.</figcaption>
+</figure>
+
+<h2>Pruning keeps the object at chance — and it doesn't matter</h2>
+<p>I measured how often the pruned keep-set contains the patches that actually hold the tube. At a 25% budget: 24.5%. Chance. Only 1–5% of the attention that ranks the tokens ever lands on the object, and the glass tube gets about half of what the opaque one gets. Yet success barely moves, and an oracle that keeps every object patch changes nothing. By layer 2 the object's information has moved into the text and proprio tokens; pruning works not because it finds the object but because the object no longer needs finding. Recall of the object's patches, which is where much of the pruning literature argues, predicts nothing about closed-loop success here.</p>
+
+<div class="two">
+<figure>
+  <img src="figures/fig1_keep_sets.png" alt="Same scene, opaque and glass, with the pruned keep set and the object's patches overlaid">
+  <figcaption>Same scene and seed, both materials. Yellow: the Prune-25 keep set. Red: the object's patches. Opaque front view keeps 2 of 3; glass keeps 0 of 3. Success is unaffected either way.</figcaption>
+</figure>
+<figure>
+  <img src="figures/fig3_h1_recall.png" alt="Recall of the object's patches vs budget: pruning sits on the chance line">
+  <figcaption>Recall of the object's patches vs. budget. Pruning (left) sits on the chance line for both materials; caching (right) recomputes glass patches <i>more</i> often, the opposite of the premise.</figcaption>
+</figure>
+</div>
+
+<h2>Static pixels are not static tokens</h2>
+<p>Pixel-change caching reuses last observation's key/value pairs for patches whose pixels didn't change. It scored <span class="warn">0% on grasp and pour</span> at every budget, on both materials, and so did a feature-change variant. The reason: a ViT token depends on the whole image, not its own pixels. Among patches whose pixels are static between observations, the SigLIP token's cosine to its previous value is 0.81 on average and below 0.55 for a tenth of them. Reuse feeds the policy stale features on every frame where anything moved, which in manipulation is every frame; the error compounds along the approach and the arm knocks the tube over. VLA-Cache's authors report a ten-point loss from naive reuse; for a policy that depends on a 10-pixel object, it is a total loss.</p>
+
+<figure>
+  <img src="figures/fig4_cache_staleness.png" alt="Pixel similarity vs SigLIP token cosine between consecutive observations, and action drift under caching">
+  <figcaption>Left: 13% of patches are pixel-static (right of the dotted line) and their tokens still move. Right: action drift of the cached policy against the full model grows to 20–25 mm within six observations.</figcaption>
+</figure>
+
+<h2>Nothing is faster</h2>
+<table>
+  <tr><th>Budget</th><th class="num">Tokens after layer 2</th><th class="num">GFLOPs</th><th class="num">L4 eager</th><th class="num">L4 CUDA graphs</th><th class="num">L4 TensorRT</th><th class="num">M5 Pro total</th></tr>
+  <tr><td>Full</td><td class="num">457</td><td class="num">24.4</td><td class="num">64.8 ms</td><td class="num">5.44 ms</td><td class="num">5.51 ms</td><td class="num">51.4 ms</td></tr>
+  <tr><td>Prune-50</td><td class="num">261</td><td class="num">19.0</td><td class="num">65.3</td><td class="num">5.17</td><td class="num">5.72</td><td class="num">54.2</td></tr>
+  <tr><td>Prune-25</td><td class="num">163</td><td class="num">16.5</td><td class="num">64.1</td><td class="num">4.88</td><td class="num">5.82</td><td class="num">54.6</td></tr>
+  <tr><td>Prune-12.5</td><td class="num">114</td><td class="num">15.3</td><td class="num">64.1</td><td class="num">4.67</td><td class="num">6.05</td><td class="num">55.0</td></tr>
+</table>
+<p>Eager PyTorch on the L4 is launch-bound: 65 ms per observation whether you keep 457 tokens or 114. Compiling with CUDA graphs is a 12× win on its own; after that, a 37% FLOPs cut buys 14% of latency, and under TensorRT nothing. On the Mac the frozen vision encoder and the ten-step action expert are 90% of the time and the methods touch the other 10%. At this size and batch 1, token-level tricks are not where the milliseconds are.</p>
+
+<h2>Scorecard</h2>
+<table>
+  <tr><th>Pre-registered hypothesis</th><th>Bar</th><th>Result</th></tr>
+  <tr><td>H1 importance scores under-rank glass</td><td>gap ≥ 10 pts</td><td><span class="warn">not supported</span> (+3.0 [+1.8, +4.2])</td></tr>
+  <tr><td>H2 speed-ups cost more on glass</td><td>≥ 15 pts on ≥ 2 tasks</td><td><span class="warn">not supported</span> (all CIs include 0)</td></tr>
+  <tr><td>H3 each method fails where its assumption fails</td><td>direction</td><td>right direction for pruning, tiny effect; caching floors everything</td></tr>
+  <tr><td>H4 quantization is material-neutral</td><td>&lt; 5 pts</td><td><span class="hl">supported</span> (≤ 2 pts)</td></tr>
+  <tr><td>H5 protecting object patches recovers the loss</td><td>≥ 50% recovered</td><td>not applicable: nothing to recover</td></tr>
+</table>
+<p>A fine-tuned 450M SmolVLA on the same data did worse than the from-scratch model on every task and is in the appendix as a negative result.</p>
+
+<h2>Caveats</h2>
+<p>Simulated glass is cleaner than real glass. The liquid is scripted and the pour instrument is below its validity bar. n&nbsp;=&nbsp;50 per cell. One model, one seed; the 12.5% reversal is unreplicated. The achievable FLOPs saving is bounded at 37% by design. Every episode log is in the repo and the analysis reproduces in minutes without a simulator.</p>
+
+<h2>Cite</h2>
+<pre>@misc{mehrotra2026clearvla,
+  title  = {Static Pixels Are Not Static Tokens: A Pre-Registered Study of
+            VLA Acceleration on Transparent Lab Objects},
+  author = {Mehrotra, Yogya},
+  year   = {2026},
+  url    = {https://github.com/yogyam/clearvla}
+}</pre>
+
+<div class="foot">
+  Yogya Mehrotra · <a href="mailto:yogyamehrotra@gmail.com">yogyamehrotra@gmail.com</a> · <a href="https://github.com/yogyam/clearvla">github.com/yogyam/clearvla</a> · Code MIT, data and checkpoint CC BY 4.0.
+</div>
+
+</div>
+</body>
+</html>
