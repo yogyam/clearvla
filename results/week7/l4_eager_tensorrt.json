@@ -1,0 +1,77 @@
+{
+ "gpu": "NVIDIA L4",
+ "torch": "2.8.0a0+5228986c39.nv25.06",
+ "n": 300,
+ "runs": [
+  {
+   "mode": "eager",
+   "config": "full",
+   "tokens_after_l2": 457,
+   "ms_per_obs": 64.84193200000021
+  },
+  {
+   "mode": "eager",
+   "config": "prune50",
+   "tokens_after_l2": 261,
+   "ms_per_obs": 65.27351900000156
+  },
+  {
+   "mode": "eager",
+   "config": "prune25",
+   "tokens_after_l2": 163,
+   "ms_per_obs": 64.04681999999795
+  },
+  {
+   "mode": "eager",
+   "config": "prune12",
+   "tokens_after_l2": 114,
+   "ms_per_obs": 64.08729649999856
+  },
+  {
+   "mode": "compile",
+   "config": "full",
+   "error": "RuntimeError('Error: accessing tensor output of CUDAGraphs that has been overwritten by a subsequent run. Stack trace: File \"/root/latency_trt.py\", line 47, in forward\\n    return s.p.ln_f(x). To prevent overwriting, clone the tensor outside of torch.compile() or call torch.compiler.cudagraph_mark_s"
+  },
+  {
+   "mode": "compile",
+   "config": "prune50",
+   "error": "AssertionError()"
+  },
+  {
+   "mode": "compile",
+   "config": "prune25",
+   "error": "AssertionError()"
+  },
+  {
+   "mode": "compile",
+   "config": "prune12",
+   "error": "AssertionError()"
+  },
+  {
+   "mode": "tensorrt",
+   "config": "full",
+   "tokens_after_l2": 457,
+   "ms_per_obs": 5.505112500003406
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune50",
+   "tokens_after_l2": 261,
+   "ms_per_obs": 5.72449300000244
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune25",
+   "tokens_after_l2": 163,
+   "ms_per_obs": 5.821542500001442
+  },
+  {
+   "mode": "tensorrt",
+   "config": "prune12",
+   "tokens_after_l2": 114,
+   "ms_per_obs": 6.0540460000027
+  }
+ ],
+ "siglip_two_views_eager_ms": 7.275992500012762,
+ "siglip_error": "AssertionError()"
+}

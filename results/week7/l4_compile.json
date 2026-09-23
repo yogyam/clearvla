@@ -1,0 +1,33 @@
+{
+ "gpu": "NVIDIA L4",
+ "torch": "2.8.0a0+5228986c39.nv25.06",
+ "n": 300,
+ "runs": [
+  {
+   "mode": "compile",
+   "config": "full",
+   "tokens_after_l2": 457,
+   "ms_per_obs": 5.439604999999403
+  },
+  {
+   "mode": "compile",
+   "config": "prune50",
+   "tokens_after_l2": 261,
+   "ms_per_obs": 5.165695500004119
+  },
+  {
+   "mode": "compile",
+   "config": "prune25",
+   "tokens_after_l2": 163,
+   "ms_per_obs": 4.876905499997974
+  },
+  {
+   "mode": "compile",
+   "config": "prune12",
+   "tokens_after_l2": 114,
+   "ms_per_obs": 4.668241499999226
+  }
+ ],
+ "siglip_two_views_eager_ms": 5.477966999990258,
+ "siglip_two_views_compile_ms": 2.491171999992048
+}

@@ -15,15 +15,15 @@ app = modal.App(APP, image=image)
 
 
 @app.function(gpu="L4", timeout=3600, volumes={"/vol": VOL})
-def run(n: int = 300):
+def run(n: int = 300, modes: str = "eager,compile,tensorrt"):
     import torch, torch.nn as nn, numpy as np
     from model.vla import ClearVLA
     dev = torch.device("cuda"); torch.backends.cuda.matmul.allow_tf32 = True
     state = torch.load("/vol/models/v4/best.pt", map_location="cpu")
     n_vis = state["model"]["prefix.pos_vis"].shape[1]
-    model = ClearVLA(n_vis=n_vis).to(dev).eval(); model.load_state_dict(state["model"]); model.half()
-    vis = torch.randn(1, n_vis, 768, device=dev, dtype=torch.half); txt = torch.randn(1, 64, 768, device=dev, dtype=torch.half)
-    txt_mask = torch.zeros(1, 64, dtype=torch.bool, device=dev); txt_mask[0, :12] = True; prop = torch.randn(1, 19, device=dev, dtype=torch.half)
+    model = ClearVLA(n_vis=n_vis).to(dev).eval(); model.load_state_dict(state["model"])   # fp32 weights; fp16 via autocast (as on the Mac)
+    vis = torch.randn(1, n_vis, 768, device=dev); txt = torch.randn(1, 64, 768, device=dev)
+    txt_mask = torch.zeros(1, 64, dtype=torch.bool, device=dev); txt_mask[0, :12] = True; prop = torch.randn(1, 19, device=dev)
     budgets = {"full": 1.0, "prune50": 0.5, "prune25": 0.25, "prune12": 0.125}
     info = dict(gpu=torch.cuda.get_device_name(0), torch=torch.__version__, n=n, runs=[])
 
@@ -54,28 +54,29 @@ def run(n: int = 300):
     def make_fns(h, tl, st, budget):
         k = int(round(budget * n_vis)); Tk = k + 65
         idx = torch.cat([torch.arange(k, device=dev), torch.arange(n_vis, T, device=dev)])
-        km = key_mask[:, idx].contiguous(); x0 = torch.randn(1, 16, 10, device=dev, dtype=torch.half); t = torch.full((1,), 0.5, device=dev, dtype=torch.half)
+        km = key_mask[:, idx].contiguous(); x0 = torch.randn(1, 16, 10, device=dev); t = torch.full((1,), 0.5, device=dev)
         def full_obs():
-            with torch.no_grad():
-                x = h(vis, txt, prop, key_mask); xk = x[:, idx]; mem = tl(xk, km); a = x0
-                for i in range(10): a = st(a, t, mem, km)
+            with torch.no_grad(), torch.autocast("cuda", dtype=torch.half):
+                x = h(vis, txt, prop, key_mask).clone(); xk = x[:, idx].contiguous(); mem = tl(xk, km).clone(); a = x0
+                for i in range(10): a = st(a, t, mem, km).clone()      # clones: CUDA-graph outputs are overwritten by the next replay
             return a
         return full_obs, Tk
 
     with torch.no_grad():
-        for mode in ("eager", "compile", "tensorrt"):
+        for mode in modes.split(","):
             for name, b in budgets.items():
                 k = int(round(b * n_vis)); Tk = k + 65
                 try:
                     if mode == "eager": h, tl, st = head, tail, step
                     elif mode == "compile":
-                        h = torch.compile(head, mode="reduce-overhead"); tl = torch.compile(tail, mode="reduce-overhead"); st = torch.compile(step, mode="reduce-overhead")
+                        torch._dynamo.reset()
+                        h = torch.compile(head, mode="reduce-overhead", dynamic=False); tl = torch.compile(tail, mode="reduce-overhead", dynamic=False); st = torch.compile(step, mode="reduce-overhead", dynamic=False)
                     else:
                         import torch_tensorrt as trt
-                        ex_x = torch.randn(1, Tk, 512, device=dev, dtype=torch.half); ex_km = key_mask[:, :Tk].contiguous(); ex_mem = torch.randn(1, Tk, 512, device=dev, dtype=torch.half)
+                        ex_x = torch.randn(1, Tk, 512, device=dev); ex_km = key_mask[:, :Tk].contiguous(); ex_mem = torch.randn(1, Tk, 512, device=dev)
                         h = trt.compile(head, ir="dynamo", inputs=[vis, txt, prop, key_mask], enabled_precisions={torch.half}, min_block_size=1)
                         tl = trt.compile(tail, ir="dynamo", inputs=[ex_x, ex_km], enabled_precisions={torch.half}, min_block_size=1)
-                        st = trt.compile(step, ir="dynamo", inputs=[torch.randn(1, 16, 10, device=dev, dtype=torch.half), torch.full((1,), 0.5, device=dev, dtype=torch.half), ex_mem, ex_km], enabled_precisions={torch.half}, min_block_size=1)
+                        st = trt.compile(step, ir="dynamo", inputs=[torch.randn(1, 16, 10, device=dev), torch.full((1,), 0.5, device=dev), ex_mem, ex_km], enabled_precisions={torch.half}, min_block_size=1)
                     fn, _ = make_fns(h, tl, st, b); ms = timeit(fn, n)
                     info["runs"].append(dict(mode=mode, config=name, tokens_after_l2=Tk, ms_per_obs=ms)); print(mode, name, f"{ms:.2f} ms", flush=True)
                 except Exception as e:
@@ -83,14 +84,14 @@ def run(n: int = 300):
         # SigLIP, two views
         try:
             from transformers import AutoModel
-            sig = AutoModel.from_pretrained("google/siglip-base-patch16-224").vision_model.to(dev).half().eval(); px = torch.randn(2, 3, 224, 224, device=dev, dtype=torch.half)
+            sig = AutoModel.from_pretrained("google/siglip-base-patch16-224").vision_model.to(dev).half().eval(); px = torch.randn(2, 3, 224, 224, device=dev, dtype=torch.half)   # SigLIP is fp16 on the Mac too
             ms = timeit(lambda: sig(pixel_values=px).last_hidden_state, n); info["siglip_two_views_eager_ms"] = ms; print("siglip eager", ms)
             sigc = torch.compile(sig, mode="reduce-overhead"); ms = timeit(lambda: sigc(pixel_values=px).last_hidden_state, n); info["siglip_two_views_compile_ms"] = ms; print("siglip compile", ms)
         except Exception as e: info["siglip_error"] = repr(e)[:300]; print("siglip ERROR", repr(e)[:200])
-    os.makedirs("/vol/latency", exist_ok=True); json.dump(info, open("/vol/latency/l4.json", "w"), indent=1); VOL.commit()
+    os.makedirs("/vol/latency", exist_ok=True); json.dump(info, open(f"/vol/latency/l4_{modes.replace(',', '_')}.json", "w"), indent=1); VOL.commit()
     return info
 
 
 @app.local_entrypoint()
-def main(n: int = 300):
-    info = run.remote(n); print(json.dumps(info, indent=1))
+def main(n: int = 300, modes: str = "eager,compile,tensorrt"):
+    info = run.remote(n, modes); print(json.dumps(info, indent=1))
