@@ -55,6 +55,17 @@ def main(out, n_boot=10000):
             bo = (retained("opaque", idx) - retained("glass", idx)) * 100; lo, hi = np.nanpercentile(bo, [2.5, 97.5])
             verdict[(c, t)] = (did, lo, hi, ro, rg)
             lines.append(f"| {c} | {t} | {ro*100:.0f} % | {rg*100:.0f} % | {did:+.0f} | [{lo:+.0f}, {hi:+.0f}] |")
+    # absolute-difference DiD (robust when the Full base rate is low, e.g. pour)
+    lines += ["\n## Absolute success change vs Full (pts) and material diff-in-diff, paired over seeds\n", "| Config | Task | Δ opaque | Δ glass | DiD (Δopaque − Δglass) | 95 % CI |", "|---|---|---|---|---|---|"]
+    for c in configs:
+        if c == "full": continue
+        for t in TASKS:
+            seeds = sorted(set(s for (tt, s) in data[(c, "opaque")] if tt == t) & set(s for (tt, s) in data[(c, "glass")] if tt == t)
+                           & set(s for (tt, s) in data[("full", "opaque")] if tt == t) & set(s for (tt, s) in data[("full", "glass")] if tt == t))
+            if not seeds: continue
+            D = {m: np.array([data[(c, m)][(t, s)]["success"] - data[("full", m)][(t, s)]["success"] for s in seeds], float) for m in MATS}
+            idx = rng.integers(0, len(seeds), (n_boot, len(seeds))); bo = (D["opaque"][idx].mean(1) - D["glass"][idx].mean(1)) * 100
+            lines.append(f"| {c} | {t} | {D['opaque'].mean()*100:+.0f} | {D['glass'].mean()*100:+.0f} | {(D['opaque'].mean()-D['glass'].mean())*100:+.0f} | [{np.percentile(bo,2.5):+.0f}, {np.percentile(bo,97.5):+.0f}] |")
     # failure modes, recall, flops, latency
     lines += ["\n## Failure modes, GT-patch recall, compute\n", "| Config | Material | Failures (top 3) | Mean GT recall | GFLOPs | Policy ms/obs |", "|---|---|---|---|---|---|"]
     for c in configs:
