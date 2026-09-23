@@ -7,7 +7,7 @@
 3. **None of the methods reduces latency** on an L4 or an M5 Pro; the vision encoder and the iterative action expert dominate and eager execution is launch-bound.
 4. The one significant material effect (12.5 % budget) is the reverse of the hypothesis: opaque grasp −28 pts, glass unchanged.
 
-Full report: [docs/report.md](docs/report.md). Blog draft: [docs/blog.md](docs/blog.md). Weekly logs with every decision and incident: [CHECKPOINT.md](CHECKPOINT.md), `docs/week*_report.md`.
+Project page: **https://yogyam.github.io/clearvla/** (paper PDF, figures, TL;DR). Full report: [docs/report.md](docs/report.md). Paper source: [paper/](paper/). Blog draft: [docs/blog.md](docs/blog.md). Weekly logs with every decision and incident: [CHECKPOINT.md](CHECKPOINT.md), `docs/week*_report.md`.
 
 ![budget curve](results/figs/fig2_budget_curve.png)
 
