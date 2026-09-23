@@ -6,7 +6,7 @@ import sys, json, argparse, re, collections
 from pathlib import Path
 import numpy as np
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
-ROOT = Path(__file__).resolve().parents[1]; OUT = ROOT / "results/figs"; OUT.mkdir(parents=True, exist_ok=True)
+ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT)); OUT = ROOT / "results/figs"; OUT.mkdir(parents=True, exist_ok=True)
 TASKS = ("grasp", "pour", "insert"); MATS = ("opaque", "glass"); COL = {"opaque": "#444444", "glass": "#1f77b4"}
 
 
